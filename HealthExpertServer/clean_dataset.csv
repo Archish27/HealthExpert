@@ -1,4 +1,4 @@
-disease_cui,disease,Number of diseases,snomed_code,symptom,Number of symptoms
+disease_cui,symptom,Number of diseases,snomed_code,disease,Number of symptoms
 C0001175,Hepatomegaly associated with AIDS,2.0,62479008,Acquired immune deficiency syndrome (AIDS) (disorder),3
 C0001175,Malaise associated with AIDS,2.0,62479008,Acquired immune deficiency syndrome (AIDS) (disorder),3
 C0001175,Fatigue associated with AIDS,2.0,62479008,Acquired immune deficiency syndrome (AIDS) (disorder),3

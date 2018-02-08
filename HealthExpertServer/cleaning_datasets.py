@@ -18,7 +18,7 @@ dataset_dis_symp_relationship = dataset_dis_symp_relationship.set_index('symptom
 dirty_dataset = dataset_dis_symp_relationship.set_index('disease_cui').join(dirty_disease_dataset,lsuffix='_caller')
 
 dirty_dataset.drop(['rid_caller_caller','snomed_code_caller','rid_caller','rid'], axis=1, inplace=True)
-dirty_dataset.rename(columns={'Terms_caller': 'disease', 'Terms': 'symptom'}, inplace=True)
+dirty_dataset.rename(columns={'Terms_caller': 'symptom', 'Terms': 'disease'}, inplace=True)
 dirty_dataset.dropna(how="any",inplace=True)
 dirty_dataset.to_csv('clean_dataset.csv')
 
