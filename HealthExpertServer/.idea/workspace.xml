@@ -2,69 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82a48e96-b7da-4f74-9b2e-5d29e9a8d6aa" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/LoginActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/LoginContract.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/LoginPresenter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/RegisterActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/RegisterContract.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/RegisterPresenter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/common/BaseActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/common/BaseContract.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/common/BaseFragment.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/common/BaseViewPager.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/common/Config.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/common/CustomFontLoader.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/dashboard/HomeFragment.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/local/SharedPreferenceManager.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/api/UserRestService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/UserLoginRequest.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/UserRegisterRequest.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/response/ErrorResponse.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/response/UserRegisterResponse.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/response/UserResponse.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/dispatcher/RetrofitObj.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/network/RetrofitException.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/network/RxErrorHandlingCallAdapterFactory.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/ui/widgets/BaseButton.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/ui/widgets/BaseCheckbox.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/ui/widgets/BaseEditText.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/ui/widgets/BaseRadioButton.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/ui/widgets/BaseTextView.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/ui/widgets/FontCache.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/button_background.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/button_background_aacent.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/button_background_disabled.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/button_state.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/button_state_accent.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/home_grey.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/settings.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_login.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_patient_details.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_register.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/app_bar_main.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/fragment_home.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/nav_header_main.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/menu/activity_main.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/menu/activity_main_drawer.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/values/attrs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Module-Frequent/apyori.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Module-Frequent/rollup_datasets.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/connection.py" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/build.gradle" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/build.gradle" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/admin/activities/DoctorDetailsActivity.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/admin/adapters/HomeAdapter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/admin/fragments/HomeContract.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/admin/fragments/HomeFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/admin/fragments/HomePresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/DoctorRequest.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/response/Doctor.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/response/DoctorWrapper.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/response/Patient.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/response/PatientWrapper.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/activities/PatientSymptomActivity.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/adapters/PatientAdapter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/fragments/PatientContract.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/fragments/PatientFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/fragments/PatientPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/button_background_secondary.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_doctor_details.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/adapter_home.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/adapter_patient.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Module-Frequent/fpgrowth.py" />
       <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/MainActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/MainActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_main.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/values/colors.xml" />
+      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/MainActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/dashboard/MainActivity.java" />
+      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/LoginActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/LoginActivity.java" />
+      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/RegisterActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/RegisterActivity.java" />
+      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/api/UserRestService.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/api/UserRestService.java" />
+      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/app_bar_main.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/app_bar_main.xml" />
+      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/fragment_home.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/fragment_home.xml" />
       <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/values/strings.xml" />
       <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/values/styles.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/HealthExpertServer.py" afterPath="$PROJECT_DIR$/HealthExpertServer.py" />
-      <change beforePath="$PROJECT_DIR$/clean_dataset.csv" afterPath="$PROJECT_DIR$/clean_dataset.csv" />
-      <change beforePath="$PROJECT_DIR$/cleaning_datasets.py" afterPath="$PROJECT_DIR$/cleaning_datasets.py" />
+      <change beforePath="$PROJECT_DIR$/Module-Frequent/apyori.py" afterPath="$PROJECT_DIR$/Module-Frequent/apyori.py" />
+      <change beforePath="$PROJECT_DIR$/Module-Frequent/output.txt" afterPath="$PROJECT_DIR$/Module-Frequent/output.txt" />
+      <change beforePath="$PROJECT_DIR$/Module-Frequent/sample.csv" afterPath="$PROJECT_DIR$/Module-Frequent/sample.csv" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -74,7 +45,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/HealthExpertServer$HealthExpertServer.coverage" NAME="HealthExpertServer Coverage Results" MODIFIED="1518081098486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/HealthExpertServer$HealthExpertServer.coverage" NAME="HealthExpertServer Coverage Results" MODIFIED="1518083811545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/HealthExpertServer$rollup_datasets.coverage" NAME="rollup_datasets Coverage Results" MODIFIED="1517942020543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Module-Frequent" />
   </component>
   <component name="DatabaseView">
@@ -94,13 +65,17 @@
       <file leaf-file-name="HealthExpertServer.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HealthExpertServer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="42" column="35" lean-forward="true" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+            <state relative-caret-position="17">
+              <caret line="62" column="27" lean-forward="false" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
-                <marker date="1518081098351" expanded="true" signature="1103:1255" ph="INSERT INTO users... " />
-                <marker date="1518081098351" expanded="true" signature="1103:1273" ph="INSERT INTO users... " />
-                <marker date="1518081098351" expanded="true" signature="1863:1956" ph="SELECT * FRO... users" />
+                <marker date="1518097391885" expanded="true" signature="1103:1255" ph="INSERT INTO users... " />
+                <marker date="1518097391885" expanded="true" signature="1103:1273" ph="INSERT INTO users... " />
+                <marker date="1518097391885" expanded="true" signature="1863:1956" ph="SELECT * FRO... users" />
+                <marker date="1518097391885" expanded="true" signature="2859:2873" ph="SELECT u_nam... USERS" />
+                <marker date="1518097391885" expanded="true" signature="2859:2901" ph="SELECT u_nam... users" />
+                <marker date="1518097391885" expanded="true" signature="2859:2903" ph="SELECT u_nam... users" />
+                <marker date="1518097391885" expanded="true" signature="4097:4199" ph="SELECT u_nam... users" />
               </folding>
             </state>
           </provider>
@@ -165,11 +140,21 @@
       <file leaf-file-name="apyori.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Module-Frequent/apyori.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1581">
-              <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+            <state relative-caret-position="1666">
+              <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
               <folding>
-                <element signature="e#24#49#0" expanded="true" />
+                <element signature="e#213#223#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fpgrowth.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Module-Frequent/fpgrowth.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="15" lean-forward="false" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -220,6 +205,8 @@
       <find>set(</find>
       <find>request.form[</find>
       <find>')</find>
+      <find>iteritem</find>
+      <find>clean_tr</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -237,11 +224,12 @@
       <list>
         <option value="$PROJECT_DIR$/cleaning_dataset.py" />
         <option value="$PROJECT_DIR$/Module-Frequent/rollup_datasets.py" />
-        <option value="$PROJECT_DIR$/Module-Frequent/apriori.py" />
         <option value="$PROJECT_DIR$/../../Symptom-X--master/a-priori/apriori.py" />
-        <option value="$PROJECT_DIR$/Module-Frequent/apyori.py" />
         <option value="$PROJECT_DIR$/cleaning_datasets.py" />
         <option value="$PROJECT_DIR$/connection.py" />
+        <option value="$PROJECT_DIR$/Module-Frequent/apyori.py" />
+        <option value="$PROJECT_DIR$/Module-Frequent/apriori.py" />
+        <option value="$PROJECT_DIR$/Module-Frequent/fpgrowth.py" />
         <option value="$PROJECT_DIR$/HealthExpertServer.py" />
       </list>
     </option>
@@ -283,6 +271,11 @@
               <item name="HealthExpertServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="HealthExpertServer" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="HealthExpertServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HealthExpertServer" type="462c0819:PsiDirectoryNode" />
+              <item name="Module-Frequent" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -293,6 +286,7 @@
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -389,25 +383,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="cleaning_dataset" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="HealthExpertServer" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="F:\GitHub Projects\HealthExpert\HealthExpertServer\collecting_dataset.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <configuration name="cleaning_datasets" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -422,6 +397,25 @@
       <module name="HealthExpertServer" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cleaning_datasets.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="fpgrowth" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Module-Frequent" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="HealthExpertServer" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Module-Frequent/fpgrowth.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -448,19 +442,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.HealthExpertServer" />
-      <item index="1" class="java.lang.String" itemvalue="Python.cleaning_dataset" />
-      <item index="2" class="java.lang.String" itemvalue="Python.cleaning_datasets" />
-      <item index="3" class="java.lang.String" itemvalue="Python.rollup_datasets" />
-      <item index="4" class="java.lang.String" itemvalue="Python.apyori" />
-      <item index="5" class="java.lang.String" itemvalue="Python.4_dictionary" />
+      <item index="1" class="java.lang.String" itemvalue="Python.cleaning_datasets" />
+      <item index="2" class="java.lang.String" itemvalue="Python.rollup_datasets" />
+      <item index="3" class="java.lang.String" itemvalue="Python.apyori" />
+      <item index="4" class="java.lang.String" itemvalue="Python.4_dictionary" />
+      <item index="5" class="java.lang.String" itemvalue="Python.fpgrowth" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.4_dictionary" />
-        <item index="1" class="java.lang.String" itemvalue="Python.cleaning_datasets" />
-        <item index="2" class="java.lang.String" itemvalue="Python.apyori" />
-        <item index="3" class="java.lang.String" itemvalue="Python.rollup_datasets" />
-        <item index="4" class="java.lang.String" itemvalue="Python.cleaning_dataset" />
+        <item index="0" class="java.lang.String" itemvalue="Python.fpgrowth" />
+        <item index="1" class="java.lang.String" itemvalue="Python.apyori" />
+        <item index="2" class="java.lang.String" itemvalue="Python.4_dictionary" />
+        <item index="3" class="java.lang.String" itemvalue="Python.cleaning_datasets" />
+        <item index="4" class="java.lang.String" itemvalue="Python.rollup_datasets" />
       </list>
     </recent_temporary>
   </component>
@@ -490,7 +484,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -499,7 +492,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28214827" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6083467" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -533,29 +526,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HealthExpertServer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <marker date="1518081098351" expanded="true" signature="1103:1255" ph="INSERT INTO users... " />
-            <marker date="1518081098351" expanded="true" signature="1103:1273" ph="INSERT INTO users... " />
-            <marker date="1518081098351" expanded="true" signature="1863:1956" ph="SELECT * FRO... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/collecting_dataset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Module-Frequent/rollup_datasets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -589,7 +559,7 @@
         <state relative-caret-position="1581">
           <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
           <folding>
-            <element signature="e#24#49#0" expanded="true" />
+            <element signature="e#213#223#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -630,9 +600,13 @@
           <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <marker date="1518081098351" expanded="true" signature="1103:1255" ph="INSERT INTO users... " />
-            <marker date="1518081098351" expanded="true" signature="1103:1273" ph="INSERT INTO users... " />
-            <marker date="1518081098351" expanded="true" signature="1863:1956" ph="SELECT * FRO... users" />
+            <marker date="1518097391885" expanded="true" signature="1103:1255" ph="INSERT INTO users... " />
+            <marker date="1518097391885" expanded="true" signature="1103:1273" ph="INSERT INTO users... " />
+            <marker date="1518097391885" expanded="true" signature="1863:1956" ph="SELECT * FRO... users" />
+            <marker date="1518097391885" expanded="true" signature="2859:2873" ph="SELECT u_nam... USERS" />
+            <marker date="1518097391885" expanded="true" signature="2859:2901" ph="SELECT u_nam... users" />
+            <marker date="1518097391885" expanded="true" signature="2859:2903" ph="SELECT u_nam... users" />
+            <marker date="1518097391885" expanded="true" signature="4097:4199" ph="SELECT u_nam... users" />
           </folding>
         </state>
       </provider>
@@ -702,7 +676,7 @@
         <state relative-caret-position="2142">
           <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
           <folding>
-            <element signature="e#24#49#0" expanded="true" />
+            <element signature="e#213#223#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -713,9 +687,13 @@
           <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <marker date="1518081098351" expanded="true" signature="1103:1255" ph="INSERT INTO users... " />
-            <marker date="1518081098351" expanded="true" signature="1103:1273" ph="INSERT INTO users... " />
-            <marker date="1518081098351" expanded="true" signature="1863:1956" ph="SELECT * FRO... users" />
+            <marker date="1518097391885" expanded="true" signature="1103:1255" ph="INSERT INTO users... " />
+            <marker date="1518097391885" expanded="true" signature="1103:1273" ph="INSERT INTO users... " />
+            <marker date="1518097391885" expanded="true" signature="1863:1956" ph="SELECT * FRO... users" />
+            <marker date="1518097391885" expanded="true" signature="2859:2873" ph="SELECT u_nam... USERS" />
+            <marker date="1518097391885" expanded="true" signature="2859:2901" ph="SELECT u_nam... users" />
+            <marker date="1518097391885" expanded="true" signature="2859:2903" ph="SELECT u_nam... users" />
+            <marker date="1518097391885" expanded="true" signature="4097:4199" ph="SELECT u_nam... users" />
           </folding>
         </state>
       </provider>
@@ -785,7 +763,7 @@
         <state relative-caret-position="2414">
           <caret line="142" column="21" lean-forward="true" selection-start-line="142" selection-start-column="21" selection-end-line="142" selection-end-column="21" />
           <folding>
-            <element signature="e#24#49#0" expanded="true" />
+            <element signature="e#213#223#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -796,9 +774,13 @@
           <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <marker date="1518081098351" expanded="true" signature="1103:1255" ph="INSERT INTO users... " />
-            <marker date="1518081098351" expanded="true" signature="1103:1273" ph="INSERT INTO users... " />
-            <marker date="1518081098351" expanded="true" signature="1863:1956" ph="SELECT * FRO... users" />
+            <marker date="1518097391885" expanded="true" signature="1103:1255" ph="INSERT INTO users... " />
+            <marker date="1518097391885" expanded="true" signature="1103:1273" ph="INSERT INTO users... " />
+            <marker date="1518097391885" expanded="true" signature="1863:1956" ph="SELECT * FRO... users" />
+            <marker date="1518097391885" expanded="true" signature="2859:2873" ph="SELECT u_nam... USERS" />
+            <marker date="1518097391885" expanded="true" signature="2859:2901" ph="SELECT u_nam... users" />
+            <marker date="1518097391885" expanded="true" signature="2859:2903" ph="SELECT u_nam... users" />
+            <marker date="1518097391885" expanded="true" signature="4097:4199" ph="SELECT u_nam... users" />
           </folding>
         </state>
       </provider>
@@ -836,9 +818,13 @@
           <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <marker date="1518081098351" expanded="true" signature="1103:1255" ph="INSERT INTO users... " />
-            <marker date="1518081098351" expanded="true" signature="1103:1273" ph="INSERT INTO users... " />
-            <marker date="1518081098351" expanded="true" signature="1863:1956" ph="SELECT * FRO... users" />
+            <marker date="1518097391885" expanded="true" signature="1103:1255" ph="INSERT INTO users... " />
+            <marker date="1518097391885" expanded="true" signature="1103:1273" ph="INSERT INTO users... " />
+            <marker date="1518097391885" expanded="true" signature="1863:1956" ph="SELECT * FRO... users" />
+            <marker date="1518097391885" expanded="true" signature="2859:2873" ph="SELECT u_nam... USERS" />
+            <marker date="1518097391885" expanded="true" signature="2859:2901" ph="SELECT u_nam... users" />
+            <marker date="1518097391885" expanded="true" signature="2859:2903" ph="SELECT u_nam... users" />
+            <marker date="1518097391885" expanded="true" signature="4097:4199" ph="SELECT u_nam... users" />
           </folding>
         </state>
       </provider>
@@ -924,16 +910,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Module-Frequent/apyori.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1581">
-          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cleaning_datasets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -972,19 +948,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Module-Frequent/apyori.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1666">
+          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding>
+            <element signature="e#213#223#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Module-Frequent/apriori.py" />
+    <entry file="file://$PROJECT_DIR$/Module-Frequent/fpgrowth.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="15" lean-forward="false" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HealthExpertServer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="42" column="35" lean-forward="true" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+        <state relative-caret-position="17">
+          <caret line="62" column="27" lean-forward="false" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <marker date="1518081098351" expanded="true" signature="1103:1255" ph="INSERT INTO users... " />
-            <marker date="1518081098351" expanded="true" signature="1103:1273" ph="INSERT INTO users... " />
-            <marker date="1518081098351" expanded="true" signature="1863:1956" ph="SELECT * FRO... users" />
+            <marker date="1518097391885" expanded="true" signature="1103:1255" ph="INSERT INTO users... " />
+            <marker date="1518097391885" expanded="true" signature="1103:1273" ph="INSERT INTO users... " />
+            <marker date="1518097391885" expanded="true" signature="1863:1956" ph="SELECT * FRO... users" />
+            <marker date="1518097391885" expanded="true" signature="2859:2873" ph="SELECT u_nam... USERS" />
+            <marker date="1518097391885" expanded="true" signature="2859:2901" ph="SELECT u_nam... users" />
+            <marker date="1518097391885" expanded="true" signature="2859:2903" ph="SELECT u_nam... users" />
+            <marker date="1518097391885" expanded="true" signature="4097:4199" ph="SELECT u_nam... users" />
           </folding>
         </state>
       </provider>

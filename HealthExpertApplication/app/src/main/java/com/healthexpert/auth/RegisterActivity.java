@@ -3,18 +3,13 @@ package com.healthexpert.auth;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.AppCompatSpinner;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.Animation;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 
-import com.healthexpert.MainActivity;
+import com.healthexpert.dashboard.MainActivity;
 import com.healthexpert.R;
 import com.healthexpert.common.BaseActivity;
 import com.healthexpert.data.local.SharedPreferenceManager;
@@ -24,8 +19,6 @@ import com.healthexpert.data.remote.models.response.UserRegisterResponse;
 import com.healthexpert.dispatcher.RetrofitObj;
 import com.healthexpert.ui.widgets.BaseButton;
 import com.healthexpert.ui.widgets.BaseEditText;
-
-import java.util.ArrayList;
 
 
 /**

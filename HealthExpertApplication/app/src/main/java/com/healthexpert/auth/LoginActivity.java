@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.Toast;
 
 
-import com.healthexpert.MainActivity;
+import com.healthexpert.dashboard.MainActivity;
 import com.healthexpert.common.BaseActivity;
 import com.healthexpert.data.local.SharedPreferenceManager;
 import com.healthexpert.data.remote.api.UserRestService;

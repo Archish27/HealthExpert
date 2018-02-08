@@ -1,144 +1,142 @@
-#!/usr/bin/env python32
-from _ast import operator
+"""
+Description     : Simple Python implementation of the Apriori Algorithm
+
+Usage:
+    $python apriori.py -f DATASET.csv -s minSupport  -c minConfidence
+
+    $python apriori.py -f DATASET.csv -s 0.15 -c 0.6
+"""
 
 import sys
+
+from itertools import chain, combinations
 from collections import defaultdict
-import decimal
-import pandas as pd
-import operator
+from optparse import OptionParser
 
 
-class APRIORI():
-    # initializing datastructures for transactions, itemsets and rules
-    def __init__(self, minsupp, minconf):
-        self.transactions = []
-        self.minsupp = float(minsupp)
-        self.minconf = float(minconf)
-        self.itemsets = []
-        self.rules = {}
-
-    # loads the csv file and proceeds to generate the first itemsets
-    def load_transactions(self, csv_file):
-        first_itemsets = dict()
-        for readline in open(csv_file, 'r'):
-            for line in readline.split('\r'):
-                t = line.strip().split(',')
-                t = filter(None,t)
-                # print(t)
-                self.transactions.append(set(t))
-                for item in t:
-                    item_set = frozenset([item])
-                    if item_set not in first_itemsets:
-                        first_itemsets[item_set] = 1
-                    else:
-                        first_itemsets[item_set] += 1
-        self.itemsets.append(first_itemsets)
-        self.correct_first_itemset()
+def subsets(arr):
+    """ Returns non empty subsets of arr"""
+    return chain(*[combinations(arr, i + 1) for i, a in enumerate(arr)])
 
 
-    # removes the itemsets below the given support value
-    def correct_first_itemset(self):
-        num_of_transactions = len(self.transactions)
-        first_itemset = self.itemsets[0]
-        for item in list(first_itemset):
-            support_value = float(first_itemset[item]) / num_of_transactions
-            if support_value < self.minsupp:
-                del first_itemset[item]
-            else:
-                first_itemset[item] = support_value
-        self.itemsets[0] = first_itemset
+def returnItemsWithMinSupport(itemSet, transactionList, minSupport, freqSet):
+    """calculates the support for items in the itemSet and returns a subset
+   of the itemSet each of whose elements satisfies the minimum support"""
+    _itemSet = set()
+    localSet = defaultdict(int)
 
-    # iteratively adds itemsets using the previous itemsets
-    def get_itemsets(self):
-        prev_itemset = list(self.itemsets[0].keys())
-        num_of_transactions = len(self.transactions)
-        while len(prev_itemset) is not 0:
-            new_set_len = len(prev_itemset[0]) + 1
-            candidate_itemsets = dict()
-            for i in range(0, len(prev_itemset)):
-                for j in range(i + 1, len(prev_itemset)):
-                    present_set = prev_itemset[i] | prev_itemset[j]
-                    if len(present_set) is new_set_len:
-                        count = 0
-                        for itemset in prev_itemset:
-                            if itemset <= present_set:
-                                count += 1
-                        if count == len(present_set):
-                            candidate_itemsets[present_set] = 0
-            # after the combinations of next possible itemsets have been generated we find each of there's support values.
-            if len(candidate_itemsets) is not 0:
-                for t in self.transactions:
-                    for itemset in candidate_itemsets:
-                        if itemset <= t:
-                            candidate_itemsets[itemset] += 1
-                for itemset in candidate_itemsets.keys():
-                    support_value = float(candidate_itemsets[itemset]) / num_of_transactions
-                    if support_value < self.minsupp:
-                        del candidate_itemsets[itemset]
-                    else:
-                        candidate_itemsets[itemset] = support_value
-            if len(candidate_itemsets) is not 0:
-                self.itemsets.append(candidate_itemsets)
-            prev_itemset = candidate_itemsets.keys()
+    for item in itemSet:
+        for transaction in transactionList:
+            if item.issubset(transaction):
+                freqSet[item] += 1
+                localSet[item] += 1
 
-    # function generates rules and checks for minimum confidence values
-    def get_rules(self):
-        self.get_itemsets()
-        for itemsets in self.itemsets[1:]:
-            for itemset in itemsets.keys():
-                for item in itemset:
-                    left_items = itemset - frozenset([item])
-                    num = self.itemsets[len(itemset) - 1][itemset]
-                    num_total = self.itemsets[len(left_items) - 1][left_items]
-                    conf = float(num) / num_total
-                    if conf >= self.minconf:
-                        line = "[" + ", ".join(list(left_items)) + "] => [" + item + "] (Conf: " + str(
-                            conf * 100) + "%, Supp: " + str((itemsets[itemset] * 100)) + "%)"
-                        self.rules[line] = conf
-    def __key_itemset(self, t):
-        return self.itemsets[len(t) - 1][t]
+    for item, count in localSet.items():
+        support = float(count) / len(transactionList)
+
+        if support >= minSupport:
+            _itemSet.add(item)
+
+    return _itemSet
 
 
-    def __key_rule(self, t):
-        return self.rules[t]
+def joinSet(itemSet, length):
+    """Join a set with itself and returns the n-element itemsets"""
+    return set([i.union(j) for i in itemSet for j in itemSet if len(i.union(j)) == length])
 
 
-    # for getting itemset confidence values
-    def get_itemset_val(self, t):
-        return self.itemsets[len(t) - 1][t]
+def getItemSetTransactionList(data_iterator):
+    transactionList = list()
+    itemSet = set()
+    for record in data_iterator:
+        transaction = frozenset(record)
+        transactionList.append(transaction)
+        for item in transaction:
+            itemSet.add(frozenset([item]))  # Generate 1-itemSets
+    return itemSet, transactionList
 
 
-    # for getting the rule values
-    def get_rule_val(self, t):
-        return self.rules[t]
+def runApriori(data_iter, minSupport, minConfidence):
+    """
+    run the apriori algorithm. data_iter is a record iterator
+    Return both:
+     - items (tuple, support)
+     - rules ((pretuple, posttuple), confidence)
+    """
+    itemSet, transactionList = getItemSetTransactionList(data_iter)
+
+    freqSet = defaultdict(int)
+    largeSet = dict()
+    # Global dictionary which stores (key=n-itemSets,value=support)
+    # which satisfy minSupport
+
+    assocRules = dict()
+    # Dictionary which stores Association Rules
+
+    oneCSet = returnItemsWithMinSupport(itemSet,
+                                        transactionList,
+                                        minSupport,
+                                        freqSet)
+
+    currentLSet = oneCSet
+    k = 2
+    while (currentLSet != set([])):
+        largeSet[k - 1] = currentLSet
+        currentLSet = joinSet(currentLSet, k)
+        currentCSet = returnItemsWithMinSupport(currentLSet,
+                                                transactionList,
+                                                minSupport,
+                                                freqSet)
+        currentLSet = currentCSet
+        k = k + 1
+
+    def getSupport(item):
+        """local function which Returns the support of an item"""
+        return float(freqSet[item]) / len(transactionList)
+
+    toRetItems = []
+    for key, value in largeSet.items():
+        toRetItems.extend([(tuple(item), getSupport(item))
+                           for item in value])
+
+    toRetRules = []
+    for key, value in list(largeSet.items()[1:]):
+        for item in value:
+            _subsets = map(frozenset, [x for x in subsets(item)])
+            for element in _subsets:
+                remain = item.difference(element)
+                if len(remain) > 0:
+                    confidence = getSupport(item) / getSupport(element)
+                    if confidence >= minConfidence:
+                        toRetRules.append(((tuple(element), tuple(remain)),
+                                           confidence))
+    return toRetItems, toRetRules
 
 
-    # for printing the required file
-    def print_result(self, file):
-        rules_writer = open(file, 'w')
-        rules_writer.write('==Frequent itemsets (min_sup=' + str(self.minsupp * 100) + '%)\n')
-        all_itemsets = []
-        for itemsets in self.itemsets:
-            all_itemsets += itemsets
-
-        ordered_itemsets = sorted(all_itemsets, key=self.__key_itemset, reverse=True)
-        ordered_itemsets = sorted(all_itemsets, key=self.get_itemset_val, reverse=True)
-        for itemset in ordered_itemsets:
-            rules_writer.write(str(list(itemset)))
-            rules_writer.write(', ' + str(self.itemsets[len(itemset) - 1][itemset] * 100) + '%')
-            rules_writer.write('\n')
-        rules_writer.write('\n==High-confidence association rules (min_conf=' + str(self.minconf * 100) + '%)\n')
-        rules_ordered = sorted(self.rules.keys(), key=self.__key_rule, reverse=True)
-        rules_ordered = sorted(self.rules.keys(), key=self.get_rule_val, reverse=True)
-
-        for rules in rules_ordered:
-            rules_writer.write(rules)
-            rules_writer.write('\n')
-        rules_writer.close()
+def printResults(items, rules):
+    """prints the generated itemsets sorted by support and the confidence rules sorted by confidence"""
+    for item, support in sorted(items, key=lambda x: (lambda item, support: support)):
+        print("item: %s , %.3f" % (str(item), support))
+    print
+    "\n------------------------ RULES:"
+    for rule, confidence in sorted(rules, key=lambda p: (lambda rule, confidence: confidence)):
+        pre, post = rule
+        print("Rule: %s ==> %s , %.3f" % (str(pre), str(post), confidence))
 
 
-if __name__ == '__main__':
-    miner = APRIORI(0.7, 0.8)
-    miner.load_transactions("rollup_dataset.csv")
-    miner.get_rules()
-    miner.print_result('output.txt')
+def dataFromFile(fname):
+    """Function which reads from the file and yields a generator"""
+    file_iter = open(fname, 'rU')
+    for line in file_iter:
+        line = line.strip().rstrip(',')  # Remove trailing comma
+        record = frozenset(line.split(','))
+        yield record
+
+
+if __name__ == "__main__":
+    minSupport = 0.5
+    minConfidence = 0.7
+
+    items, rules = runApriori("myData.csv", minSupport, minConfidence)
+
+    printResults(items, rules)

@@ -1,7 +1,10 @@
 package com.healthexpert.data.remote.api;
 
+import com.healthexpert.data.remote.models.requests.DoctorRequest;
 import com.healthexpert.data.remote.models.requests.UserLoginRequest;
 import com.healthexpert.data.remote.models.requests.UserRegisterRequest;
+import com.healthexpert.data.remote.models.response.DoctorWrapper;
+import com.healthexpert.data.remote.models.response.PatientWrapper;
 import com.healthexpert.data.remote.models.response.UserRegisterResponse;
 import com.healthexpert.data.remote.models.response.UserResponse;
 
@@ -19,5 +22,12 @@ public interface UserRestService {
 
     @POST("/auth/register")
     Observable<UserRegisterResponse> doRegister(@Body UserRegisterRequest userRegisterRequest);
+
+    @POST("/admin/doctors")
+    Observable<DoctorWrapper> getHomeData();
+
+    @POST("/doctor/patients")
+    Observable<PatientWrapper> getPatientData(@Body DoctorRequest doctorRequest);
+
 
 }

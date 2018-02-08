@@ -70,5 +70,60 @@ def user_login():
                                    role=row[2])
 
 
+@app.route('/doctor/patients', methods=['GET', 'POST'])
+def get_patients():
+    if request.method == 'POST':
+        data = request.data
+        dataD = json.loads(data)
+        accesstoken = dataD['accesstoken'].encode('utf-8')
+        cur = mysql.connection.cursor()
+        cur.execute('''SELECT * FROM patient where d_accesstoken=%s''', (accesstoken))
+        list_data = []
+        for row in cur:
+            dataDict = {'pid': row[0],
+                        'name': row[1],
+                        'dob': row[2],
+                        'gender': row[3],
+                        'height': row[4],
+                        'weight': row[5],
+                        'emailid': row[6],
+                        'phoneno': row[7],
+                        'occupation': row[8],
+                        'symptoms': row[9],
+                        'history': row[10],
+                        'investigations': row[11],
+                        'city': row[12],
+                        'pincode': row[13],
+                        'mothername': row[14],
+                        'mothersymptoms': row[15],
+                        'fathername': row[16],
+                        'fathersymptoms': row[17],
+                        'photo': row[18]
+                        }
+            list_data.append(dataDict)
+
+        return jsonify(data=list_data)
+
+
+@app.route('/admin/doctors', methods=['GET', 'POST'])
+def get_doctors():
+    if request.method == 'POST':
+
+        cur = mysql.connection.cursor()
+        cur.execute(
+            '''SELECT u_name,u_emailid,u_phoneno,u_pincode,u_city,u_speciality FROM users where u_status=0 AND r_id=3 ''')
+        list_data = []
+        for row in cur:
+            dataDict = {'name': row[0],
+                        'emailid': row[1],
+                        'phoneno': row[2],
+                        'pincode': row[3],
+                        'city': row[4],
+                        'speciality': row[5]}
+            list_data.append(dataDict)
+
+        return jsonify(data=list_data)
+
+
 if __name__ == '__main__':
-    app.run(host='192.168.0.103',port=5000)
+    app.run(host='192.168.0.103', port=5000)
