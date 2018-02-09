@@ -13,11 +13,14 @@ import android.view.View;
 import android.widget.Toast;
 
 
+import com.healthexpert.auth.doctor.DoctorRegisterActivity;
+import com.healthexpert.auth.patient.PatientRegisterActivity;
 import com.healthexpert.dashboard.MainActivity;
 import com.healthexpert.common.BaseActivity;
 import com.healthexpert.data.local.SharedPreferenceManager;
 import com.healthexpert.data.remote.api.UserRestService;
 import com.healthexpert.data.remote.models.requests.UserLoginRequest;
+import com.healthexpert.data.remote.models.response.Patient;
 import com.healthexpert.data.remote.models.response.UserResponse;
 import com.healthexpert.R;
 import com.healthexpert.dispatcher.RetrofitObj;
@@ -41,6 +44,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
     BaseEditText etEmailId, etPassword;
     BaseButton bLogin;
     LoginPresenter loginPresenter;
+    BaseButton bRegisterPatient, bRegisterDoctor;
     ProgressDialog _dialog;
 
     @Override
@@ -72,10 +76,18 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
                 }
             }
         });
-        tvRegister.setOnClickListener(new View.OnClickListener() {
+        bRegisterDoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), RegisterActivity.class);
+                Intent i = new Intent(getApplicationContext(), DoctorRegisterActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
+        bRegisterPatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), PatientRegisterActivity.class);
                 startActivity(i);
                 finish();
             }
@@ -85,7 +97,8 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
     private void initViews() {
         etEmailId = (BaseEditText) findViewById(R.id.etEmailId);
         etPassword = (BaseEditText) findViewById(R.id.etPassword);
-        tvRegister = (BaseTextView) findViewById(R.id.tvRegister);
+        bRegisterPatient = (BaseButton) findViewById(R.id.bRegisterPatient);
+        bRegisterDoctor = (BaseButton) findViewById(R.id.bRegisterDoctor);
         bLogin = (BaseButton) findViewById(R.id.bLogin);
     }
 

@@ -2,40 +2,67 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82a48e96-b7da-4f74-9b2e-5d29e9a8d6aa" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/admin/activities/DoctorDetailsActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/admin/adapters/HomeAdapter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/admin/fragments/HomeContract.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/admin/fragments/HomeFragment.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/admin/fragments/HomePresenter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/DoctorRequest.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/response/Doctor.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/response/DoctorWrapper.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/response/Patient.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/response/PatientWrapper.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/activities/PatientSymptomActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/adapters/PatientAdapter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/fragments/PatientContract.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/fragments/PatientFragment.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/fragments/PatientPresenter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/button_background_secondary.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_doctor_details.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/adapter_home.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/adapter_patient.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Module-Frequent/fpgrowth.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/admin/activities/AdminDoctorDetailsContract.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/admin/activities/AdminDoctorDetailsPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/patient/PatientRegisterActivity.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/patient/PatientRegisterContracts.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/patient/PatientRegisterPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/api/DoctorRestService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/api/PatientRestService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/AdminDoctorDetails.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/DoctorRegisterRequest.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/PatientRegisterRequest.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/PatientRequest.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/PatientRequestNoIcon.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/response/SymptomResponse.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/response/SymptomResponseWrapper.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/adapters/DoctorHomeAdapter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/fragments/DoctorHomeFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/adapters/PatientHomeAdapter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/fragments/PatientHomeFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/symptom/SymptomPatientContracts.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/symptom/SymptomPatientPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/symptom/adapters/SymptomAdapter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/caduceus.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/close_button.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/doctor.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/mydoctors.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/mypatients.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/patient.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/plus.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/prepare_button.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/profile.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/summary.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_doctor_register.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_register_patient.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/adapter_patient_home.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/adapter_symptoms.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/dialog_image.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/dialog_symptoms.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/fragment_patient.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/fragment_patient_home.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/layout_patient.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/cities" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/citites" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sample" />
       <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/MainActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/dashboard/MainActivity.java" />
+      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/admin/activities/DoctorDetailsActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/admin/activities/AdminDoctorDetailsActivity.java" />
+      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/admin/adapters/HomeAdapter.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/admin/adapters/AdminHomeAdapter.java" />
+      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/admin/fragments/HomeFragment.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/admin/fragments/AdminHomeFragment.java" />
       <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/LoginActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/LoginActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/RegisterActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/RegisterActivity.java" />
+      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/RegisterActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/doctor/DoctorRegisterActivity.java" />
+      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/RegisterContract.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/doctor/RegisterContract.java" />
+      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/RegisterPresenter.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/doctor/RegisterPresenter.java" />
+      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/dashboard/MainActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/dashboard/MainActivity.java" />
       <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/api/UserRestService.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/api/UserRestService.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/app_bar_main.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/app_bar_main.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/fragment_home.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/fragment_home.xml" />
+      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/response/Doctor.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/response/Doctor.java" />
+      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/fragments/PatientFragment.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/fragments/PatientFragment.java" />
+      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/button_background_secondary.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/button_background_secondary.xml" />
+      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_login.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_login.xml" />
+      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_register.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/values/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/values/styles.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/HealthExpertServer.py" afterPath="$PROJECT_DIR$/HealthExpertServer.py" />
-      <change beforePath="$PROJECT_DIR$/Module-Frequent/apyori.py" afterPath="$PROJECT_DIR$/Module-Frequent/apyori.py" />
-      <change beforePath="$PROJECT_DIR$/Module-Frequent/output.txt" afterPath="$PROJECT_DIR$/Module-Frequent/output.txt" />
-      <change beforePath="$PROJECT_DIR$/Module-Frequent/sample.csv" afterPath="$PROJECT_DIR$/Module-Frequent/sample.csv" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,7 +72,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/HealthExpertServer$HealthExpertServer.coverage" NAME="HealthExpertServer Coverage Results" MODIFIED="1518083811545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/HealthExpertServer$HealthExpertServer.coverage" NAME="HealthExpertServer Coverage Results" MODIFIED="1518208912515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/HealthExpertServer$rollup_datasets.coverage" NAME="rollup_datasets Coverage Results" MODIFIED="1517942020543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Module-Frequent" />
   </component>
   <component name="DatabaseView">
@@ -65,18 +92,49 @@
       <file leaf-file-name="HealthExpertServer.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HealthExpertServer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="62" column="27" lean-forward="false" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
+            <state relative-caret-position="332">
+              <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
-                <marker date="1518097391885" expanded="true" signature="1103:1255" ph="INSERT INTO users... " />
-                <marker date="1518097391885" expanded="true" signature="1103:1273" ph="INSERT INTO users... " />
-                <marker date="1518097391885" expanded="true" signature="1863:1956" ph="SELECT * FRO... users" />
-                <marker date="1518097391885" expanded="true" signature="2859:2873" ph="SELECT u_nam... USERS" />
-                <marker date="1518097391885" expanded="true" signature="2859:2901" ph="SELECT u_nam... users" />
-                <marker date="1518097391885" expanded="true" signature="2859:2903" ph="SELECT u_nam... users" />
-                <marker date="1518097391885" expanded="true" signature="4097:4199" ph="SELECT u_nam... users" />
+                <marker date="1518208399724" expanded="true" signature="1516:1672" ph="INSERT INTO doctor... " />
+                <marker date="1518208399724" expanded="true" signature="1803:1870" ph="INSERT into users... " />
+                <marker date="1518208399724" expanded="true" signature="1803:1893" ph="INSERT into users... " />
+                <marker date="1518208399724" expanded="true" signature="3656:3969" ph="INSERT INTO doctor... " />
+                <marker date="1518208399724" expanded="true" signature="4217:4307" ph="INSERT into users... " />
+                <marker date="1518208399724" expanded="true" signature="5914:6216" ph="INSERT INTO patient... " />
+                <marker date="1518208399724" expanded="true" signature="6457:6547" ph="INSERT into users... " />
+                <marker date="1518208399724" expanded="true" signature="7121:7214" ph="SELECT * FRO... users" />
+                <marker date="1518208399724" expanded="true" signature="8003:8054" ph="SELECT s_id,... symptom" />
+                <marker date="1518208399724" expanded="true" signature="8535:8549" ph="SELECT u_nam... USERS" />
+                <marker date="1518208399724" expanded="true" signature="8535:8577" ph="SELECT u_nam... users" />
+                <marker date="1518208399724" expanded="true" signature="8535:8579" ph="SELECT u_nam... users" />
+                <marker date="1518208399724" expanded="true" signature="9794:9827" ph="SELECT * FRO... patient" />
+                <marker date="1518208399724" expanded="true" signature="9794:9831" ph="SELECT * FRO... patient" />
+                <marker date="1518208399724" expanded="true" signature="11011:11204" ph="SELECT u_nam... users" />
+                <marker date="1518208399724" expanded="true" signature="11011:11205" ph="SELECT d_nam... doctor" />
+                <marker date="1518208399724" expanded="true" signature="12130:12175" ph="UPDATE users... " />
+                <marker date="1518208399724" expanded="true" signature="12130:12185" ph="UPDATE users... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sample" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sample">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="38" column="14" lean-forward="false" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cities" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cities">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -87,18 +145,6 @@
             <state relative-caret-position="85">
               <caret line="5" column="48" lean-forward="false" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="collecting_dataset.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/collecting_dataset.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -128,22 +174,10 @@
       <file leaf-file-name="apriori.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../Symptom-X--master/a-priori/apriori.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="57" column="4" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="161" selection-end-column="32" />
+            <state relative-caret-position="289">
+              <caret line="44" column="25" lean-forward="false" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="apyori.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Module-Frequent/apyori.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1666">
-              <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-              <folding>
-                <element signature="e#213#223#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -207,6 +241,15 @@
       <find>')</find>
       <find>iteritem</find>
       <find>clean_tr</find>
+      <find>status</find>
+      <find>,Sporotrichotic_chancre</find>
+      <find>-</find>
+      <find>[-][a-z]*[\s][]</find>
+      <find>admin/doc</find>
+      <find>comm</find>
+      <find>doctor/</find>
+      <find>$</find>
+      <find>/auth/register/patient/noicon</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -214,6 +257,10 @@
       <replace>dataD</replace>
       <replace>dataD[</replace>
       <replace>']</replace>
+      <replace>s_code</replace>
+      <replace>,s_name</replace>
+      <replace>,</replace>
+      <replace>&lt;/item&gt;</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -230,6 +277,8 @@
         <option value="$PROJECT_DIR$/Module-Frequent/apyori.py" />
         <option value="$PROJECT_DIR$/Module-Frequent/apriori.py" />
         <option value="$PROJECT_DIR$/Module-Frequent/fpgrowth.py" />
+        <option value="$PROJECT_DIR$/sample" />
+        <option value="$PROJECT_DIR$/cities" />
         <option value="$PROJECT_DIR$/HealthExpertServer.py" />
       </list>
     </option>
@@ -249,7 +298,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -262,31 +311,13 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="HealthExpertServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HealthExpertServer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HealthExpertServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HealthExpertServer" type="462c0819:PsiDirectoryNode" />
-              <item name="Module-Frequent" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://F:/GitHub Projects/HealthExpert/HealthExpertServer/HealthExpertServer.py" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -487,26 +518,26 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34039333" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="0" y="0" width="295" height="544" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1603631" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="0" y="0" width="295" height="544" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31907895" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6083467" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39967105" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
@@ -526,24 +557,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Module-Frequent/rollup_datasets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="55" lean-forward="false" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cleaning_datasets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../Symptom-X--master/a-priori/apriori.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
@@ -559,7 +572,7 @@
         <state relative-caret-position="1581">
           <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
           <folding>
-            <element signature="e#213#223#0" expanded="true" />
+            <element signature="e#213#223#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -600,13 +613,24 @@
           <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <marker date="1518097391885" expanded="true" signature="1103:1255" ph="INSERT INTO users... " />
-            <marker date="1518097391885" expanded="true" signature="1103:1273" ph="INSERT INTO users... " />
-            <marker date="1518097391885" expanded="true" signature="1863:1956" ph="SELECT * FRO... users" />
-            <marker date="1518097391885" expanded="true" signature="2859:2873" ph="SELECT u_nam... USERS" />
-            <marker date="1518097391885" expanded="true" signature="2859:2901" ph="SELECT u_nam... users" />
-            <marker date="1518097391885" expanded="true" signature="2859:2903" ph="SELECT u_nam... users" />
-            <marker date="1518097391885" expanded="true" signature="4097:4199" ph="SELECT u_nam... users" />
+            <marker date="1518208399724" expanded="true" signature="1516:1672" ph="INSERT INTO doctor... " />
+            <marker date="1518208399724" expanded="true" signature="1803:1870" ph="INSERT into users... " />
+            <marker date="1518208399724" expanded="true" signature="1803:1893" ph="INSERT into users... " />
+            <marker date="1518208399724" expanded="true" signature="3656:3969" ph="INSERT INTO doctor... " />
+            <marker date="1518208399724" expanded="true" signature="4217:4307" ph="INSERT into users... " />
+            <marker date="1518208399724" expanded="true" signature="5914:6216" ph="INSERT INTO patient... " />
+            <marker date="1518208399724" expanded="true" signature="6457:6547" ph="INSERT into users... " />
+            <marker date="1518208399724" expanded="true" signature="7121:7214" ph="SELECT * FRO... users" />
+            <marker date="1518208399724" expanded="true" signature="8003:8054" ph="SELECT s_id,... symptom" />
+            <marker date="1518208399724" expanded="true" signature="8535:8549" ph="SELECT u_nam... USERS" />
+            <marker date="1518208399724" expanded="true" signature="8535:8577" ph="SELECT u_nam... users" />
+            <marker date="1518208399724" expanded="true" signature="8535:8579" ph="SELECT u_nam... users" />
+            <marker date="1518208399724" expanded="true" signature="9794:9827" ph="SELECT * FRO... patient" />
+            <marker date="1518208399724" expanded="true" signature="9794:9831" ph="SELECT * FRO... patient" />
+            <marker date="1518208399724" expanded="true" signature="11011:11204" ph="SELECT u_nam... users" />
+            <marker date="1518208399724" expanded="true" signature="11011:11205" ph="SELECT d_nam... doctor" />
+            <marker date="1518208399724" expanded="true" signature="12130:12175" ph="UPDATE users... " />
+            <marker date="1518208399724" expanded="true" signature="12130:12185" ph="UPDATE users... " />
           </folding>
         </state>
       </provider>
@@ -616,7 +640,7 @@
         <state relative-caret-position="119">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -676,7 +700,7 @@
         <state relative-caret-position="2142">
           <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
           <folding>
-            <element signature="e#213#223#0" expanded="true" />
+            <element signature="e#213#223#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -687,13 +711,24 @@
           <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <marker date="1518097391885" expanded="true" signature="1103:1255" ph="INSERT INTO users... " />
-            <marker date="1518097391885" expanded="true" signature="1103:1273" ph="INSERT INTO users... " />
-            <marker date="1518097391885" expanded="true" signature="1863:1956" ph="SELECT * FRO... users" />
-            <marker date="1518097391885" expanded="true" signature="2859:2873" ph="SELECT u_nam... USERS" />
-            <marker date="1518097391885" expanded="true" signature="2859:2901" ph="SELECT u_nam... users" />
-            <marker date="1518097391885" expanded="true" signature="2859:2903" ph="SELECT u_nam... users" />
-            <marker date="1518097391885" expanded="true" signature="4097:4199" ph="SELECT u_nam... users" />
+            <marker date="1518208399724" expanded="true" signature="1516:1672" ph="INSERT INTO doctor... " />
+            <marker date="1518208399724" expanded="true" signature="1803:1870" ph="INSERT into users... " />
+            <marker date="1518208399724" expanded="true" signature="1803:1893" ph="INSERT into users... " />
+            <marker date="1518208399724" expanded="true" signature="3656:3969" ph="INSERT INTO doctor... " />
+            <marker date="1518208399724" expanded="true" signature="4217:4307" ph="INSERT into users... " />
+            <marker date="1518208399724" expanded="true" signature="5914:6216" ph="INSERT INTO patient... " />
+            <marker date="1518208399724" expanded="true" signature="6457:6547" ph="INSERT into users... " />
+            <marker date="1518208399724" expanded="true" signature="7121:7214" ph="SELECT * FRO... users" />
+            <marker date="1518208399724" expanded="true" signature="8003:8054" ph="SELECT s_id,... symptom" />
+            <marker date="1518208399724" expanded="true" signature="8535:8549" ph="SELECT u_nam... USERS" />
+            <marker date="1518208399724" expanded="true" signature="8535:8577" ph="SELECT u_nam... users" />
+            <marker date="1518208399724" expanded="true" signature="8535:8579" ph="SELECT u_nam... users" />
+            <marker date="1518208399724" expanded="true" signature="9794:9827" ph="SELECT * FRO... patient" />
+            <marker date="1518208399724" expanded="true" signature="9794:9831" ph="SELECT * FRO... patient" />
+            <marker date="1518208399724" expanded="true" signature="11011:11204" ph="SELECT u_nam... users" />
+            <marker date="1518208399724" expanded="true" signature="11011:11205" ph="SELECT d_nam... doctor" />
+            <marker date="1518208399724" expanded="true" signature="12130:12175" ph="UPDATE users... " />
+            <marker date="1518208399724" expanded="true" signature="12130:12185" ph="UPDATE users... " />
           </folding>
         </state>
       </provider>
@@ -703,7 +738,7 @@
         <state relative-caret-position="119">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -763,7 +798,7 @@
         <state relative-caret-position="2414">
           <caret line="142" column="21" lean-forward="true" selection-start-line="142" selection-start-column="21" selection-end-line="142" selection-end-column="21" />
           <folding>
-            <element signature="e#213#223#0" expanded="true" />
+            <element signature="e#213#223#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -774,13 +809,24 @@
           <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <marker date="1518097391885" expanded="true" signature="1103:1255" ph="INSERT INTO users... " />
-            <marker date="1518097391885" expanded="true" signature="1103:1273" ph="INSERT INTO users... " />
-            <marker date="1518097391885" expanded="true" signature="1863:1956" ph="SELECT * FRO... users" />
-            <marker date="1518097391885" expanded="true" signature="2859:2873" ph="SELECT u_nam... USERS" />
-            <marker date="1518097391885" expanded="true" signature="2859:2901" ph="SELECT u_nam... users" />
-            <marker date="1518097391885" expanded="true" signature="2859:2903" ph="SELECT u_nam... users" />
-            <marker date="1518097391885" expanded="true" signature="4097:4199" ph="SELECT u_nam... users" />
+            <marker date="1518208399724" expanded="true" signature="1516:1672" ph="INSERT INTO doctor... " />
+            <marker date="1518208399724" expanded="true" signature="1803:1870" ph="INSERT into users... " />
+            <marker date="1518208399724" expanded="true" signature="1803:1893" ph="INSERT into users... " />
+            <marker date="1518208399724" expanded="true" signature="3656:3969" ph="INSERT INTO doctor... " />
+            <marker date="1518208399724" expanded="true" signature="4217:4307" ph="INSERT into users... " />
+            <marker date="1518208399724" expanded="true" signature="5914:6216" ph="INSERT INTO patient... " />
+            <marker date="1518208399724" expanded="true" signature="6457:6547" ph="INSERT into users... " />
+            <marker date="1518208399724" expanded="true" signature="7121:7214" ph="SELECT * FRO... users" />
+            <marker date="1518208399724" expanded="true" signature="8003:8054" ph="SELECT s_id,... symptom" />
+            <marker date="1518208399724" expanded="true" signature="8535:8549" ph="SELECT u_nam... USERS" />
+            <marker date="1518208399724" expanded="true" signature="8535:8577" ph="SELECT u_nam... users" />
+            <marker date="1518208399724" expanded="true" signature="8535:8579" ph="SELECT u_nam... users" />
+            <marker date="1518208399724" expanded="true" signature="9794:9827" ph="SELECT * FRO... patient" />
+            <marker date="1518208399724" expanded="true" signature="9794:9831" ph="SELECT * FRO... patient" />
+            <marker date="1518208399724" expanded="true" signature="11011:11204" ph="SELECT u_nam... users" />
+            <marker date="1518208399724" expanded="true" signature="11011:11205" ph="SELECT d_nam... doctor" />
+            <marker date="1518208399724" expanded="true" signature="12130:12175" ph="UPDATE users... " />
+            <marker date="1518208399724" expanded="true" signature="12130:12185" ph="UPDATE users... " />
           </folding>
         </state>
       </provider>
@@ -790,7 +836,7 @@
         <state relative-caret-position="136">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -818,13 +864,24 @@
           <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <marker date="1518097391885" expanded="true" signature="1103:1255" ph="INSERT INTO users... " />
-            <marker date="1518097391885" expanded="true" signature="1103:1273" ph="INSERT INTO users... " />
-            <marker date="1518097391885" expanded="true" signature="1863:1956" ph="SELECT * FRO... users" />
-            <marker date="1518097391885" expanded="true" signature="2859:2873" ph="SELECT u_nam... USERS" />
-            <marker date="1518097391885" expanded="true" signature="2859:2901" ph="SELECT u_nam... users" />
-            <marker date="1518097391885" expanded="true" signature="2859:2903" ph="SELECT u_nam... users" />
-            <marker date="1518097391885" expanded="true" signature="4097:4199" ph="SELECT u_nam... users" />
+            <marker date="1518208399724" expanded="true" signature="1516:1672" ph="INSERT INTO doctor... " />
+            <marker date="1518208399724" expanded="true" signature="1803:1870" ph="INSERT into users... " />
+            <marker date="1518208399724" expanded="true" signature="1803:1893" ph="INSERT into users... " />
+            <marker date="1518208399724" expanded="true" signature="3656:3969" ph="INSERT INTO doctor... " />
+            <marker date="1518208399724" expanded="true" signature="4217:4307" ph="INSERT into users... " />
+            <marker date="1518208399724" expanded="true" signature="5914:6216" ph="INSERT INTO patient... " />
+            <marker date="1518208399724" expanded="true" signature="6457:6547" ph="INSERT into users... " />
+            <marker date="1518208399724" expanded="true" signature="7121:7214" ph="SELECT * FRO... users" />
+            <marker date="1518208399724" expanded="true" signature="8003:8054" ph="SELECT s_id,... symptom" />
+            <marker date="1518208399724" expanded="true" signature="8535:8549" ph="SELECT u_nam... USERS" />
+            <marker date="1518208399724" expanded="true" signature="8535:8577" ph="SELECT u_nam... users" />
+            <marker date="1518208399724" expanded="true" signature="8535:8579" ph="SELECT u_nam... users" />
+            <marker date="1518208399724" expanded="true" signature="9794:9827" ph="SELECT * FRO... patient" />
+            <marker date="1518208399724" expanded="true" signature="9794:9831" ph="SELECT * FRO... patient" />
+            <marker date="1518208399724" expanded="true" signature="11011:11204" ph="SELECT u_nam... users" />
+            <marker date="1518208399724" expanded="true" signature="11011:11205" ph="SELECT d_nam... doctor" />
+            <marker date="1518208399724" expanded="true" signature="12130:12175" ph="UPDATE users... " />
+            <marker date="1518208399724" expanded="true" signature="12130:12185" ph="UPDATE users... " />
           </folding>
         </state>
       </provider>
@@ -834,7 +891,7 @@
         <state relative-caret-position="51">
           <caret line="3" column="122" lean-forward="false" selection-start-line="3" selection-start-column="122" selection-end-line="3" selection-end-column="122" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -879,7 +936,7 @@
         <state relative-caret-position="119">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -893,16 +950,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Module-Frequent/bucketmap.csv" />
-    <entry file="file://$PROJECT_DIR$/../../Symptom-X--master/a-priori/apriori.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="57" column="4" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="161" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../APriori-master/src/apriori.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
@@ -951,16 +998,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Module-Frequent/apyori.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1666">
-          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-          <folding>
-            <element signature="e#213#223#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Module-Frequent/apriori.py" />
     <entry file="file://$PROJECT_DIR$/Module-Frequent/fpgrowth.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -970,19 +1007,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Module-Frequent/apyori.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding>
+            <element signature="e#213#223#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Symptom-X--master/a-priori/apriori.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="44" column="25" lean-forward="false" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="38" column="14" lean-forward="false" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cities">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HealthExpertServer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="62" column="27" lean-forward="false" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
+        <state relative-caret-position="332">
+          <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <marker date="1518097391885" expanded="true" signature="1103:1255" ph="INSERT INTO users... " />
-            <marker date="1518097391885" expanded="true" signature="1103:1273" ph="INSERT INTO users... " />
-            <marker date="1518097391885" expanded="true" signature="1863:1956" ph="SELECT * FRO... users" />
-            <marker date="1518097391885" expanded="true" signature="2859:2873" ph="SELECT u_nam... USERS" />
-            <marker date="1518097391885" expanded="true" signature="2859:2901" ph="SELECT u_nam... users" />
-            <marker date="1518097391885" expanded="true" signature="2859:2903" ph="SELECT u_nam... users" />
-            <marker date="1518097391885" expanded="true" signature="4097:4199" ph="SELECT u_nam... users" />
+            <marker date="1518208399724" expanded="true" signature="1516:1672" ph="INSERT INTO doctor... " />
+            <marker date="1518208399724" expanded="true" signature="1803:1870" ph="INSERT into users... " />
+            <marker date="1518208399724" expanded="true" signature="1803:1893" ph="INSERT into users... " />
+            <marker date="1518208399724" expanded="true" signature="3656:3969" ph="INSERT INTO doctor... " />
+            <marker date="1518208399724" expanded="true" signature="4217:4307" ph="INSERT into users... " />
+            <marker date="1518208399724" expanded="true" signature="5914:6216" ph="INSERT INTO patient... " />
+            <marker date="1518208399724" expanded="true" signature="6457:6547" ph="INSERT into users... " />
+            <marker date="1518208399724" expanded="true" signature="7121:7214" ph="SELECT * FRO... users" />
+            <marker date="1518208399724" expanded="true" signature="8003:8054" ph="SELECT s_id,... symptom" />
+            <marker date="1518208399724" expanded="true" signature="8535:8549" ph="SELECT u_nam... USERS" />
+            <marker date="1518208399724" expanded="true" signature="8535:8577" ph="SELECT u_nam... users" />
+            <marker date="1518208399724" expanded="true" signature="8535:8579" ph="SELECT u_nam... users" />
+            <marker date="1518208399724" expanded="true" signature="9794:9827" ph="SELECT * FRO... patient" />
+            <marker date="1518208399724" expanded="true" signature="9794:9831" ph="SELECT * FRO... patient" />
+            <marker date="1518208399724" expanded="true" signature="11011:11204" ph="SELECT u_nam... users" />
+            <marker date="1518208399724" expanded="true" signature="11011:11205" ph="SELECT d_nam... doctor" />
+            <marker date="1518208399724" expanded="true" signature="12130:12175" ph="UPDATE users... " />
+            <marker date="1518208399724" expanded="true" signature="12130:12185" ph="UPDATE users... " />
           </folding>
         </state>
       </provider>

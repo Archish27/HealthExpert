@@ -14,36 +14,23 @@ public class Doctor implements Parcelable{
     String phoneno;
     String city;
     String speciality;
+    String gender;
+    String experience;
+    String regid;
+    String accesstoken;
 
-    public Doctor(String name, String emailid, String pincode, String phoneno, String city, String speciality) {
+    public Doctor(String name, String emailid, String pincode, String phoneno, String city, String speciality, String gender, String experience, String regid, String accesstoken) {
         this.name = name;
         this.emailid = emailid;
         this.pincode = pincode;
         this.phoneno = phoneno;
         this.city = city;
         this.speciality = speciality;
+        this.gender = gender;
+        this.experience = experience;
+        this.regid = regid;
+        this.accesstoken = accesstoken;
     }
-
-    protected Doctor(Parcel in) {
-        name = in.readString();
-        emailid = in.readString();
-        pincode = in.readString();
-        phoneno = in.readString();
-        city = in.readString();
-        speciality = in.readString();
-    }
-
-    public static final Creator<Doctor> CREATOR = new Creator<Doctor>() {
-        @Override
-        public Doctor createFromParcel(Parcel in) {
-            return new Doctor(in);
-        }
-
-        @Override
-        public Doctor[] newArray(int size) {
-            return new Doctor[size];
-        }
-    };
 
     public String getName() {
         return name;
@@ -93,6 +80,67 @@ public class Doctor implements Parcelable{
         this.speciality = speciality;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getExperience() {
+        return experience;
+    }
+
+    public void setExperience(String experience) {
+        this.experience = experience;
+    }
+
+    public String getRegid() {
+        return regid;
+    }
+
+    public void setRegid(String regid) {
+        this.regid = regid;
+    }
+
+    public String getAccesstoken() {
+        return accesstoken;
+    }
+
+    public void setAccesstoken(String accesstoken) {
+        this.accesstoken = accesstoken;
+    }
+
+    public static Creator<Doctor> getCREATOR() {
+        return CREATOR;
+    }
+
+    protected Doctor(Parcel in) {
+        name = in.readString();
+        emailid = in.readString();
+        pincode = in.readString();
+        phoneno = in.readString();
+        city = in.readString();
+        speciality = in.readString();
+        gender = in.readString();
+        experience = in.readString();
+        regid = in.readString();
+        accesstoken = in.readString();
+    }
+
+    public static final Creator<Doctor> CREATOR = new Creator<Doctor>() {
+        @Override
+        public Doctor createFromParcel(Parcel in) {
+            return new Doctor(in);
+        }
+
+        @Override
+        public Doctor[] newArray(int size) {
+            return new Doctor[size];
+        }
+    };
+
     @Override
     public int describeContents() {
         return 0;
@@ -106,5 +154,9 @@ public class Doctor implements Parcelable{
         dest.writeString(phoneno);
         dest.writeString(city);
         dest.writeString(speciality);
+        dest.writeString(gender);
+        dest.writeString(experience);
+        dest.writeString(regid);
+        dest.writeString(accesstoken);
     }
 }

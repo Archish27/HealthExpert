@@ -3,6 +3,7 @@ package com.healthexpert.doctor.fragments;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -21,6 +22,7 @@ import com.healthexpert.data.remote.models.response.PatientWrapper;
 import com.healthexpert.dispatcher.RetrofitObj;
 import com.healthexpert.doctor.activities.PatientSymptomActivity;
 import com.healthexpert.doctor.adapters.PatientAdapter;
+import com.healthexpert.auth.patient.PatientRegisterActivity;
 
 import java.util.ArrayList;
 
@@ -34,6 +36,7 @@ public class PatientFragment extends BaseFragment implements PatientContract.Pat
     RecyclerView rvHome;
     PatientPresenter patientPresenter;
     ProgressBar pgProgress;
+    FloatingActionButton fabAddPatient;
 
     @Override
     public void onNetworkException(Throwable e) {
@@ -43,10 +46,19 @@ public class PatientFragment extends BaseFragment implements PatientContract.Pat
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_patient, container, false);
         rvHome = (RecyclerView) view.findViewById(R.id.rvHome);
         pgProgress = (ProgressBar) view.findViewById(R.id.pgProgress);
         swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.srlHome);
+        fabAddPatient = (FloatingActionButton) view.findViewById(R.id.fabAddPatient);
+        fabAddPatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), PatientRegisterActivity.class);
+                startActivity(i);
+                getActivity().finish();
+            }
+        });
         rvHome.setHasFixedSize(true);
         rvHome.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext(), LinearLayoutManager.VERTICAL, false));
         UserRestService userRestService = RetrofitObj.getInstance().create(UserRestService.class);

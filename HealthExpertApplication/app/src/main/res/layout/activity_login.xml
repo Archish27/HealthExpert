@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,8 +43,8 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="8dp"
+            app:passwordToggleEnabled="true">
 
             <com.healthexpert.ui.widgets.BaseEditText
                 android:id="@+id/etPassword"
@@ -64,15 +64,25 @@
             android:layout_marginTop="25dp"
             android:text="@string/login" />
 
-        <com.healthexpert.ui.widgets.BaseTextView
-            android:id="@+id/tvRegister"
-            style="@style/PrimaryText"
+        <com.healthexpert.ui.widgets.BaseButton
+            android:id="@+id/bRegisterPatient"
+            style="@style/SecondaryButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:gravity="center"
             android:padding="16dp"
-            android:text="@string/register_here"
-            android:textColor="@color/colorAccent" />
+            android:text="@string/register_as_patient" />
+
+        <com.healthexpert.ui.widgets.BaseButton
+            android:id="@+id/bRegisterDoctor"
+            style="@style/SecondaryButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="@string/register_as_doctor" />
     </LinearLayout>
 
 </ScrollView>

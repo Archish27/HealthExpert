@@ -1,8 +1,10 @@
-package com.healthexpert.auth;
+package com.healthexpert.auth.doctor;
 
 
 import com.healthexpert.common.BaseContract;
+import com.healthexpert.data.remote.models.requests.DoctorRegisterRequest;
 import com.healthexpert.data.remote.models.requests.UserRegisterRequest;
+import com.healthexpert.data.remote.models.response.Doctor;
 import com.healthexpert.data.remote.models.response.UserRegisterResponse;
 import com.healthexpert.data.remote.models.response.UserResponse;
 
@@ -12,12 +14,14 @@ import com.healthexpert.data.remote.models.response.UserResponse;
 
 public interface RegisterContract {
     interface RegisterView extends BaseContract.BaseView {
-        void onRegister(UserRegisterResponse userResponse);
+        void onDoctorRegister(UserRegisterResponse userResponse);
+        void onPatientRegister(UserRegisterResponse userResponse);
 
     }
 
     interface RegisterPresenter {
-        void registerUser(UserRegisterRequest userRegisterRequest);
+        void registerDoctor(DoctorRegisterRequest doctorRegisterRequest);
+        void registerPatient(UserRegisterRequest userRegisterRequest);
 
     }
 }

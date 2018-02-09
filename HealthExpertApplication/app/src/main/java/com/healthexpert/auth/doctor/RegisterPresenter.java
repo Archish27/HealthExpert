@@ -1,9 +1,12 @@
-package com.healthexpert.auth;
+package com.healthexpert.auth.doctor;
 
 import android.util.Log;
 
+import com.healthexpert.data.remote.api.DoctorRestService;
 import com.healthexpert.data.remote.api.UserRestService;
+import com.healthexpert.data.remote.models.requests.DoctorRegisterRequest;
 import com.healthexpert.data.remote.models.requests.UserRegisterRequest;
+import com.healthexpert.data.remote.models.response.Doctor;
 import com.healthexpert.data.remote.models.response.UserRegisterResponse;
 
 import rx.Observer;
@@ -17,17 +20,17 @@ import rx.schedulers.Schedulers;
 public class RegisterPresenter implements RegisterContract.RegisterPresenter {
 
     RegisterContract.RegisterView view;
-    UserRestService userRestService;
+    DoctorRestService doctorRestService;
 
-    public RegisterPresenter(UserRestService userRestService, RegisterContract.RegisterView view) {
+    public RegisterPresenter(DoctorRestService doctorRestService, RegisterContract.RegisterView view) {
         this.view = view;
-        this.userRestService = userRestService;
+        this.doctorRestService = doctorRestService;
     }
 
     @Override
-    public void registerUser(UserRegisterRequest userRegisterRequest) {
-        userRestService
-                .doRegister(userRegisterRequest)
+    public void registerDoctor(DoctorRegisterRequest doctorRegisterRequestt) {
+        doctorRestService
+                .doDoctorRegister(doctorRegisterRequestt)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.newThread())
                 .subscribe(new Observer<UserRegisterResponse>() {
@@ -45,10 +48,15 @@ public class RegisterPresenter implements RegisterContract.RegisterPresenter {
                     @Override
                     public void onNext(UserRegisterResponse user) {
                         if (view != null)
-                            view.onRegister(user);
+                            view.onDoctorRegister(user);
                     }
                 });
 
+
+    }
+
+    @Override
+    public void registerPatient(UserRegisterRequest userRegisterRequest) {
 
     }
 

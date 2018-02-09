@@ -13,8 +13,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.healthexpert.R;
-import com.healthexpert.admin.fragments.*;
-import com.healthexpert.admin.fragments.HomeFragment;
+import com.healthexpert.admin.fragments.AdminHomeFragment;
 import com.healthexpert.auth.LoginActivity;
 import com.healthexpert.auth.LoginContract;
 import com.healthexpert.common.BaseActivity;
@@ -23,7 +22,8 @@ import com.healthexpert.common.CustomFontLoader;
 import com.healthexpert.data.local.SharedPreferenceManager;
 import com.healthexpert.data.remote.models.response.Patient;
 import com.healthexpert.data.remote.models.response.UserResponse;
-import com.healthexpert.doctor.fragments.PatientFragment;
+import com.healthexpert.doctor.fragments.DoctorHomeFragment;
+import com.healthexpert.patient.fragments.PatientHomeFragment;
 
 
 /***
@@ -76,13 +76,20 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 //        fragmentTransaction.replace(R.id.fragment_container, fragment);
 //        fragmentTransaction.commit();
         if (new SharedPreferenceManager(getApplicationContext()).getCategory() == 1) {
-            com.healthexpert.admin.fragments.HomeFragment homeFragment = new HomeFragment();
+            AdminHomeFragment adminHomeFragment = new AdminHomeFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container, homeFragment);
+            fragmentTransaction.replace(R.id.fragment_container, adminHomeFragment);
             fragmentTransaction.commit();
         } else if (new SharedPreferenceManager(getApplicationContext()).getCategory() == 2) {
-            PatientFragment patientFragment = new PatientFragment();
+            DoctorHomeFragment patientFragment = new DoctorHomeFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, patientFragment);
+            fragmentTransaction.commit();
+
+        } else if (new SharedPreferenceManager(getApplicationContext()).getCategory() == 3) {
+            PatientHomeFragment patientFragment = new PatientHomeFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, patientFragment);
@@ -117,13 +124,13 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         switch (id) {
             case R.id.nav_home:
                 if (new SharedPreferenceManager(getApplicationContext()).getCategory() == 1) {
-                    com.healthexpert.admin.fragments.HomeFragment homeFragment = new HomeFragment();
+                    AdminHomeFragment adminHomeFragment = new AdminHomeFragment();
                     android.support.v4.app.FragmentTransaction fragmentTransaction =
                             getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.fragment_container, homeFragment);
+                    fragmentTransaction.replace(R.id.fragment_container, adminHomeFragment);
                     fragmentTransaction.commit();
                 } else if (new SharedPreferenceManager(getApplicationContext()).getCategory() == 2) {
-                    PatientFragment patientFragment = new PatientFragment();
+                    PatientHomeFragment patientFragment = new PatientHomeFragment();
                     android.support.v4.app.FragmentTransaction fragmentTransaction =
                             getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.replace(R.id.fragment_container, patientFragment);

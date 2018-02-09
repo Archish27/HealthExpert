@@ -13,8 +13,8 @@ import android.widget.ProgressBar;
 
 
 import com.healthexpert.R;
-import com.healthexpert.admin.activities.DoctorDetailsActivity;
-import com.healthexpert.admin.adapters.HomeAdapter;
+import com.healthexpert.admin.activities.AdminDoctorDetailsActivity;
+import com.healthexpert.admin.adapters.AdminHomeAdapter;
 import com.healthexpert.common.BaseFragment;
 import com.healthexpert.data.remote.api.UserRestService;
 import com.healthexpert.data.remote.models.response.Doctor;
@@ -27,7 +27,7 @@ import java.util.ArrayList;
  * Created by Archish on 1/28/2017.
  */
 
-public class HomeFragment extends BaseFragment implements HomeContract.HomeView, HomeAdapter.LikeItemUpdateListener {
+public class AdminHomeFragment extends BaseFragment implements HomeContract.HomeView, AdminHomeAdapter.LikeItemUpdateListener {
 
     SwipeRefreshLayout swipeRefreshLayout;
     RecyclerView rvHome;
@@ -69,11 +69,15 @@ public class HomeFragment extends BaseFragment implements HomeContract.HomeView,
                     , doctorWrapper.data.get(i).getPincode()
                     , doctorWrapper.data.get(i).getPhoneno()
                     , doctorWrapper.data.get(i).getCity()
-                    , doctorWrapper.data.get(i).getSpeciality());
+                    , doctorWrapper.data.get(i).getSpeciality()
+                    , doctorWrapper.data.get(i).getGender()
+                    , doctorWrapper.data.get(i).getExperience()
+                    , doctorWrapper.data.get(i).getRegid()
+                    , doctorWrapper.data.get(i).getAccesstoken());
             doctors.add(doctor);
         }
-        HomeAdapter homeAdapter = new HomeAdapter(doctors, this);
-        rvHome.setAdapter(homeAdapter);
+        AdminHomeAdapter adminHomeAdapter = new AdminHomeAdapter(doctors, this);
+        rvHome.setAdapter(adminHomeAdapter);
         if (swipeRefreshLayout.isRefreshing())
             swipeRefreshLayout.setRefreshing(false);
         pgProgress.setVisibility(View.GONE);
@@ -82,8 +86,9 @@ public class HomeFragment extends BaseFragment implements HomeContract.HomeView,
 
     @Override
     public void onItemCardClicked(Doctor home) {
-        Intent i = new Intent(getActivity(), DoctorDetailsActivity.class);
-        i.putExtra("doctor",home);
+        Intent i = new Intent(getActivity(), AdminDoctorDetailsActivity.class);
+        i.putExtra("doctor", home);
         startActivity(i);
+        getActivity().finish();
     }
 }

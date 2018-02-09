@@ -17,12 +17,12 @@ import java.util.ArrayList;
  * Created by Archish on 12/19/2016.
  */
 
-public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.NewsFeedViewHolder> {
+public class AdminHomeAdapter extends RecyclerView.Adapter<AdminHomeAdapter.NewsFeedViewHolder> {
 
     ArrayList<Doctor> data;
     private LikeItemUpdateListener commander;
 
-    public HomeAdapter(ArrayList<Doctor> data, LikeItemUpdateListener commander) {
+    public AdminHomeAdapter(ArrayList<Doctor> data, LikeItemUpdateListener commander) {
         this.data = data;
         this.commander = commander;
     }
@@ -32,14 +32,14 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.NewsFeedViewHo
     }
 
     @Override
-    public HomeAdapter.NewsFeedViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public AdminHomeAdapter.NewsFeedViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_home, parent, false);
         NewsFeedViewHolder holder = new NewsFeedViewHolder(v);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(final HomeAdapter.NewsFeedViewHolder holder, final int position) {
+    public void onBindViewHolder(final AdminHomeAdapter.NewsFeedViewHolder holder, final int position) {
         holder.tvName.setText(data.get(position).getName());
         holder.tvEmailId.setText(data.get(position).getEmailid());
         holder.tvPhoneno.setText(data.get(position).getPhoneno());
