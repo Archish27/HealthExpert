@@ -7,7 +7,7 @@ import android.os.Parcelable;
  * Created by Archish on 2/8/2018.
  */
 
-public class Doctor implements Parcelable{
+public class Doctor implements Parcelable {
     String name;
     String emailid;
     String pincode;
@@ -18,8 +18,10 @@ public class Doctor implements Parcelable{
     String experience;
     String regid;
     String accesstoken;
+    String photo;
+    String fuid;
 
-    public Doctor(String name, String emailid, String pincode, String phoneno, String city, String speciality, String gender, String experience, String regid, String accesstoken) {
+    public Doctor(String name, String emailid, String pincode, String phoneno, String city, String speciality, String gender, String experience, String regid, String accesstoken, String photo, String fuid) {
         this.name = name;
         this.emailid = emailid;
         this.pincode = pincode;
@@ -30,7 +32,47 @@ public class Doctor implements Parcelable{
         this.experience = experience;
         this.regid = regid;
         this.accesstoken = accesstoken;
+        this.photo = photo;
+        this.fuid = fuid;
     }
+
+    public String getFuid() {
+        return fuid;
+    }
+
+    public void setFuid(String fuid) {
+        this.fuid = fuid;
+    }
+
+    public static Creator<Doctor> getCREATOR() {
+        return CREATOR;
+    }
+
+    protected Doctor(Parcel in) {
+        name = in.readString();
+        emailid = in.readString();
+        pincode = in.readString();
+        phoneno = in.readString();
+        city = in.readString();
+        speciality = in.readString();
+        gender = in.readString();
+        experience = in.readString();
+        regid = in.readString();
+        accesstoken = in.readString();
+        photo = in.readString();
+    }
+
+    public static final Creator<Doctor> CREATOR = new Creator<Doctor>() {
+        @Override
+        public Doctor createFromParcel(Parcel in) {
+            return new Doctor(in);
+        }
+
+        @Override
+        public Doctor[] newArray(int size) {
+            return new Doctor[size];
+        }
+    };
 
     public String getName() {
         return name;
@@ -112,34 +154,13 @@ public class Doctor implements Parcelable{
         this.accesstoken = accesstoken;
     }
 
-    public static Creator<Doctor> getCREATOR() {
-        return CREATOR;
+    public String getPhoto() {
+        return photo;
     }
 
-    protected Doctor(Parcel in) {
-        name = in.readString();
-        emailid = in.readString();
-        pincode = in.readString();
-        phoneno = in.readString();
-        city = in.readString();
-        speciality = in.readString();
-        gender = in.readString();
-        experience = in.readString();
-        regid = in.readString();
-        accesstoken = in.readString();
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
-
-    public static final Creator<Doctor> CREATOR = new Creator<Doctor>() {
-        @Override
-        public Doctor createFromParcel(Parcel in) {
-            return new Doctor(in);
-        }
-
-        @Override
-        public Doctor[] newArray(int size) {
-            return new Doctor[size];
-        }
-    };
 
     @Override
     public int describeContents() {
@@ -158,5 +179,6 @@ public class Doctor implements Parcelable{
         dest.writeString(experience);
         dest.writeString(regid);
         dest.writeString(accesstoken);
+        dest.writeString(photo);
     }
 }

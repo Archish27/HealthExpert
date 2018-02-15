@@ -11,14 +11,4 @@
 
     </include>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabAddPatient"
-        style="@style/Widget.Design.FloatingActionButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="32dp"
-        android:src="@drawable/plus"
-        android:tint="@color/colorAccent"
-        app:backgroundTint="@color/colorPrimaryDark" />
 </android.support.design.widget.CoordinatorLayout>

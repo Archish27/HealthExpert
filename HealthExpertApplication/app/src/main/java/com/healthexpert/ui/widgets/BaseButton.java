@@ -29,7 +29,7 @@ public class BaseButton extends AppCompatButton {
                 attrs,
                 R.styleable.BaseFont);
 
-        String fontName = attributeArray.getString(R.styleable.BaseFont_font);
+        String fontName = attributeArray.getString(R.styleable.BaseFont_font_name);
 
         Typeface customFont = selectTypeface(context, fontName);
         setTypeface(customFont);

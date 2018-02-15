@@ -29,7 +29,7 @@ public class DoctorHomeAdapter extends RecyclerView.Adapter<DoctorHomeAdapter.Ne
     }
 
     public interface LikeItemUpdateListener {
-        void onItemCardClicked(Doctor home);
+        void onItemCardClicked(int position);
     }
 
     @Override
@@ -61,7 +61,9 @@ public class DoctorHomeAdapter extends RecyclerView.Adapter<DoctorHomeAdapter.Ne
             case "My Patients":
                 holder.categoryIcon.setImageResource(R.drawable.mypatients);
                 break;
-
+            case "Messaging":
+                holder.categoryIcon.setImageResource(R.drawable.chats);
+                break;
 
         }
     }
@@ -84,6 +86,13 @@ public class DoctorHomeAdapter extends RecyclerView.Adapter<DoctorHomeAdapter.Ne
             categoryName = (BaseTextView) itemView.findViewById(R.id.tvCatName);
             categoryIcon = (ImageView) itemView.findViewById(R.id.ivIconChar);
             categoryBackground = (ImageView) itemView.findViewById(R.id.categoryBackground);
+            container.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(commander!=null)
+                        commander.onItemCardClicked(getAdapterPosition());
+                }
+            });
         }
 
     }

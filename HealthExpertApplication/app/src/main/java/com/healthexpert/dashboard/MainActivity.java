@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.healthexpert.R;
 import com.healthexpert.admin.fragments.AdminHomeFragment;
 import com.healthexpert.auth.LoginActivity;
@@ -21,6 +22,7 @@ import com.healthexpert.common.Config;
 import com.healthexpert.common.CustomFontLoader;
 import com.healthexpert.data.local.SharedPreferenceManager;
 import com.healthexpert.data.remote.models.response.Patient;
+import com.healthexpert.data.remote.models.response.UserRegisterResponse;
 import com.healthexpert.data.remote.models.response.UserResponse;
 import com.healthexpert.doctor.fragments.DoctorHomeFragment;
 import com.healthexpert.patient.fragments.PatientHomeFragment;
@@ -56,6 +58,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 //            LoginPresenter loginPresenter = new LoginPresenter(userRepository, this);
 //            loginPresenter.logout(new SharedPreferenceManager(getApplicationContext()).getAccessToken());
             showProgressDialog();
+            FirebaseAuth.getInstance().signOut();
             new SharedPreferenceManager(getApplicationContext()).removeAllToken();
             Intent i = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(i);
@@ -130,6 +133,13 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                     fragmentTransaction.replace(R.id.fragment_container, adminHomeFragment);
                     fragmentTransaction.commit();
                 } else if (new SharedPreferenceManager(getApplicationContext()).getCategory() == 2) {
+                    DoctorHomeFragment doctorFragment = new DoctorHomeFragment();
+                    android.support.v4.app.FragmentTransaction fragmentTransaction =
+                            getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.fragment_container, doctorFragment);
+                    fragmentTransaction.commit();
+
+                } else if (new SharedPreferenceManager(getApplicationContext()).getCategory() == 3) {
                     PatientHomeFragment patientFragment = new PatientHomeFragment();
                     android.support.v4.app.FragmentTransaction fragmentTransaction =
                             getSupportFragmentManager().beginTransaction();
@@ -152,6 +162,11 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     @Override
     public void onLogin(UserResponse userResponse) {
+
+    }
+
+    @Override
+    public void onFuid(UserRegisterResponse userRegisterResponse) {
 
     }
 //

@@ -2,8 +2,10 @@ package com.healthexpert.auth;
 
 
 import com.healthexpert.common.BaseContract;
+import com.healthexpert.data.remote.models.requests.FirebaseRequest;
 import com.healthexpert.data.remote.models.requests.UserLoginRequest;
 import com.healthexpert.data.remote.models.requests.UserRegisterRequest;
+import com.healthexpert.data.remote.models.response.UserRegisterResponse;
 import com.healthexpert.data.remote.models.response.UserResponse;
 
 /**
@@ -13,11 +15,13 @@ import com.healthexpert.data.remote.models.response.UserResponse;
 public interface LoginContract {
     interface LoginView extends BaseContract.BaseView {
         void onLogin(UserResponse userResponse);
+        void onFuid(UserRegisterResponse userRegisterResponse);
 
     }
 
     interface LoginPresenter {
         void login(UserLoginRequest userLoginRequest);
+        void Fuid(FirebaseRequest firebaseRequest);
 
     }
 }

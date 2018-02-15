@@ -4,6 +4,10 @@ import com.healthexpert.data.remote.models.requests.DoctorRegisterRequest;
 import com.healthexpert.data.remote.models.requests.PatientRegisterRequest;
 import com.healthexpert.data.remote.models.requests.PatientRequest;
 import com.healthexpert.data.remote.models.requests.PatientRequestNoIcon;
+import com.healthexpert.data.remote.models.response.DoctorResponseWrapper;
+import com.healthexpert.data.remote.models.response.DoctorWrapper;
+import com.healthexpert.data.remote.models.response.Speciality;
+import com.healthexpert.data.remote.models.response.SpecialityWrapper;
 import com.healthexpert.data.remote.models.response.UserRegisterResponse;
 
 import retrofit2.http.Body;
@@ -20,5 +24,12 @@ public interface PatientRestService {
 
     @POST("/auth/register/patient/noicon")
     Observable<UserRegisterResponse> addPatientNoIcon(@Body PatientRequestNoIcon patientRequestNoIcon);
+
+    @POST("/patient/doctors")
+    Observable<DoctorResponseWrapper> getDoctors(@Body Speciality speciality);
+
+    @POST("/doctor/speciality")
+    Observable<SpecialityWrapper> specialityDoctors();
+
 
 }

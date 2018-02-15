@@ -8,7 +8,8 @@ app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'hedb'
-UPLOAD_FOLDER = os.path.basename('uploads')
+FOLDER_UPLOAD = 'uploads'
+UPLOAD_FOLDER = os.path.basename(FOLDER_UPLOAD)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 mysql = MySQL(app)
 
@@ -38,10 +39,11 @@ def user_register():
         experience = dataD['experience'].encode('utf-8')
         phoneno = dataD['phoneno'].encode('utf-8')
         password = hashlib.sha256(dataD['password'].encode('utf-8')).hexdigest()
-        file = request.files['image']
-        photo = accesstoken + file.filename
-        f = os.path.join(app.config['UPLOAD_FOLDER'], photo)
-        f.save(f)
+        # file = request.files['image']
+        # photo = FOLDER_UPLOAD + "/" + accesstoken + file.filename
+        # f = os.path.join(app.config['UPLOAD_FOLDER'], photo)
+        # f.save(f)
+        photo = ""
         status = 0
         r_id = 2
         cur = mysql.connection.cursor()
@@ -81,7 +83,7 @@ def patient_register_icon():
         phoneno = dataD['phoneno'].encode('utf-8')
         password = hashlib.sha256(dataD['password'].encode('utf-8')).hexdigest()
         file = request.files['image']
-        photo = accesstoken + file.filename
+        photo = FOLDER_UPLOAD + "/" + accesstoken + file.filename
         f = os.path.join(app.config['UPLOAD_FOLDER'], photo)
         f.save(f)
         status = 1
@@ -165,6 +167,20 @@ def user_login():
                                    role=row[2])
 
 
+@app.route('/auth/login/fuid', methods=['GET', 'POST'])
+def user_update_fuid():
+    if request.method == 'POST':
+        data = request.data
+        dataD = json.loads(data)
+        accesstoken = dataD['accesstoken'].encode('utf-8')
+        fuid = dataD['fuid'].encode('utf-8')
+        cur = mysql.connection.cursor()
+        cur.execute('''UPDATE doctor SET d_fuid=%s WHERE d_accesstoken=%s''',
+                    (fuid, accesstoken))
+        mysql.connection.commit()
+        return jsonify(status=True, message="Login Successful")
+
+
 @app.route('/doctor/patient/symptoms', methods=['GET', 'POST'])
 def get_symptoms():
     if request.method == 'POST':
@@ -173,6 +189,18 @@ def get_symptoms():
         list_data = []
         for row in cur:
             dataDict = {'id': row[0], 'sname': row[1]}
+            list_data.append(dataDict)
+        return jsonify(data=list_data)
+
+
+@app.route('/doctor/speciality', methods=['GET', 'POST'])
+def get_speciality():
+    if request.method == 'POST':
+        cur = mysql.connection.cursor()
+        cur.execute('''SELECT * FROM speciality ORDER BY s_id''')
+        list_data = []
+        for row in cur:
+            dataDict = {'s_id': row[0], 's_name': row[1], 's_description': row[2]}
             list_data.append(dataDict)
         return jsonify(data=list_data)
 
@@ -251,7 +279,7 @@ def get_doctors():
 
         cur = mysql.connection.cursor()
         cur.execute(
-            '''SELECT d_name,d_emailid,d_phoneno,d_pincode,d_city,d_speciality,d_gender,d_experience,d_regid,d_accesstoken FROM doctor INNER JOIN users on doctor.d_accesstoken = users.u_accesstoken  AND r_id=2 ''')
+            '''SELECT d_name,u_emailid,d_phoneno,d_pincode,d_city,s_name,d_gender,d_experience,d_regid,d_accesstoken,d_photo,d_fuid FROM doctor,users,speciality where doctor.d_accesstoken = users.u_accesstoken AND doctor.d_speciality=speciality.s_id  AND users.r_id=2 AND users.u_status=0''')
         list_data = []
         for row in cur:
             dataDict = {'name': row[0],
@@ -263,7 +291,9 @@ def get_doctors():
                         'gender': row[6],
                         'experience': row[7],
                         'regid': row[8],
-                        'accesstoken': row[9]}
+                        'accesstoken': row[9],
+                        'photo': row[10],
+                        'fuid': row[11]}
             list_data.append(dataDict)
 
         return jsonify(data=list_data)
@@ -275,7 +305,7 @@ def status_doctor():
         data = request.data
         dataD = json.loads(data)
         accesstoken = dataD['accesstoken'].encode('utf-8')
-        status = dataD['status'].encode('utf-8')
+        status = dataD['status']
         cur = mysql.connection.cursor()
         cur.execute(
             '''UPDATE users SET u_status = %s where u_accesstoken = %s''',
@@ -287,6 +317,75 @@ def status_doctor():
         else:
             return jsonify(status=True,
                            message="Doctor Rejected")
+
+
+@app.route('/patient/doctors', methods=['GET', 'POST'])
+def get_doctors_for_patients():
+    if request.method == 'POST':
+        data = request.data
+        dataD = json.loads(data)
+        sname = dataD['s_name'].encode('utf-8')
+
+        cur = mysql.connection.cursor()
+        cur.execute(
+            '''SELECT d_name,u_emailid,d_phoneno,d_pincode,d_city,s_name,d_gender,d_experience,d_regid,d_accesstoken,d_photo FROM doctor,users,speciality,rating where doctor.d_accesstoken = users.u_accesstoken AND doctor.d_speciality=speciality.s_id  AND users.r_id=2 AND users.u_status=1 AND speciality.s_name=%s ORDER BY rating.r_score DESC''',
+            (sname,))
+        list_data = []
+        for row in cur:
+            cur_rate = mysql.connection.cursor()
+            cur_rate.execute(
+                '''SELECT COUNT(r_like) as likes,AVG(r_score) as ratings FROM rating where r_daccesstoken=%s''',
+                (str(row[9]),))
+            for rate_row in cur_rate:
+                dataDict = {'name': row[0],
+                            'emailid': row[1],
+                            'phoneno': row[2],
+                            'pincode': row[3],
+                            'city': row[4],
+                            'speciality': row[5],
+                            'gender': row[6],
+                            'experience': row[7],
+                            'regid': row[8],
+                            'accesstoken': row[9],
+                            'photo': row[10],
+                            'likes': rate_row[0],
+                            'ratings': str(rate_row[1])}
+                list_data.append(dataDict)
+
+        return jsonify(data=list_data)
+
+
+@app.route('/doctor/alldoctors', methods=['GET', 'POST'])
+def get_doctors_all():
+    if request.method == 'POST':
+
+        cur = mysql.connection.cursor()
+        cur.execute(
+            '''SELECT DISTINCT d_name,u_emailid,d_phoneno,d_pincode,d_city,s_name,d_gender,d_experience,d_regid,d_accesstoken,d_photo,d_fuid FROM doctor,users,speciality,rating where doctor.d_accesstoken = users.u_accesstoken AND doctor.d_speciality=speciality.s_id  AND users.r_id=2 AND users.u_status=1 ORDER BY rating.r_score DESC''')
+        list_data = []
+        for row in cur:
+            cur_rate = mysql.connection.cursor()
+            cur_rate.execute(
+                '''SELECT COUNT(r_like) as likes,AVG(r_score) as ratings FROM rating where r_daccesstoken=%s''',
+                (str(row[9]),))
+            for rate_row in cur_rate:
+                dataDict = {'name': row[0],
+                            'emailid': row[1],
+                            'phoneno': row[2],
+                            'pincode': row[3],
+                            'city': row[4],
+                            'speciality': row[5],
+                            'gender': row[6],
+                            'experience': row[7],
+                            'regid': row[8],
+                            'accesstoken': row[9],
+                            'photo': row[10],
+                            'fuid': row[11],
+                            'likes': rate_row[0],
+                            'ratings': str(rate_row[1])}
+                list_data.append(dataDict)
+
+        return jsonify(data=list_data)
 
 
 if __name__ == '__main__':

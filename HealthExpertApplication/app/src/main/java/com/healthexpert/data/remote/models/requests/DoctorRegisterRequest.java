@@ -7,7 +7,7 @@ import android.os.Parcelable;
  * Created by Archish on 2/8/2018.
  */
 
-public class DoctorRegisterRequest implements Parcelable{
+public class DoctorRegisterRequest implements Parcelable {
     String name;
     String emailid;
     String speciality;
@@ -18,8 +18,9 @@ public class DoctorRegisterRequest implements Parcelable{
     String regid;
     String gender;
     String experience;
+    String fuid;
 
-    public DoctorRegisterRequest(String name, String emailid, String speciality, String city, String pincode, String phoneno, String password, String regid, String gender, String experience) {
+    public DoctorRegisterRequest(String name, String emailid, String speciality, String city, String pincode, String phoneno, String password, String regid, String gender, String experience, String fuid) {
         this.name = name;
         this.emailid = emailid;
         this.speciality = speciality;
@@ -30,6 +31,19 @@ public class DoctorRegisterRequest implements Parcelable{
         this.regid = regid;
         this.gender = gender;
         this.experience = experience;
+        this.fuid = fuid;
+    }
+
+    public String getFuid() {
+        return fuid;
+    }
+
+    public void setFuid(String fuid) {
+        this.fuid = fuid;
+    }
+
+    public static Creator<DoctorRegisterRequest> getCREATOR() {
+        return CREATOR;
     }
 
     protected DoctorRegisterRequest(Parcel in) {

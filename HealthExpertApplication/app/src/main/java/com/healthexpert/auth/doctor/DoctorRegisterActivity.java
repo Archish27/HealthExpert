@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
@@ -17,6 +18,13 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.healthexpert.auth.LoginActivity;
 import com.healthexpert.common.Config;
 import com.healthexpert.dashboard.MainActivity;
@@ -35,6 +43,7 @@ import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.util.Calendar;
+import java.util.HashMap;
 
 
 /**
@@ -48,12 +57,13 @@ public class DoctorRegisterActivity extends BaseActivity implements RegisterCont
     ImageView ivImage, ivCloseButton;
     FloatingActionButton fabAdd;
     FrameLayout fImage;
-
+    DatabaseReference firebaseDatabase;
     BaseRadioButton rbGender;
     RegisterPresenter presenter;
     private static final int ADDRESS_CAMERA_IMAGE = 1850;
     private static final int ADDRESS_GALLERY_IMAGE = 1851;
     String path = "";
+    private FirebaseAuth firebaseAuth;
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -161,10 +171,39 @@ public class DoctorRegisterActivity extends BaseActivity implements RegisterCont
                 boolean status = validate();
                 if (status) {
                     showProgressDialog();
-                    presenter.registerDoctor(new DoctorRegisterRequest(etFullName.getText().toString(), etEmailId.getText().toString(),
-                            etSpeciality.getText().toString(), etCity.getText().toString(), etPincode.getText().toString()
-                            , etPhoneNo.getText().toString(), etPassword.getText().toString(), etRegId.getText().toString()
-                            , rbGender.getText().toString(), etExperince.getText().toString()));
+                    firebaseAuth.createUserWithEmailAndPassword(etEmailId.getText().toString(), etPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+                                final String uid = firebaseUser.getUid();
+                                firebaseDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+
+                                HashMap<String, String> hashMap = new HashMap<>();
+                                hashMap.put("name", etFullName.getText().toString());
+                                hashMap.put("image", "default");
+                                hashMap.put("thumb_image", "default");
+                                hashMap.put("emailid", etEmailId.getText().toString());
+                                hashMap.put("phoneno", etPhoneNo.getText().toString());
+                                firebaseDatabase.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful())
+                                            presenter.registerDoctor(new DoctorRegisterRequest(etFullName.getText().toString(), etEmailId.getText().toString(),
+                                                    etSpeciality.getText().toString(), etCity.getText().toString(), etPincode.getText().toString()
+                                                    , etPhoneNo.getText().toString(), etPassword.getText().toString(), etRegId.getText().toString()
+                                                    , rbGender.getText().toString(), etExperince.getText().toString(), uid));
+                                    }
+                                });
+
+                            } else {
+                                Toast.makeText(DoctorRegisterActivity.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
+                                dismissProgressDialog();
+                            }
+
+                        }
+                    });
+
                 }
 
 
@@ -174,6 +213,7 @@ public class DoctorRegisterActivity extends BaseActivity implements RegisterCont
     }
 
     private void initViews() {
+        firebaseAuth = FirebaseAuth.getInstance();
         etFullName = (BaseEditText) findViewById(R.id.etFullName);
         etPhoneNo = (BaseEditText) findViewById(R.id.etPhoneno);
         etEmailId = (BaseEditText) findViewById(R.id.etEmailId);

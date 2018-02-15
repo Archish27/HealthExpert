@@ -73,7 +73,9 @@ public class AdminHomeFragment extends BaseFragment implements HomeContract.Home
                     , doctorWrapper.data.get(i).getGender()
                     , doctorWrapper.data.get(i).getExperience()
                     , doctorWrapper.data.get(i).getRegid()
-                    , doctorWrapper.data.get(i).getAccesstoken());
+                    , doctorWrapper.data.get(i).getAccesstoken()
+                    , doctorWrapper.data.get(i).getPhoto()
+                    , doctorWrapper.data.get(i).getFuid());
             doctors.add(doctor);
         }
         AdminHomeAdapter adminHomeAdapter = new AdminHomeAdapter(doctors, this);

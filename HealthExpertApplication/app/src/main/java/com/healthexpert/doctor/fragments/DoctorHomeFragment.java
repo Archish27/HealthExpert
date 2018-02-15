@@ -14,6 +14,7 @@ import com.healthexpert.admin.activities.AdminDoctorDetailsActivity;
 import com.healthexpert.common.BaseFragment;
 import com.healthexpert.data.remote.models.response.Doctor;
 import com.healthexpert.doctor.adapters.DoctorHomeAdapter;
+import com.healthexpert.doctor.doctors.DoctorActivity;
 
 import java.util.ArrayList;
 
@@ -47,6 +48,7 @@ public class DoctorHomeFragment extends BaseFragment implements DoctorHomeAdapte
         data.add("Doctor");
         data.add("My Patients");
         data.add("Summary");
+        data.add("Messaging");
         data.add("Profile");
         DoctorHomeAdapter homeAdapter = new DoctorHomeAdapter(data, this);
         rvHome.setAdapter(homeAdapter);
@@ -55,9 +57,29 @@ public class DoctorHomeFragment extends BaseFragment implements DoctorHomeAdapte
 
 
     @Override
-    public void onItemCardClicked(Doctor home) {
-        Intent i = new Intent(getActivity(), AdminDoctorDetailsActivity.class);
-        i.putExtra("doctor", home);
-        startActivity(i);
+    public void onItemCardClicked(int position) {
+        switch (position) {
+            case 0:
+//                Intent i = new Intent(getActivity(), Activity.class);
+//                startActivity(i);
+                break;
+            case 1:
+                Intent i1 = new Intent(getActivity(), DoctorActivity.class);
+                startActivity(i1);
+                break;
+            case 2:
+//                Intent i2 = new Intent(getActivity(), DoctorSpecialityActivity.class);
+//                startActivity(i2);
+                break;
+            case 3:
+//                Intent i3 = new Intent(getActivity(), DoctorSpecialityActivity.class);
+//                startActivity(i3);
+                break;
+            case 4:
+                Intent i4 = new Intent(getActivity(), ChatListActivity.class);
+                startActivity(i4);
+                break;
+        }
+
     }
 }

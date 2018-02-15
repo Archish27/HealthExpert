@@ -28,6 +28,6 @@ public class PatientSymptomActivity extends BaseActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        setContentView(R.layout.actvity_patient_symptom);
+        setContentView(R.layout.activity_patient_details);
     }
 }

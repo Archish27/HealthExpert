@@ -31,7 +31,7 @@ public class PatientHomeAdapter extends RecyclerView.Adapter<PatientHomeAdapter.
     }
 
     public interface LikeItemUpdateListener {
-        void onItemCardClicked(Doctor home);
+        void onItemCardClicked(int position);
     }
 
     @Override
@@ -83,7 +83,15 @@ public class PatientHomeAdapter extends RecyclerView.Adapter<PatientHomeAdapter.
             categoryName = (BaseTextView) itemView.findViewById(R.id.tvCatName);
             categoryIcon = (ImageView) itemView.findViewById(R.id.ivIconChar);
             categoryBackground = (ImageView) itemView.findViewById(R.id.categoryBackground);
+            container.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (commander != null)
+                        commander.onItemCardClicked(getAdapterPosition());
+                }
+            });
         }
+
 
     }
 

@@ -3,7 +3,7 @@
     android:id="@+id/categoryAdapterContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    >
+    android:background="?attr/selectableItemBackground">
 
     <ImageView
         android:id="@+id/categoryBackground"

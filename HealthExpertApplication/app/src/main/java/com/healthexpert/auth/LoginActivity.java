@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
@@ -13,14 +14,23 @@ import android.view.View;
 import android.widget.Toast;
 
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.healthexpert.auth.doctor.DoctorRegisterActivity;
 import com.healthexpert.auth.patient.PatientRegisterActivity;
 import com.healthexpert.dashboard.MainActivity;
 import com.healthexpert.common.BaseActivity;
 import com.healthexpert.data.local.SharedPreferenceManager;
 import com.healthexpert.data.remote.api.UserRestService;
+import com.healthexpert.data.remote.models.requests.FirebaseRequest;
 import com.healthexpert.data.remote.models.requests.UserLoginRequest;
 import com.healthexpert.data.remote.models.response.Patient;
+import com.healthexpert.data.remote.models.response.UserRegisterResponse;
 import com.healthexpert.data.remote.models.response.UserResponse;
 import com.healthexpert.R;
 import com.healthexpert.dispatcher.RetrofitObj;
@@ -46,6 +56,8 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
     LoginPresenter loginPresenter;
     BaseButton bRegisterPatient, bRegisterDoctor;
     ProgressDialog _dialog;
+    FirebaseAuth firebaseAuth;
+    DatabaseReference firebaseDatabase;
 
     @Override
     public void onNetworkException(Throwable e) {
@@ -100,22 +112,62 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
         bRegisterPatient = (BaseButton) findViewById(R.id.bRegisterPatient);
         bRegisterDoctor = (BaseButton) findViewById(R.id.bRegisterDoctor);
         bLogin = (BaseButton) findViewById(R.id.bLogin);
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
     }
 
     @Override
-    public void onLogin(UserResponse userResponse) {
-        dismissProgressDialog();
+    public void onLogin(final UserResponse userResponse) {
         if (userResponse.getSuccess()) {
-            new SharedPreferenceManager(getApplicationContext()).saveMainPage(1);
-            new SharedPreferenceManager(getApplicationContext()).saveAccessToken(userResponse.getAccessToken());
-            new SharedPreferenceManager(getApplicationContext()).saveCategory(userResponse.getCategory());
-            Intent i = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(i);
-            finish();
+            if (userResponse.getCategory() == 2)
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(etEmailId.getText().toString(), etPassword.getText().toString())
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    String current_id = firebaseAuth.getCurrentUser().getUid();
+                                    String deviceToken = FirebaseInstanceId.getInstance().getToken();
+                                    firebaseDatabase.child(current_id).child("device_token").setValue(deviceToken);
+                                    new SharedPreferenceManager(getApplicationContext()).saveMainPage(1);
+                                    new SharedPreferenceManager(getApplicationContext()).saveAccessToken(userResponse.getAccessToken());
+                                    new SharedPreferenceManager(getApplicationContext()).saveCategory(userResponse.getCategory());
+
+                                    //new SharedPreferenceManager(getApplicationContext()).saveDeviceToken(deviceToken);
+                                    sendFuid(userResponse, current_id);
+                                }
+                            }
+                        });
+            else
+                login(userResponse);
         } else {
             Toast.makeText(LoginActivity.this, userResponse.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    @Override
+    public void onFuid(UserRegisterResponse userRegisterResponse) {
+        dismissProgressDialog();
+
+        if (userRegisterResponse.isStatus()) {
+            Intent i = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(i);
+            finish();
+        }
+    }
+
+    private void sendFuid(UserResponse userResponse, String deviceToken) {
+        loginPresenter.Fuid(new FirebaseRequest(userResponse.getAccessToken(), deviceToken));
+    }
+
+    private void login(UserResponse userResponse) {
+        dismissProgressDialog();
+        new SharedPreferenceManager(getApplicationContext()).saveMainPage(1);
+        new SharedPreferenceManager(getApplicationContext()).saveAccessToken(userResponse.getAccessToken());
+        new SharedPreferenceManager(getApplicationContext()).saveCategory(userResponse.getCategory());
+        Intent i = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(i);
+        finish();
     }
 
 

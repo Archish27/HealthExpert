@@ -15,6 +15,8 @@ public class SharedPreferenceManager {
     private static final String PREFS_ACCESS_TOKEN = "accessToken";
     private static final String PREFS_MAINPAGE = "mainpage";
     private static String PREFS_DEVICE_TOKEN = "devicetoken";
+    private static String PREFS_FUSER_TOKEN = "firebasetoken";
+
 
 
     public SharedPreferenceManager(Context mContext) {
@@ -36,6 +38,9 @@ public class SharedPreferenceManager {
 
     public void saveAccessToken(String accessToken) {
         settings.edit().putString(PREFS_ACCESS_TOKEN, accessToken).apply();
+    }
+    public void saveFirebaseToken(String accessToken) {
+        settings.edit().putString(PREFS_FUSER_TOKEN, accessToken).apply();
     }
 
     public String getMobileNo() {

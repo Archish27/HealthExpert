@@ -2,11 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.healthexpert">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".common.HealthExpert"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -44,7 +46,55 @@
             android:windowSoftInputMode="stateHidden">
 
         </activity>
-        
+        <activity
+            android:name=".patient.doctors.DoctorActivity"
+            android:label="@string/doctors"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+        <activity
+            android:name=".patient.doctors.DoctorSpecialityActivity"
+            android:label="@string/doctors"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+        <activity
+            android:name=".patient.doctors.DoctorDetailsActivity"
+            android:label="@string/doctors"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+        <activity
+            android:name=".doctor.doctors.DoctorActivity"
+            android:label="@string/doctors"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+        <activity
+            android:name=".doctor.doctors.DoctorDetailsActivity"
+            android:label="@string/doctors"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+        <activity
+            android:name=".doctor.fragments.ChatListActivity"
+            android:label="@string/messaging"
+            android:parentActivityName=".dashboard.MainActivity"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+        <activity
+            android:name=".doctor.chat.ChatActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".doctor.doctors.DoctorActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="com.healthexpert.doctorchat_TARGET_NOTIFICATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".auth.LoginActivity"
             android:label="@string/app_name"
@@ -56,6 +106,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".MessengingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.applozic.application.key"
+            android:value="healthexpert36f3899969b6fb6ae2" />
     </application>
 
 </manifest>

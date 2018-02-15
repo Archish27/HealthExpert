@@ -1,8 +1,8 @@
 package com.healthexpert.doctor.fragments;
 
+import com.healthexpert.data.remote.api.DoctorRestService;
 import com.healthexpert.data.remote.api.UserRestService;
 import com.healthexpert.data.remote.models.requests.DoctorRequest;
-import com.healthexpert.data.remote.models.response.DoctorWrapper;
 import com.healthexpert.data.remote.models.response.PatientWrapper;
 
 import rx.Observer;
@@ -15,17 +15,17 @@ import rx.schedulers.Schedulers;
 
 public class PatientPresenter implements PatientContract.PatientPresenter {
 
-    UserRestService userRestService;
+    DoctorRestService doctorRestService;
     PatientContract.PatientView patientView;
 
-    public PatientPresenter(UserRestService userRestService, PatientContract.PatientView patientView) {
-        this.userRestService = userRestService;
+    public PatientPresenter(DoctorRestService doctorRestService, PatientContract.PatientView patientView) {
+        this.doctorRestService = doctorRestService;
         this.patientView = patientView;
     }
 
     @Override
     public void fetchPatientData(DoctorRequest doctorRequest) {
-        userRestService.getPatientData(doctorRequest)
+        doctorRestService.getPatientData(doctorRequest)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Observer<PatientWrapper>() {
