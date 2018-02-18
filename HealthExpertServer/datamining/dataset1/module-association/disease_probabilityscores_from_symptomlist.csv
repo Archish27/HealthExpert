@@ -1,0 +1,73 @@
+Symptomlist
+asthenia,nightmare,drowsiness,pain
+Disease,Probability scores
+hypertensive  disease,25.0
+diabetes,25.0
+depression  mental,25.0
+accident  cerebrovascular,25.0
+hypercholesterolemia,25.0
+infection,25.0
+infection  urinary tract,25.0
+anemia,50.0
+dementia,25.0
+insufficiency  renal,25.0
+confusion,25.0
+degenerative  polyarthritis,75.0
+hypothyroidism,75.0
+anxiety  state,50.0
+malignant  neoplasms,25.0
+primary malignant neoplasm,25.0
+cellulitis,25.0
+gastroesophageal  reflux disease,50.0
+deep  vein thrombosis,25.0
+dehydration,25.0
+neoplasm,25.0
+epilepsy,25.0
+chronic  kidney failure,25.0
+carcinoma,25.0
+psychotic  disorder,25.0
+obesity,25.0
+ischemia,25.0
+exanthema,25.0
+kidney  failure acute,25.0
+mitral  valve insufficiency,25.0
+arthritis,50.0
+hemiparesis,50.0
+osteoporosis,25.0
+transient  ischemic attack,25.0
+adenocarcinoma,25.0
+pancreatitis,25.0
+incontinence,25.0
+hernia,50.0
+carcinoma prostate,25.0
+lymphatic  diseases,25.0
+stenosis  aortic valve,25.0
+diverticulitis,25.0
+overload  fluid,25.0
+osteomyelitis,25.0
+gastritis,25.0
+sickle  cell anemia,25.0
+deglutition  disorder,25.0
+gout,25.0
+pneumonia  aspiration,25.0
+colitis,25.0
+diverticulosis,25.0
+suicide  attempt,25.0
+parkinson  disease,25.0
+encephalopathy,25.0
+tricuspid  valve insufficiency,25.0
+Alzheimer's  disease,25.0
+neuropathy,50.0
+neoplasm  metastasis,25.0
+tonic-clonic  epilepsy,25.0
+melanoma,25.0
+carcinoma of lung,25.0
+personality  disorder,25.0
+hemorrhoids,25.0
+spasm  bronchial,25.0
+pyelonephritis,25.0
+effusion  pericardial,25.0
+delirium,25.0
+cholecystitis,25.0
+biliary  calculus,25.0
+adhesion,25.0

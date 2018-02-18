@@ -27,7 +27,10 @@ import com.google.firebase.database.ValueEventListener;
 import com.healthexpert.R;
 import com.healthexpert.common.BaseActivity;
 import com.healthexpert.common.GetTimeAgo;
+import com.healthexpert.data.remote.api.DoctorRestService;
+import com.healthexpert.data.remote.models.requests.MessageRequest;
 import com.healthexpert.data.remote.models.response.Messages;
+import com.healthexpert.dispatcher.RetrofitObj;
 import com.healthexpert.doctor.adapters.ChatAdapter;
 import com.healthexpert.ui.widgets.BaseEditText;
 import com.healthexpert.ui.widgets.BaseTextView;
@@ -95,7 +98,7 @@ public class ChatActivity extends BaseActivity {
         rootReference.child("Users").child(userId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String online =  dataSnapshot.child("online").getValue().toString();
+                String online = dataSnapshot.child("online").getValue().toString();
                 String image = dataSnapshot.child("image").getValue().toString();
                 if (online.equals("true")) {
                     tvLastSeen.setText("Online");
@@ -178,6 +181,8 @@ public class ChatActivity extends BaseActivity {
                 }
             });
             etMessage.setText("");
+
+            sendNotification(currentUserId, userId);
         }
         srlMessages.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -313,5 +318,11 @@ public class ChatActivity extends BaseActivity {
 
             }
         });
+    }
+
+    private void sendNotification(String source_fuid, String destination_fuid) {
+        DoctorRestService doctorRestService = RetrofitObj.getInstance().create(DoctorRestService.class);
+        ChatPresenter chatPresenter = new ChatPresenter(doctorRestService);
+        chatPresenter.sendNotification(new MessageRequest(source_fuid, destination_fuid));
     }
 }

@@ -42,7 +42,6 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.NewsFeed
     @Override
     public void onBindViewHolder(final PatientAdapter.NewsFeedViewHolder holder, final int position) {
         holder.tvName.setText(data.get(position).getName());
-        holder.tvEmailId.setText(data.get(position).getEmailid());
         holder.tvPhoneno.setText(data.get(position).getPhoneno());
         holder.tvCity.setText(data.get(position).getCity());
 //        if (!data.get(position).getHimage().isEmpty())
@@ -65,7 +64,6 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.NewsFeed
         public NewsFeedViewHolder(final View itemView) {
             super(itemView);
             tvName = (BaseTextView) itemView.findViewById(R.id.tvName);
-            tvEmailId = (BaseTextView) itemView.findViewById(R.id.tvEmailId);
             tvPhoneno = (BaseTextView) itemView.findViewById(R.id.tvPhoneno);
             tvCity = (BaseTextView) itemView.findViewById(R.id.tvCity);
             llItem = (LinearLayout) itemView.findViewById(R.id.llItem);

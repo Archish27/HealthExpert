@@ -36,18 +36,6 @@ public class Doctor implements Parcelable {
         this.fuid = fuid;
     }
 
-    public String getFuid() {
-        return fuid;
-    }
-
-    public void setFuid(String fuid) {
-        this.fuid = fuid;
-    }
-
-    public static Creator<Doctor> getCREATOR() {
-        return CREATOR;
-    }
-
     protected Doctor(Parcel in) {
         name = in.readString();
         emailid = in.readString();
@@ -60,6 +48,7 @@ public class Doctor implements Parcelable {
         regid = in.readString();
         accesstoken = in.readString();
         photo = in.readString();
+        fuid = in.readString();
     }
 
     public static final Creator<Doctor> CREATOR = new Creator<Doctor>() {
@@ -162,6 +151,14 @@ public class Doctor implements Parcelable {
         this.photo = photo;
     }
 
+    public String getFuid() {
+        return fuid;
+    }
+
+    public void setFuid(String fuid) {
+        this.fuid = fuid;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -180,5 +177,6 @@ public class Doctor implements Parcelable {
         dest.writeString(regid);
         dest.writeString(accesstoken);
         dest.writeString(photo);
+        dest.writeString(fuid);
     }
 }

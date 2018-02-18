@@ -8,6 +8,11 @@ import com.healthexpert.data.remote.models.response.Doctor;
 import com.healthexpert.data.remote.models.response.UserRegisterResponse;
 import com.healthexpert.data.remote.models.response.UserResponse;
 
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.http.Multipart;
+import retrofit2.http.Part;
+
 /**
  * Created by Archish on 1/13/2017.
  */
@@ -20,7 +25,19 @@ public interface RegisterContract {
     }
 
     interface RegisterPresenter {
-        void registerDoctor(DoctorRegisterRequest doctorRegisterRequest);
+        void registerDoctor(RequestBody name,
+                            RequestBody emailid,
+                            RequestBody regid,
+                            RequestBody speciality,
+                            RequestBody city,
+                            RequestBody gender,
+                            RequestBody pincode,
+                            RequestBody experience,
+                            RequestBody phoneno,
+                            RequestBody password,
+                            RequestBody fuid,
+                            RequestBody i_name);
+
         void registerPatient(UserRegisterRequest userRegisterRequest);
 
     }

@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.healthexpert.R;
 import com.healthexpert.common.BaseActivity;
+import com.healthexpert.common.Config;
 import com.healthexpert.dashboard.MainActivity;
 import com.healthexpert.data.remote.api.UserRestService;
 import com.healthexpert.data.remote.models.requests.AdminDoctorDetails;
@@ -17,6 +18,9 @@ import com.healthexpert.data.remote.models.response.UserRegisterResponse;
 import com.healthexpert.dispatcher.RetrofitObj;
 import com.healthexpert.ui.widgets.BaseButton;
 import com.healthexpert.ui.widgets.BaseTextView;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by Archish on 2/8/2018.
@@ -27,6 +31,8 @@ public class AdminDoctorDetailsActivity extends BaseActivity implements AdminDoc
     BaseButton bAccept, bReject;
     AdminDoctorDetailsPresenter adminDoctorDetailsPresenter;
     Doctor doctor;
+    CircleImageView ivImage;
+    String fuid;
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -52,14 +58,29 @@ public class AdminDoctorDetailsActivity extends BaseActivity implements AdminDoc
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         setContentView(R.layout.activity_doctor_details);
-        initViews();
         doctor = getIntent().getParcelableExtra("doctor");
+        fuid = getIntent().getStringExtra("fuid");
+        initViews();
         tvName.setText(doctor.getName());
         tvPhoneno.setText(doctor.getPhoneno());
         tvCity.setText(doctor.getCity());
         tvEmailId.setText(doctor.getEmailid());
         tvPincode.setText(doctor.getPincode());
         tvSpeciality.setText(doctor.getSpeciality());
+        if (!doctor.getPhoto().isEmpty())
+            Picasso.with(getApplicationContext()).load(Config.BASE_URL + doctor.getPhoto()).into(ivImage);
+        bAccept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                adminDoctorDetailsPresenter.statusDoctor(new AdminDoctorDetails(doctor.getAccesstoken(), fuid, 1));
+            }
+        });
+        bReject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                adminDoctorDetailsPresenter.statusDoctor(new AdminDoctorDetails(doctor.getAccesstoken(), fuid, 99));
+            }
+        });
 
     }
 
@@ -72,20 +93,10 @@ public class AdminDoctorDetailsActivity extends BaseActivity implements AdminDoc
         tvSpeciality = (BaseTextView) findViewById(R.id.tvSpeciality);
         bAccept = (BaseButton) findViewById(R.id.bAccept);
         bReject = (BaseButton) findViewById(R.id.bReject);
+        ivImage = (CircleImageView) findViewById(R.id.ivProfile);
         UserRestService userRestService = RetrofitObj.getInstance().create(UserRestService.class);
         adminDoctorDetailsPresenter = new AdminDoctorDetailsPresenter(userRestService, this);
-        bAccept.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                adminDoctorDetailsPresenter.statusDoctor(new AdminDoctorDetails(doctor.getAccesstoken(), 1));
-            }
-        });
-        bReject.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                adminDoctorDetailsPresenter.statusDoctor(new AdminDoctorDetails(doctor.getAccesstoken(), 99));
-            }
-        });
+
     }
 
     @Override

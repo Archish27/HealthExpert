@@ -27,9 +27,9 @@
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/ivImage"
-                    android:src="@mipmap/ic_launcher"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/avatar" />
             </LinearLayout>
 
             <LinearLayout
@@ -42,33 +42,26 @@
                 android:padding="4dp">
 
                 <com.healthexpert.ui.widgets.BaseTextView
-                    android:text="Patient Name"
                     android:id="@+id/tvName"
                     style="@style/PrimaryText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="Patient Name" />
 
 
                 <com.healthexpert.ui.widgets.BaseTextView
-                    android:text="@string/email_id"
-                    android:id="@+id/tvEmailId"
-                    style="@style/SecondaryText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <com.healthexpert.ui.widgets.BaseTextView
-                    android:text="@string/phone_no"
                     android:id="@+id/tvPhoneno"
                     style="@style/SecondaryText"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="@string/phone_no" />
 
                 <com.healthexpert.ui.widgets.BaseTextView
-                    android:text="@string/city"
                     android:id="@+id/tvCity"
                     style="@style/TertiaryText"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="@string/city" />
 
 
             </LinearLayout>

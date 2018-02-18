@@ -211,7 +211,7 @@ public class MyPatientsActivity extends BaseActivity implements MyPatientsContra
                     myPatientsWrapper.data.get(i).getGender(),
                     myPatientsWrapper.data.get(i).getHeight(),
                     myPatientsWrapper.data.get(i).getWeight(),
-                    myPatientsWrapper.data.get(i).getEmailid(),
+                    myPatientsWrapper.data.get(i).getBloodgroup(),
                     myPatientsWrapper.data.get(i).getPhoneno(),
                     myPatientsWrapper.data.get(i).getOccupation(),
                     myPatientsWrapper.data.get(i).getSymptoms(),
@@ -223,7 +223,8 @@ public class MyPatientsActivity extends BaseActivity implements MyPatientsContra
                     myPatientsWrapper.data.get(i).getMothersymptoms(),
                     myPatientsWrapper.data.get(i).getFathername(),
                     myPatientsWrapper.data.get(i).getFathersymptoms(),
-                    myPatientsWrapper.data.get(i).getPhoto());
+                    myPatientsWrapper.data.get(i).getPhoto(),
+                    myPatientsWrapper.data.get(i).getAccesstoken());
             patients.add(patient);
 
         }

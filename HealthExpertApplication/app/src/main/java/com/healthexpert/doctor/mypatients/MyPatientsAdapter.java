@@ -7,11 +7,14 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.healthexpert.R;
-import com.healthexpert.data.remote.models.response.DoctorResponse;
+import com.healthexpert.common.Config;
 import com.healthexpert.data.remote.models.response.Patient;
 import com.healthexpert.ui.widgets.BaseTextView;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 /**
@@ -42,13 +45,10 @@ public class MyPatientsAdapter extends RecyclerView.Adapter<MyPatientsAdapter.Ne
     @Override
     public void onBindViewHolder(final MyPatientsAdapter.NewsFeedViewHolder holder, final int position) {
         holder.tvName.setText(data.get(position).getName());
-        holder.tvEmailId.setText(data.get(position).getEmailid());
-        holder.tvPhoneno.setText(data.get(position).getPhoneno());
         holder.tvCity.setText(data.get(position).getCity());
-//        if (!data.get(position).getHimage().isEmpty())
-//            Picasso.with(holder.itemView.getContext()).load(Config.BASE_URL + data.get(position).getHimage()).into(holder.ivImage);
-//        else
-//            holder.ivImage.setVisibility(View.GONE);
+        holder.tvPhoneno.setText(data.get(position).getPhoneno());
+        if (!data.get(position).getPhoto().isEmpty())
+            Picasso.with(holder.itemView.getContext()).load(Config.BASE_URL + data.get(position).getPhoto()).into(holder.ivImage);
 
     }
 
@@ -59,15 +59,16 @@ public class MyPatientsAdapter extends RecyclerView.Adapter<MyPatientsAdapter.Ne
 
     public class NewsFeedViewHolder extends RecyclerView.ViewHolder {
 
-        BaseTextView tvName, tvEmailId, tvPhoneno, tvCity;
+        CircleImageView ivImage;
+        BaseTextView tvName, tvPhoneno, tvCity;
         LinearLayout llItem;
 
         public NewsFeedViewHolder(final View itemView) {
             super(itemView);
             tvName = (BaseTextView) itemView.findViewById(R.id.tvName);
-            tvEmailId = (BaseTextView) itemView.findViewById(R.id.tvEmailId);
+            tvCity = (BaseTextView) itemView.findViewById(R.id.tvEmailId);
             tvPhoneno = (BaseTextView) itemView.findViewById(R.id.tvPhoneno);
-            tvCity = (BaseTextView) itemView.findViewById(R.id.tvCity);
+            ivImage = (CircleImageView) itemView.findViewById(R.id.ivImage);
             llItem = (LinearLayout) itemView.findViewById(R.id.llItem);
             llItem.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -81,6 +82,7 @@ public class MyPatientsAdapter extends RecyclerView.Adapter<MyPatientsAdapter.Ne
         }
 
     }
+
     public void animateTo(ArrayList<Patient> models) {
         applyAndAnimateRemovals(models);
         applyAndAnimateAdditions(models);
@@ -131,7 +133,6 @@ public class MyPatientsAdapter extends RecyclerView.Adapter<MyPatientsAdapter.Ne
         data.add(toPosition, model);
         notifyItemMoved(fromPosition, toPosition);
     }
-
 
 
 }

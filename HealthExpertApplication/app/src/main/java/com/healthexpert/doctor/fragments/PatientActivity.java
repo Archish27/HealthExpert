@@ -76,7 +76,7 @@ public class PatientActivity extends BaseActivity implements PatientContract.Pat
                     patientWrapper.data.get(i).getGender(),
                     patientWrapper.data.get(i).getHeight(),
                     patientWrapper.data.get(i).getWeight(),
-                    patientWrapper.data.get(i).getEmailid(),
+                    patientWrapper.data.get(i).getBloodgroup(),
                     patientWrapper.data.get(i).getPhoneno(),
                     patientWrapper.data.get(i).getOccupation(),
                     patientWrapper.data.get(i).getSymptoms(),
@@ -88,7 +88,8 @@ public class PatientActivity extends BaseActivity implements PatientContract.Pat
                     patientWrapper.data.get(i).getMothersymptoms(),
                     patientWrapper.data.get(i).getFathername(),
                     patientWrapper.data.get(i).getFathersymptoms(),
-                    patientWrapper.data.get(i).getPhoto());
+                    patientWrapper.data.get(i).getPhoto(),
+                    patientWrapper.data.get(i).getAccesstoken());
             patients.add(patient);
         }
         PatientAdapter patientAdapter = new PatientAdapter(patients, this);

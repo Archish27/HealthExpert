@@ -7,10 +7,14 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.healthexpert.R;
+import com.healthexpert.common.Config;
 import com.healthexpert.data.remote.models.response.Doctor;
 import com.healthexpert.ui.widgets.BaseTextView;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 /**
@@ -43,10 +47,8 @@ public class AdminHomeAdapter extends RecyclerView.Adapter<AdminHomeAdapter.News
         holder.tvName.setText(data.get(position).getName());
         holder.tvEmailId.setText(data.get(position).getEmailid());
         holder.tvPhoneno.setText(data.get(position).getPhoneno());
-//        if (!data.get(position).getHimage().isEmpty())
-//            Picasso.with(holder.itemView.getContext()).load(Config.BASE_URL + data.get(position).getHimage()).into(holder.ivImage);
-//        else
-//            holder.ivImage.setVisibility(View.GONE);
+        if (!data.get(position).getPhoto().isEmpty())
+            Picasso.with(holder.itemView.getContext()).load(Config.BASE_URL + data.get(position).getPhoto()).into(holder.ivImage);
 
     }
 
@@ -59,12 +61,14 @@ public class AdminHomeAdapter extends RecyclerView.Adapter<AdminHomeAdapter.News
 
         BaseTextView tvName, tvEmailId, tvPhoneno;
         LinearLayout llItem;
+        CircleImageView ivImage;
 
         public NewsFeedViewHolder(final View itemView) {
             super(itemView);
             tvName = (BaseTextView) itemView.findViewById(R.id.tvName);
             tvEmailId = (BaseTextView) itemView.findViewById(R.id.tvEmailId);
             tvPhoneno = (BaseTextView) itemView.findViewById(R.id.tvPhoneno);
+            ivImage = (CircleImageView) itemView.findViewById(R.id.ivImage);
             llItem = (LinearLayout) itemView.findViewById(R.id.llItem);
             llItem.setOnClickListener(new View.OnClickListener() {
                 @Override

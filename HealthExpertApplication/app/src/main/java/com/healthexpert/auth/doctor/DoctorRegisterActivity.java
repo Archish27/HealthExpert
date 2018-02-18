@@ -3,6 +3,8 @@ package com.healthexpert.auth.doctor;
 import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -10,6 +12,7 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -25,6 +28,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.healthexpert.auth.LoginActivity;
 import com.healthexpert.common.Config;
 import com.healthexpert.dashboard.MainActivity;
@@ -41,9 +45,14 @@ import com.healthexpert.ui.widgets.BaseRadioButton;
 import com.healthexpert.ui.widgets.BaseTextView;
 import com.squareup.picasso.Picasso;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.util.Calendar;
 import java.util.HashMap;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 
 
 /**
@@ -178,8 +187,10 @@ public class DoctorRegisterActivity extends BaseActivity implements RegisterCont
                                 FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
                                 final String uid = firebaseUser.getUid();
                                 firebaseDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+                                String deviceToken = FirebaseInstanceId.getInstance().getToken();
 
                                 HashMap<String, String> hashMap = new HashMap<>();
+                                hashMap.put("device_token", deviceToken);
                                 hashMap.put("name", etFullName.getText().toString());
                                 hashMap.put("image", "default");
                                 hashMap.put("thumb_image", "default");
@@ -188,11 +199,22 @@ public class DoctorRegisterActivity extends BaseActivity implements RegisterCont
                                 firebaseDatabase.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
-                                        if (task.isSuccessful())
-                                            presenter.registerDoctor(new DoctorRegisterRequest(etFullName.getText().toString(), etEmailId.getText().toString(),
-                                                    etSpeciality.getText().toString(), etCity.getText().toString(), etPincode.getText().toString()
-                                                    , etPhoneNo.getText().toString(), etPassword.getText().toString(), etRegId.getText().toString()
-                                                    , rbGender.getText().toString(), etExperince.getText().toString(), uid));
+                                        if (task.isSuccessful()) {
+                                            RequestBody name = RequestBody.create(MediaType.parse("text/plain"), etFullName.getText().toString().getBytes());
+                                            RequestBody emailid = RequestBody.create(MediaType.parse("text/plain"), etEmailId.getText().toString().getBytes());
+                                            RequestBody regid = RequestBody.create(MediaType.parse("text/plain"), etRegId.getText().toString().getBytes());
+                                            RequestBody speciality = RequestBody.create(MediaType.parse("text/plain"), etSpeciality.getText().toString().getBytes());
+                                            RequestBody city = RequestBody.create(MediaType.parse("text/plain"), etCity.getText().toString().getBytes());
+                                            RequestBody gender = RequestBody.create(MediaType.parse("text/plain"), rbGender.getText().toString().getBytes());
+                                            RequestBody pincode = RequestBody.create(MediaType.parse("text/plain"), etPincode.getText().toString().getBytes());
+                                            RequestBody experience = RequestBody.create(MediaType.parse("text/plain"), etExperince.getText().toString().getBytes());
+                                            RequestBody phoneno = RequestBody.create(MediaType.parse("text/plain"), etPhoneNo.getText().toString().getBytes());
+                                            RequestBody password = RequestBody.create(MediaType.parse("text/plain"), etPassword.getText().toString().getBytes());
+                                            RequestBody fuid = RequestBody.create(MediaType.parse("text/plain"), uid.getBytes());
+                                            File f = new File(path);
+                                            RequestBody image = RequestBody.create(MediaType.parse("image/*"), f);
+                                            presenter.registerDoctor(name, emailid, regid, speciality, city, gender, pincode, experience, phoneno, password, fuid, image);
+                                        }
                                     }
                                 });
 
@@ -282,6 +304,9 @@ public class DoctorRegisterActivity extends BaseActivity implements RegisterCont
         } else if (!etPassword.getText().toString().equals(etCPassword.getText().toString())) {
             etCPassword.setError("Password doesn't match");
             etCPassword.setFocusable(true);
+            return false;
+        } else if (path.isEmpty()) {
+            Toast.makeText(DoctorRegisterActivity.this, "Please select profile icon", Toast.LENGTH_SHORT).show();
             return false;
         }
 

@@ -17,7 +17,7 @@ import android.widget.TextView;
  */
 public class Config {
     public static final String IMAGE_DIRECTORY_NAME = "HealthExpert";
-    public static final String BASE_URL = "http://192.168.0.103:5000/";
+    public static final String BASE_URL = "http://192.168.0.102:5000/";
 
 
     public static void changeFontInViewGroup(ViewGroup viewGroup, int fontType) {

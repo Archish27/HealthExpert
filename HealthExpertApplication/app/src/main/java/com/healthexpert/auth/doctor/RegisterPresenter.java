@@ -9,6 +9,8 @@ import com.healthexpert.data.remote.models.requests.UserRegisterRequest;
 import com.healthexpert.data.remote.models.response.Doctor;
 import com.healthexpert.data.remote.models.response.UserRegisterResponse;
 
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -28,9 +30,9 @@ public class RegisterPresenter implements RegisterContract.RegisterPresenter {
     }
 
     @Override
-    public void registerDoctor(DoctorRegisterRequest doctorRegisterRequestt) {
+    public void registerDoctor(RequestBody name, RequestBody emailid, RequestBody regid, RequestBody speciality, RequestBody city, RequestBody gender, RequestBody pincode, RequestBody experience, RequestBody phoneno, RequestBody password, RequestBody fuid, RequestBody i_name) {
         doctorRestService
-                .doDoctorRegister(doctorRegisterRequestt)
+                .doDoctorRegister(name, emailid, regid, speciality, city, gender, pincode, experience, phoneno, password, fuid, i_name)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.newThread())
                 .subscribe(new Observer<UserRegisterResponse>() {
@@ -51,7 +53,6 @@ public class RegisterPresenter implements RegisterContract.RegisterPresenter {
                             view.onDoctorRegister(user);
                     }
                 });
-
 
     }
 

@@ -90,6 +90,7 @@ public class AdminHomeFragment extends BaseFragment implements HomeContract.Home
     public void onItemCardClicked(Doctor home) {
         Intent i = new Intent(getActivity(), AdminDoctorDetailsActivity.class);
         i.putExtra("doctor", home);
+        i.putExtra("fuid",home.getFuid());
         startActivity(i);
         getActivity().finish();
     }

@@ -19,8 +19,9 @@ public class DoctorRegisterRequest implements Parcelable {
     String gender;
     String experience;
     String fuid;
+    String photo;
 
-    public DoctorRegisterRequest(String name, String emailid, String speciality, String city, String pincode, String phoneno, String password, String regid, String gender, String experience, String fuid) {
+    public DoctorRegisterRequest(String name, String emailid, String speciality, String city, String pincode, String phoneno, String password, String regid, String gender, String experience, String fuid, String photo) {
         this.name = name;
         this.emailid = emailid;
         this.speciality = speciality;
@@ -32,18 +33,7 @@ public class DoctorRegisterRequest implements Parcelable {
         this.gender = gender;
         this.experience = experience;
         this.fuid = fuid;
-    }
-
-    public String getFuid() {
-        return fuid;
-    }
-
-    public void setFuid(String fuid) {
-        this.fuid = fuid;
-    }
-
-    public static Creator<DoctorRegisterRequest> getCREATOR() {
-        return CREATOR;
+        this.photo = photo;
     }
 
     protected DoctorRegisterRequest(Parcel in) {
@@ -57,6 +47,8 @@ public class DoctorRegisterRequest implements Parcelable {
         regid = in.readString();
         gender = in.readString();
         experience = in.readString();
+        fuid = in.readString();
+        photo = in.readString();
     }
 
     public static final Creator<DoctorRegisterRequest> CREATOR = new Creator<DoctorRegisterRequest>() {
@@ -151,6 +143,22 @@ public class DoctorRegisterRequest implements Parcelable {
         this.experience = experience;
     }
 
+    public String getFuid() {
+        return fuid;
+    }
+
+    public void setFuid(String fuid) {
+        this.fuid = fuid;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -168,5 +176,7 @@ public class DoctorRegisterRequest implements Parcelable {
         dest.writeString(regid);
         dest.writeString(gender);
         dest.writeString(experience);
+        dest.writeString(fuid);
+        dest.writeString(photo);
     }
 }

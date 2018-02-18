@@ -1,17 +1,28 @@
 from flask import Flask, request, jsonify
 from flask_mysqldb import MySQL
+from werkzeug.utils import secure_filename
 import json, os
+from pyfcm import FCMNotification
 import hashlib
+from firebase import firebase
+import base64
+from os.path import join, dirname, realpath
+
+push_service = FCMNotification(api_key='AIzaSyAJAUIw8JlY64FYmft7MfZyyZqlqd18NII')
 
 app = Flask(__name__)
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'hedb'
-FOLDER_UPLOAD = 'uploads'
-UPLOAD_FOLDER = os.path.basename(FOLDER_UPLOAD)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+dir = dirname(realpath(__file__))
+app.config['UPLOAD_FOLDER'] = join(dir, "static\\uploads\\")
+app.config['UPLOAD_PATH'] = "static/uploads/"
 mysql = MySQL(app)
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'PNG', 'JPG', 'JPEG'}
+
+authentication = firebase.FirebaseAuthentication('9xOiL0GKPgXmUXO85nYFCFg0pj6H0vdzgnVYUuwy', 'archishthakkar@gmail.com')
+firebase = firebase.FirebaseApplication('https://newfirebaseapplication-7755a.firebaseio.com/', authentication)
 
 
 # JSONResponses
@@ -24,35 +35,37 @@ def hello_world():
 
 
 @app.route('/auth/register/doctor', methods=['POST', 'GET'])
-def user_register():
+def register_doctor():
     if request.method == 'POST':
-        data = request.data
-        dataD = json.loads(data)
-        name = dataD['name'].encode('utf-8')
-        emailid = dataD['emailid'].encode('utf-8')
+        name = request.form['name']
+        emailid = request.form['emailid'].encode('utf-8')
         accesstoken = hashlib.sha256(emailid).hexdigest()
-        regid = dataD['regid'].encode('utf-8')
-        speciality = dataD['speciality'].encode('utf-8')
-        city = dataD['city'].encode('utf-8')
-        gender = dataD['gender'].encode('utf-8')
-        pincode = dataD['pincode'].encode('utf-8')
-        experience = dataD['experience'].encode('utf-8')
-        phoneno = dataD['phoneno'].encode('utf-8')
-        password = hashlib.sha256(dataD['password'].encode('utf-8')).hexdigest()
-        # file = request.files['image']
-        # photo = FOLDER_UPLOAD + "/" + accesstoken + file.filename
-        # f = os.path.join(app.config['UPLOAD_FOLDER'], photo)
-        # f.save(f)
-        photo = ""
+        regid = request.form['regid']
+        speciality = request.form['speciality']
+        city = request.form['city']
+        gender = request.form['gender']
+        pincode = request.form['pincode']
+        experience = request.form['experience']
+        phoneno = request.form['phoneno']
+        password = hashlib.sha256(request.form['password'].encode('utf-8')).hexdigest()
+        fuid = request.form['fuid'].encode('utf-8')
+        file = request.files['image']
+        photo = app.config['UPLOAD_PATH'] + accesstoken + file.filename
+        filename = secure_filename(accesstoken + file.filename)
+
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+
         status = 0
         r_id = 2
         cur = mysql.connection.cursor()
         cur.execute(
-            '''INSERT INTO doctor(d_name,d_phoneno,d_regid,d_gender,d_speciality,d_experience,d_city,d_pincode,d_accesstoken,d_photo) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)''',
-            (name, phoneno, regid, gender, speciality, experience, city, pincode, accesstoken, photo))
-        cur.execute('''INSERT into users(u_accesstoken,u_emailid,u_password,u_status,r_id) values(%s,%s,%s,%s,%s)''',
-                    (accesstoken, emailid, password, status, r_id))
+            '''INSERT INTO doctor(d_name,d_phoneno,d_regid,d_gender,d_speciality,d_experience,d_city,d_pincode,d_accesstoken,d_photo,d_fuid) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)''',
+            (name, phoneno, regid, gender, speciality, experience, city, pincode, accesstoken, photo, fuid))
+        cur.execute(
+            '''INSERT into users(u_accesstoken,u_emailid,u_password,u_status,r_id) values(%s,%s,%s,%s,%s)''',
+            (accesstoken, emailid, password, status, r_id))
         mysql.connection.commit()
+
         return jsonify(status=True,
                        message="Registered Successfully")
 
@@ -83,7 +96,7 @@ def patient_register_icon():
         phoneno = dataD['phoneno'].encode('utf-8')
         password = hashlib.sha256(dataD['password'].encode('utf-8')).hexdigest()
         file = request.files['image']
-        photo = FOLDER_UPLOAD + "/" + accesstoken + file.filename
+        photo = "/" + accesstoken + file.filename
         f = os.path.join(app.config['UPLOAD_FOLDER'], photo)
         f.save(f)
         status = 1
@@ -254,10 +267,10 @@ def get_patients():
                         'gender': row[3],
                         'height': row[4],
                         'weight': row[5],
-                        'emailid': row[6],
-                        'phoneno': row[7],
-                        'occupation': row[8],
-                        'symptoms': row[9],
+                        'phoneno': row[6],
+                        'occupation': row[7],
+                        'symptoms': row[8],
+                        'bloodgroup': row[9],
                         'history': row[10],
                         'investigations': row[11],
                         'city': row[12],
@@ -266,7 +279,8 @@ def get_patients():
                         'mothersymptoms': row[15],
                         'fathername': row[16],
                         'fathersymptoms': row[17],
-                        'photo': row[18]
+                        'photo': row[18],
+                        'accesstoken': row[19]
                         }
             list_data.append(dataDict)
 
@@ -279,7 +293,7 @@ def get_doctors():
 
         cur = mysql.connection.cursor()
         cur.execute(
-            '''SELECT d_name,u_emailid,d_phoneno,d_pincode,d_city,s_name,d_gender,d_experience,d_regid,d_accesstoken,d_photo,d_fuid FROM doctor,users,speciality where doctor.d_accesstoken = users.u_accesstoken AND doctor.d_speciality=speciality.s_id  AND users.r_id=2 AND users.u_status=0''')
+            '''SELECT DISTINCT d_name,u_emailid,d_phoneno,d_pincode,d_city,s_name,d_gender,d_experience,d_regid,d_accesstoken,d_photo,d_fuid FROM doctor,users,speciality where doctor.d_accesstoken = users.u_accesstoken AND doctor.d_speciality=speciality.s_id  AND users.r_id=2 AND users.u_status=0''')
         list_data = []
         for row in cur:
             dataDict = {'name': row[0],
@@ -305,13 +319,20 @@ def status_doctor():
         data = request.data
         dataD = json.loads(data)
         accesstoken = dataD['accesstoken'].encode('utf-8')
+        fuid = dataD['firebaseid'].encode('utf-8')
         status = dataD['status']
+
         cur = mysql.connection.cursor()
         cur.execute(
             '''UPDATE users SET u_status = %s where u_accesstoken = %s''',
             (status, accesstoken))
         mysql.connection.commit()
         if status != 99:
+            result = firebase.get('/Users/' + fuid.decode('utf-8'), None)
+            registration_id = result.get("device_token")
+            name = result.get("name")
+            push_service.notify_single_device(registration_id=registration_id, message_title="Health Expert"
+                                              , message_body=name + " your registration is verified")
             return jsonify(status=True,
                            message="Doctor Verified")
         else:
@@ -388,5 +409,118 @@ def get_doctors_all():
         return jsonify(data=list_data)
 
 
+@app.route('/bookmark/add', methods=['GET', 'POST'])
+def bookmark_operation():
+    if request.method == 'POST':
+        data = request.data
+        dataD = json.loads(data)
+        source_token = dataD['source_token'].encode('utf-8')
+        destination_token = dataD['destination_token'].encode('utf-8')
+        role = dataD['role'].encode('utf-8')
+        cur = mysql.connection.cursor()
+        cur.execute('''INSERT into bookmarks(source_token,destination_token) VALUES (%s,%s)''',
+                    (source_token, destination_token))
+        mysql.connection.commit()
+        if role == 2:
+            return jsonify(status=True, message="Added to My Patients")
+        else:
+            return jsonify(status=True, message="Added to My Doctors")
+
+
+# For patients get all my doctors
+@app.route('/patient/bookmark/doctors', methods=['GET', 'POST'])
+def bookmark_mydoctors():
+    if request.method == 'POST':
+        data = request.data
+        dataD = json.loads(data)
+        source_token = dataD['source_token'].encode('utf-8')
+        cur = mysql.connection.cursor()
+        cur.execute(
+            '''SELECT d_name,u_emailid,d_phoneno,d_pincode,d_city,s_name,d_gender,d_experience,d_regid,d_accesstoken,d_photo,d_fuid FROM doctor where d_accesstoken IN (SELECT b_destination from bookmarks WHERE b_source=%s)''',
+            (source_token))
+        list_data = []
+        for row in cur:
+            dataDict = {'name': row[0],
+                        'emailid': row[1],
+                        'phoneno': row[2],
+                        'pincode': row[3],
+                        'city': row[4],
+                        'speciality': row[5],
+                        'gender': row[6],
+                        'experience': row[7],
+                        'regid': row[8],
+                        'accesstoken': row[9],
+                        'photo': row[10],
+                        'fuid': row[11]}
+            list_data.append(dataDict)
+
+        return jsonify(data=list_data)
+
+
+# For doctors get all my patients
+@app.route('/doctor/bookmark/patients', methods=['GET', 'POST'])
+def bookmark_mypatients():
+    if request.method == 'POST':
+        data = request.data
+        dataD = json.loads(data)
+        source_token = dataD['source_token'].encode('utf-8')
+        cur = mysql.connection.cursor()
+        cur.execute(
+            '''SELECT * FROM patient where p_accesstoken IN (SELECT b_destination from bookmarks WHERE b_source=%s)''',
+            (source_token))
+        list_data = []
+        for row in cur:
+            dataDict = {'pid': row[0],
+                        'name': row[1],
+                        'dob': row[2],
+                        'gender': row[3],
+                        'height': row[4],
+                        'weight': row[5],
+                        'phoneno': row[6],
+                        'occupation': row[7],
+                        'symptoms': row[8],
+                        'bloodgroup': row[9],
+                        'history': row[10],
+                        'investigations': row[11],
+                        'city': row[12],
+                        'pincode': row[13],
+                        'mothername': row[14],
+                        'mothersymptoms': row[15],
+                        'fathername': row[16],
+                        'fathersymptoms': row[17],
+                        'photo': row[18],
+                        'accesstoken': row[19]
+                        }
+            list_data.append(dataDict)
+
+        return jsonify(data=list_data)
+
+
+@app.route('/messaging/notify', methods=['GET', 'POST'])
+def messaging_notify():
+    if request.method == 'POST':
+        data = request.data
+        dataD = json.loads(data)
+        source_fuid = dataD['source_fuid']
+        destination_fuid = dataD['destination_fuid']
+        source_result = firebase.get('/Users/' + source_fuid, None)
+
+        result = firebase.get('/Users/' + destination_fuid, None)
+        registration_id = result.get("device_token")
+        message_title = source_result.get("name")
+        message_body = "1 new message"
+        action = "com.healthexpert.doctorchat_TARGET_NOTIFICATION"
+        data_message = {'from_did': source_fuid}
+        result_push = push_service.notify_single_device(registration_id=registration_id, message_title=message_title,
+                                                        message_body=message_body, click_action=action,
+                                                        data_message=data_message)
+        return jsonify(result_push)
+
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
 if __name__ == '__main__':
-    app.run(host='192.168.0.103', port=5000)
+    app.run(host='192.168.0.102', port=5000)

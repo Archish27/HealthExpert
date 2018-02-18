@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('../../final_dataset_1.csv');
+df = pd.read_csv('symptom_bench.csv');
 d = pd.pivot_table(df, index='disease', columns='symptom', values='values')
 d.fillna(0, inplace=True)
 # index = d.index.union(d.columns)
