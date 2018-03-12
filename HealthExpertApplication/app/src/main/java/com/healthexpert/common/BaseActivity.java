@@ -24,6 +24,12 @@ public class BaseActivity extends AppCompatActivity implements BaseContract.Base
         progressDialog.setCancelable(false);
         progressDialog.show();
     }
+    protected void showProgressDialog(String title) {
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading...");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
+    }
 
     protected void dismissProgressDialog() {
         if (progressDialog != null) {

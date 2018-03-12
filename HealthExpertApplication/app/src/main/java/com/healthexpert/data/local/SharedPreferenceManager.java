@@ -66,6 +66,27 @@ public class SharedPreferenceManager {
     public String getDeviceToken() {
         return settings.getString(PREFS_DEVICE_TOKEN, null);
     }
+    public void saveImage(String token) {
+        settings.edit().putString("image", token).apply();
+    }
+
+    public String getImage() {
+        return settings.getString("image", "");
+    }
+    public void saveName(String token) {
+        settings.edit().putString("name", token).apply();
+    }
+
+    public String getName() {
+        return settings.getString("name", "");
+    }
+    public void saveEmailId(String token) {
+        settings.edit().putString("emailid", token).apply();
+    }
+
+    public String getEmailId() {
+        return settings.getString("emailid", "");
+    }
 
     public void removeAccessToken() {
         settings.edit().remove(PREFS_ACCESS_TOKEN).apply();

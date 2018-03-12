@@ -20,7 +20,9 @@ import android.widget.ProgressBar;
 
 import com.healthexpert.R;
 import com.healthexpert.common.BaseActivity;
+import com.healthexpert.data.local.SharedPreferenceManager;
 import com.healthexpert.data.remote.api.DoctorRestService;
+import com.healthexpert.data.remote.models.requests.MyRequest;
 import com.healthexpert.data.remote.models.response.DoctorResponse;
 import com.healthexpert.data.remote.models.response.Patient;
 import com.healthexpert.data.remote.models.response.PatientWrapper;
@@ -39,7 +41,6 @@ public class MyPatientsActivity extends BaseActivity implements MyPatientsContra
 
     SwipeRefreshLayout swipeRefreshLayout;
     RecyclerView rvHome;
-    FloatingActionButton bFilter;
     ProgressBar pgProgress;
     MyPatientsPresenter myPatientsPresenter;
     MyPatientsAdapter myPatientsAdapter;
@@ -76,18 +77,11 @@ public class MyPatientsActivity extends BaseActivity implements MyPatientsContra
         rvHome.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
         DoctorRestService doctorRestService = RetrofitObj.getInstance().create(DoctorRestService.class);
         myPatientsPresenter = new MyPatientsPresenter(doctorRestService, this);
-        myPatientsPresenter.getPatients();
+        myPatientsPresenter.getPatients(new MyRequest(new SharedPreferenceManager(getApplicationContext()).getAccessToken()));
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                myPatientsPresenter.getPatients();
-            }
-        });
-        bFilter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                showFilter();
-
+                myPatientsPresenter.getPatients(new MyRequest(new SharedPreferenceManager(getApplicationContext()).getAccessToken()));
             }
         });
 
@@ -179,7 +173,6 @@ public class MyPatientsActivity extends BaseActivity implements MyPatientsContra
         rvHome = (RecyclerView) findViewById(R.id.rvHome);
         pgProgress = (ProgressBar) findViewById(R.id.pgProgress);
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.srlHome);
-        bFilter = (FloatingActionButton) findViewById(R.id.fabFilter);
     }
 
     @Override
@@ -194,10 +187,9 @@ public class MyPatientsActivity extends BaseActivity implements MyPatientsContra
 
     @Override
     public void onItemCardClicked(Patient patient) {
-        Intent i = new Intent(MyPatientsActivity.this, DoctorDetailsActivity.class);
-        i.putExtra("doctor", patient);
+        Intent i = new Intent(MyPatientsActivity.this, PatientDetailsActivity.class);
+        i.putExtra("patient", patient);
         startActivity(i);
-        finish();
     }
 
 
@@ -224,7 +216,8 @@ public class MyPatientsActivity extends BaseActivity implements MyPatientsContra
                     myPatientsWrapper.data.get(i).getFathername(),
                     myPatientsWrapper.data.get(i).getFathersymptoms(),
                     myPatientsWrapper.data.get(i).getPhoto(),
-                    myPatientsWrapper.data.get(i).getAccesstoken());
+                    myPatientsWrapper.data.get(i).getAccesstoken(),
+                    myPatientsWrapper.data.get(i).getDevicetoken());
             patients.add(patient);
 
         }

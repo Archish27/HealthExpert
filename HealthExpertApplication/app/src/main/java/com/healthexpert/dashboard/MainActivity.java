@@ -26,6 +26,10 @@ import com.healthexpert.data.remote.models.response.UserRegisterResponse;
 import com.healthexpert.data.remote.models.response.UserResponse;
 import com.healthexpert.doctor.fragments.DoctorHomeFragment;
 import com.healthexpert.patient.fragments.PatientHomeFragment;
+import com.healthexpert.ui.widgets.BaseTextView;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 /***
@@ -57,7 +61,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 //            RetrofitObj userRepository = ((RakshakApp) getApplication()).getComponent().userRepository();
 //            LoginPresenter loginPresenter = new LoginPresenter(userRepository, this);
 //            loginPresenter.logout(new SharedPreferenceManager(getApplicationContext()).getAccessToken());
-            showProgressDialog();
             FirebaseAuth.getInstance().signOut();
             new SharedPreferenceManager(getApplicationContext()).removeAllToken();
             Intent i = new Intent(MainActivity.this, LoginActivity.class);
@@ -112,8 +115,13 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
         //How to change elements in the header programatically
         View headerView = navigationView.getHeaderView(0);
-        TextView role = (TextView) headerView.findViewById(R.id.email);
-
+        BaseTextView role = (BaseTextView) headerView.findViewById(R.id.email);
+        role.setText(new SharedPreferenceManager(getApplicationContext()).getEmailId());
+        BaseTextView username = (BaseTextView) headerView.findViewById(R.id.username);
+        username.setText(new SharedPreferenceManager(getApplicationContext()).getName().isEmpty() ? getString(R.string.app_name) : new SharedPreferenceManager(getApplicationContext()).getName());
+        CircleImageView ivProfile = (CircleImageView) headerView.findViewById(R.id.profile_image);
+        if (!new SharedPreferenceManager(getApplicationContext()).getImage().isEmpty())
+            Picasso.with(getApplicationContext()).load(Config.BASE_URL + new SharedPreferenceManager(getApplicationContext()).getImage()).fit().into(ivProfile);
         navigationView.setNavigationItemSelectedListener(this);
         Config.changeFontInViewGroup(drawer, CustomFontLoader.MONTSERRAT);
 
@@ -148,9 +156,12 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
                 }
                 break;
-            case R.id.nav_settings:
-//                Intent settings = new Intent(MainActivity.this, SettingsActivity.class);
-//                startActivity(settings);
+            case R.id.nav_logout:
+                FirebaseAuth.getInstance().signOut();
+                new SharedPreferenceManager(getApplicationContext()).removeAllToken();
+                Intent i = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(i);
+                finish();
                 break;
         }
 

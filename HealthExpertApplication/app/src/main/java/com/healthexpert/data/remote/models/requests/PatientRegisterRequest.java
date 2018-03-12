@@ -30,8 +30,9 @@ public class PatientRegisterRequest implements Parcelable {
     private String fathersymptoms;
     private RequestBody image;
     private String password;
+    private String devicetoken;
 
-    public PatientRegisterRequest(String name, String dob, String gender, String height, String weight, String emailid, String phoneno, String occupation, String bloodgroup, String symptoms, String history, String investigations, String city, String pincode, String mothername, String mothersymptoms, String fathername, String fathersymptoms, RequestBody image, String password) {
+    public PatientRegisterRequest(String name, String dob, String gender, String height, String weight, String emailid, String phoneno, String occupation, String bloodgroup, String symptoms, String history, String investigations, String city, String pincode, String mothername, String mothersymptoms, String fathername, String fathersymptoms, RequestBody image, String password, String devicetoken) {
         this.name = name;
         this.dob = dob;
         this.gender = gender;
@@ -52,6 +53,7 @@ public class PatientRegisterRequest implements Parcelable {
         this.fathersymptoms = fathersymptoms;
         this.image = image;
         this.password = password;
+        this.devicetoken = devicetoken;
     }
 
     protected PatientRegisterRequest(Parcel in) {
@@ -74,23 +76,7 @@ public class PatientRegisterRequest implements Parcelable {
         fathername = in.readString();
         fathersymptoms = in.readString();
         password = in.readString();
-    }
-
-    public static final Creator<PatientRegisterRequest> CREATOR = new Creator<PatientRegisterRequest>() {
-        @Override
-        public PatientRegisterRequest createFromParcel(Parcel in) {
-            return new PatientRegisterRequest(in);
-        }
-
-        @Override
-        public PatientRegisterRequest[] newArray(int size) {
-            return new PatientRegisterRequest[size];
-        }
-    };
-
-    @Override
-    public int describeContents() {
-        return 0;
+        devicetoken = in.readString();
     }
 
     @Override
@@ -114,5 +100,191 @@ public class PatientRegisterRequest implements Parcelable {
         dest.writeString(fathername);
         dest.writeString(fathersymptoms);
         dest.writeString(password);
+        dest.writeString(devicetoken);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<PatientRegisterRequest> CREATOR = new Creator<PatientRegisterRequest>() {
+        @Override
+        public PatientRegisterRequest createFromParcel(Parcel in) {
+            return new PatientRegisterRequest(in);
+        }
+
+        @Override
+        public PatientRegisterRequest[] newArray(int size) {
+            return new PatientRegisterRequest[size];
+        }
+    };
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+    public String getEmailid() {
+        return emailid;
+    }
+
+    public void setEmailid(String emailid) {
+        this.emailid = emailid;
+    }
+
+    public String getPhoneno() {
+        return phoneno;
+    }
+
+    public void setPhoneno(String phoneno) {
+        this.phoneno = phoneno;
+    }
+
+    public String getOccupation() {
+        return occupation;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
+    public String getBloodgroup() {
+        return bloodgroup;
+    }
+
+    public void setBloodgroup(String bloodgroup) {
+        this.bloodgroup = bloodgroup;
+    }
+
+    public String getSymptoms() {
+        return symptoms;
+    }
+
+    public void setSymptoms(String symptoms) {
+        this.symptoms = symptoms;
+    }
+
+    public String getHistory() {
+        return history;
+    }
+
+    public void setHistory(String history) {
+        this.history = history;
+    }
+
+    public String getInvestigations() {
+        return investigations;
+    }
+
+    public void setInvestigations(String investigations) {
+        this.investigations = investigations;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPincode() {
+        return pincode;
+    }
+
+    public void setPincode(String pincode) {
+        this.pincode = pincode;
+    }
+
+    public String getMothername() {
+        return mothername;
+    }
+
+    public void setMothername(String mothername) {
+        this.mothername = mothername;
+    }
+
+    public String getMothersymptoms() {
+        return mothersymptoms;
+    }
+
+    public void setMothersymptoms(String mothersymptoms) {
+        this.mothersymptoms = mothersymptoms;
+    }
+
+    public String getFathername() {
+        return fathername;
+    }
+
+    public void setFathername(String fathername) {
+        this.fathername = fathername;
+    }
+
+    public String getFathersymptoms() {
+        return fathersymptoms;
+    }
+
+    public void setFathersymptoms(String fathersymptoms) {
+        this.fathersymptoms = fathersymptoms;
+    }
+
+    public RequestBody getImage() {
+        return image;
+    }
+
+    public void setImage(RequestBody image) {
+        this.image = image;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getDevicetoken() {
+        return devicetoken;
+    }
+
+    public void setDevicetoken(String devicetoken) {
+        this.devicetoken = devicetoken;
     }
 }

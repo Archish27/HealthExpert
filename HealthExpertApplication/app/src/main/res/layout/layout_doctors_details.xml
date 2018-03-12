@@ -23,7 +23,7 @@
                 android:layout_height="128dp"
                 android:layout_gravity="center"
                 android:padding="16dp"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/avatar"
                 android:textColor="@color/colorPrimary"
                 app:civ_border_color="@color/colorPrimaryDark"
                 app:civ_border_width="2dp" />
@@ -144,9 +144,9 @@
                     style="@style/PrimaryText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:drawableLeft="@drawable/address"
+                    android:drawableLeft="@drawable/telephone"
                     android:drawablePadding="8dp"
-                    android:drawableStart="@drawable/address"
+                    android:drawableStart="@drawable/telephone"
                     android:gravity="center_vertical"
                     android:padding="8dp" />
 

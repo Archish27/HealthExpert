@@ -85,6 +85,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
                 if (status) {
                     showProgressDialog();
                     loginPresenter.login(new UserLoginRequest(etEmailId.getText().toString(), etPassword.getText().toString()));
+                    new SharedPreferenceManager(getApplicationContext()).saveEmailId(etEmailId.getText().toString());
                 }
             }
         });
@@ -131,8 +132,8 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
                                     new SharedPreferenceManager(getApplicationContext()).saveMainPage(1);
                                     new SharedPreferenceManager(getApplicationContext()).saveAccessToken(userResponse.getAccessToken());
                                     new SharedPreferenceManager(getApplicationContext()).saveCategory(userResponse.getCategory());
+                                    new SharedPreferenceManager(getApplicationContext()).saveDeviceToken(deviceToken);
 
-                                    //new SharedPreferenceManager(getApplicationContext()).saveDeviceToken(deviceToken);
                                     sendFuid(userResponse, current_id);
                                 }
                             }
@@ -140,6 +141,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
             else
                 login(userResponse);
         } else {
+            dismissProgressDialog();
             Toast.makeText(LoginActivity.this, userResponse.getMessage(), Toast.LENGTH_SHORT).show();
         }
 

@@ -28,6 +28,7 @@ import com.healthexpert.data.remote.models.response.DoctorResponse;
 import com.healthexpert.data.remote.models.response.DoctorResponseWrapper;
 import com.healthexpert.data.remote.models.response.Speciality;
 import com.healthexpert.data.remote.models.response.SpecialityWrapper;
+import com.healthexpert.data.remote.models.response.UserRegisterResponse;
 import com.healthexpert.dispatcher.RetrofitObj;
 import com.healthexpert.doctor.adapters.DoctorAdapter;
 import com.healthexpert.doctor.chat.ChatActivity;
@@ -43,7 +44,6 @@ public class DoctorActivity extends BaseActivity implements DoctorContract.Docto
 
     SwipeRefreshLayout swipeRefreshLayout;
     RecyclerView rvHome;
-    FloatingActionButton bFilter;
     ProgressBar pgProgress;
     DoctorPresenter doctorPresenter;
     DoctorAdapter doctorAdapter;
@@ -87,13 +87,6 @@ public class DoctorActivity extends BaseActivity implements DoctorContract.Docto
                 doctorPresenter.getDoctors();
             }
         });
-        bFilter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                showFilter();
-
-            }
-        });
 
 
     }
@@ -116,7 +109,7 @@ public class DoctorActivity extends BaseActivity implements DoctorContract.Docto
 
         final ArrayList<DoctorResponse> filteredModelList = new ArrayList<>();
         for (DoctorResponse model : models) {
-            final String text = model.getName().toLowerCase() + model.getSpeciality().toLowerCase() + model.getCity() + model.getExperience();
+            final String text = model.getCity();
             if (text.contains(query)) {
                 filteredModelList.add(model);
             }
@@ -183,7 +176,7 @@ public class DoctorActivity extends BaseActivity implements DoctorContract.Docto
         rvHome = (RecyclerView) findViewById(R.id.rvHome);
         pgProgress = (ProgressBar) findViewById(R.id.pgProgress);
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.srlHome);
-        bFilter = (FloatingActionButton) findViewById(R.id.fabFilter);
+
     }
 
     @Override
@@ -201,7 +194,6 @@ public class DoctorActivity extends BaseActivity implements DoctorContract.Docto
         Intent i = new Intent(DoctorActivity.this, DoctorDetailsActivity.class);
         i.putExtra("doctor", doctorResponse);
         startActivity(i);
-        finish();
     }
 
     @Override
@@ -237,6 +229,11 @@ public class DoctorActivity extends BaseActivity implements DoctorContract.Docto
         if (swipeRefreshLayout.isRefreshing())
             swipeRefreshLayout.setRefreshing(false);
         pgProgress.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onPrescription(UserRegisterResponse userRegisterResponse) {
+
     }
 
 }

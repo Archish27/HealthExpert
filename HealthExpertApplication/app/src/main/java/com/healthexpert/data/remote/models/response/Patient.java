@@ -28,9 +28,9 @@ public class Patient implements Parcelable {
     private String fathersymptoms;
     private String photo;
     private String accesstoken;
+    private String devicetoken;
 
-
-    public Patient(String pid, String name, String dob, String gender, String height, String weight, String bloodgroup, String phoneno, String occupation, String symptoms, String history, String investigations, String city, String pincode, String mothername, String mothersymptoms, String fathername, String fathersymptoms, String photo, String accesstoken) {
+    public Patient(String pid, String name, String dob, String gender, String height, String weight, String bloodgroup, String phoneno, String occupation, String symptoms, String history, String investigations, String city, String pincode, String mothername, String mothersymptoms, String fathername, String fathersymptoms, String photo, String accesstoken, String devicetoken) {
         this.pid = pid;
         this.name = name;
         this.dob = dob;
@@ -51,6 +51,7 @@ public class Patient implements Parcelable {
         this.fathersymptoms = fathersymptoms;
         this.photo = photo;
         this.accesstoken = accesstoken;
+        this.devicetoken = devicetoken;
     }
 
     protected Patient(Parcel in) {
@@ -74,6 +75,7 @@ public class Patient implements Parcelable {
         fathersymptoms = in.readString();
         photo = in.readString();
         accesstoken = in.readString();
+        devicetoken = in.readString();
     }
 
     public static final Creator<Patient> CREATOR = new Creator<Patient>() {
@@ -87,35 +89,6 @@ public class Patient implements Parcelable {
             return new Patient[size];
         }
     };
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(pid);
-        dest.writeString(name);
-        dest.writeString(dob);
-        dest.writeString(gender);
-        dest.writeString(height);
-        dest.writeString(weight);
-        dest.writeString(bloodgroup);
-        dest.writeString(phoneno);
-        dest.writeString(occupation);
-        dest.writeString(symptoms);
-        dest.writeString(history);
-        dest.writeString(investigations);
-        dest.writeString(city);
-        dest.writeString(pincode);
-        dest.writeString(mothername);
-        dest.writeString(mothersymptoms);
-        dest.writeString(fathername);
-        dest.writeString(fathersymptoms);
-        dest.writeString(photo);
-        dest.writeString(accesstoken);
-    }
 
     public String getPid() {
         return pid;
@@ -277,7 +250,41 @@ public class Patient implements Parcelable {
         this.accesstoken = accesstoken;
     }
 
-    public static Creator<Patient> getCREATOR() {
-        return CREATOR;
+    public String getDevicetoken() {
+        return devicetoken;
+    }
+
+    public void setDevicetoken(String devicetoken) {
+        this.devicetoken = devicetoken;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(pid);
+        parcel.writeString(name);
+        parcel.writeString(dob);
+        parcel.writeString(gender);
+        parcel.writeString(height);
+        parcel.writeString(weight);
+        parcel.writeString(bloodgroup);
+        parcel.writeString(phoneno);
+        parcel.writeString(occupation);
+        parcel.writeString(symptoms);
+        parcel.writeString(history);
+        parcel.writeString(investigations);
+        parcel.writeString(city);
+        parcel.writeString(pincode);
+        parcel.writeString(mothername);
+        parcel.writeString(mothersymptoms);
+        parcel.writeString(fathername);
+        parcel.writeString(fathersymptoms);
+        parcel.writeString(photo);
+        parcel.writeString(accesstoken);
+        parcel.writeString(devicetoken);
     }
 }

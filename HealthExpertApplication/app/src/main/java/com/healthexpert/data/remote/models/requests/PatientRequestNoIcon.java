@@ -29,8 +29,9 @@ public class PatientRequestNoIcon implements Parcelable {
     private String fathersymptoms;
     private String bloodgroup;
     private String password;
+    private String devicetoken;
 
-    public PatientRequestNoIcon(String name, String dob, String gender, String height, String weight, String emailid, String phoneno, String occupation, String symptoms, String history, String investigations, String city, String pincode, String mothername, String mothersymptoms, String fathername, String fathersymptoms,String bloodgroup,String password) {
+    public PatientRequestNoIcon(String name, String dob, String gender, String height, String weight, String emailid, String phoneno, String occupation, String symptoms, String history, String investigations, String city, String pincode, String mothername, String mothersymptoms, String fathername, String fathersymptoms, String bloodgroup, String password, String devicetoken) {
         this.name = name;
         this.dob = dob;
         this.gender = gender;
@@ -50,15 +51,43 @@ public class PatientRequestNoIcon implements Parcelable {
         this.fathersymptoms = fathersymptoms;
         this.bloodgroup = bloodgroup;
         this.password = password;
+        this.devicetoken = devicetoken;
     }
 
-    public String getPassword() {
-        return password;
+    protected PatientRequestNoIcon(Parcel in) {
+        name = in.readString();
+        dob = in.readString();
+        gender = in.readString();
+        height = in.readString();
+        weight = in.readString();
+        emailid = in.readString();
+        phoneno = in.readString();
+        occupation = in.readString();
+        symptoms = in.readString();
+        history = in.readString();
+        investigations = in.readString();
+        city = in.readString();
+        pincode = in.readString();
+        mothername = in.readString();
+        mothersymptoms = in.readString();
+        fathername = in.readString();
+        fathersymptoms = in.readString();
+        bloodgroup = in.readString();
+        password = in.readString();
+        devicetoken = in.readString();
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    public static final Creator<PatientRequestNoIcon> CREATOR = new Creator<PatientRequestNoIcon>() {
+        @Override
+        public PatientRequestNoIcon createFromParcel(Parcel in) {
+            return new PatientRequestNoIcon(in);
+        }
+
+        @Override
+        public PatientRequestNoIcon[] newArray(int size) {
+            return new PatientRequestNoIcon[size];
+        }
+    };
 
     public String getName() {
         return name;
@@ -204,53 +233,20 @@ public class PatientRequestNoIcon implements Parcelable {
         this.bloodgroup = bloodgroup;
     }
 
-    public static Creator<PatientRequestNoIcon> getCREATOR() {
-        return CREATOR;
+    public String getPassword() {
+        return password;
     }
 
-    protected PatientRequestNoIcon(Parcel in) {
-        name = in.readString();
-        dob = in.readString();
-        gender = in.readString();
-        height = in.readString();
-        weight = in.readString();
-        emailid = in.readString();
-        phoneno = in.readString();
-        occupation = in.readString();
-        symptoms = in.readString();
-        history = in.readString();
-        investigations = in.readString();
-        city = in.readString();
-        pincode = in.readString();
-        mothername = in.readString();
-        mothersymptoms = in.readString();
-        fathername = in.readString();
-        fathersymptoms = in.readString();
-        bloodgroup = in.readString();
-        password = in.readString();
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(name);
-        dest.writeString(dob);
-        dest.writeString(gender);
-        dest.writeString(height);
-        dest.writeString(weight);
-        dest.writeString(emailid);
-        dest.writeString(phoneno);
-        dest.writeString(occupation);
-        dest.writeString(symptoms);
-        dest.writeString(history);
-        dest.writeString(investigations);
-        dest.writeString(city);
-        dest.writeString(pincode);
-        dest.writeString(mothername);
-        dest.writeString(mothersymptoms);
-        dest.writeString(fathername);
-        dest.writeString(fathersymptoms);
-        dest.writeString(bloodgroup);
-        dest.writeString(password);
+    public String getDevicetoken() {
+        return devicetoken;
+    }
+
+    public void setDevicetoken(String devicetoken) {
+        this.devicetoken = devicetoken;
     }
 
     @Override
@@ -258,15 +254,27 @@ public class PatientRequestNoIcon implements Parcelable {
         return 0;
     }
 
-    public static final Creator<PatientRequestNoIcon> CREATOR = new Creator<PatientRequestNoIcon>() {
-        @Override
-        public PatientRequestNoIcon createFromParcel(Parcel in) {
-            return new PatientRequestNoIcon(in);
-        }
-
-        @Override
-        public PatientRequestNoIcon[] newArray(int size) {
-            return new PatientRequestNoIcon[size];
-        }
-    };
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(name);
+        parcel.writeString(dob);
+        parcel.writeString(gender);
+        parcel.writeString(height);
+        parcel.writeString(weight);
+        parcel.writeString(emailid);
+        parcel.writeString(phoneno);
+        parcel.writeString(occupation);
+        parcel.writeString(symptoms);
+        parcel.writeString(history);
+        parcel.writeString(investigations);
+        parcel.writeString(city);
+        parcel.writeString(pincode);
+        parcel.writeString(mothername);
+        parcel.writeString(mothersymptoms);
+        parcel.writeString(fathername);
+        parcel.writeString(fathersymptoms);
+        parcel.writeString(bloodgroup);
+        parcel.writeString(password);
+        parcel.writeString(devicetoken);
+    }
 }

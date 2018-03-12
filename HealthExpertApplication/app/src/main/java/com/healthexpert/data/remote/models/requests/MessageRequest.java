@@ -7,10 +7,29 @@ package com.healthexpert.data.remote.models.requests;
 public class MessageRequest {
     String source_fuid;
     String destination_fuid;
-
-    public MessageRequest(String source_fuid, String destination_fuid) {
+    String message;
+    String target;
+    public MessageRequest(String source_fuid, String destination_fuid,String message,String target) {
         this.source_fuid = source_fuid;
         this.destination_fuid = destination_fuid;
+        this.message = message;
+        this.target = target;
+    }
+
+    public String getTarget() {
+        return target;
+    }
+
+    public void setTarget(String target) {
+        this.target = target;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public String getSource_fuid() {

@@ -9,9 +9,9 @@
     </group>
     <group>
         <item
-            android:id="@+id/nav_settings"
+            android:id="@+id/nav_logout"
             android:icon="@drawable/settings"
-            android:title="@string/settings" />
+            android:title="@string/logout" />
     </group>
 
 

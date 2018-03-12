@@ -23,10 +23,13 @@ import java.util.ArrayList;
 public class SymptomAdapter extends RecyclerView.Adapter<SymptomAdapter.NewsFeedViewHolder> {
 
     public ArrayList<SymptomResponse> data;
+    public ArrayList<SymptomResponse> maindata;
 
     public SymptomAdapter(ArrayList<SymptomResponse> data) {
         this.data = data;
+        maindata = new ArrayList<>();
     }
+
     public void filterList(ArrayList<SymptomResponse> filterdNames) {
         data = filterdNames;
         notifyDataSetChanged();
@@ -70,9 +73,11 @@ public class SymptomAdapter extends RecyclerView.Adapter<SymptomAdapter.NewsFeed
                     if (data.get(getAdapterPosition()).isCheck()) {
                         cCheck.setChecked(false);
                         data.get(getAdapterPosition()).setCheck(false);
+                        maindata.remove(data.get(getAdapterPosition()).getSname());
                     } else {
                         cCheck.setChecked(true);
                         data.get(getAdapterPosition()).setCheck(true);
+                        maindata.add(data.get(getAdapterPosition()));
                     }
                 }
             });
@@ -80,6 +85,11 @@ public class SymptomAdapter extends RecyclerView.Adapter<SymptomAdapter.NewsFeed
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     data.get(getAdapterPosition()).setCheck(isChecked);
+                    if (isChecked) {
+                        maindata.add(data.get(getAdapterPosition()));
+                    } else {
+                        maindata.remove(data.get(getAdapterPosition()).getSname());
+                    }
                 }
             });
 
@@ -88,8 +98,11 @@ public class SymptomAdapter extends RecyclerView.Adapter<SymptomAdapter.NewsFeed
 
     }
 
-    public ArrayList<SymptomResponse> getSymptoms(){
+    public ArrayList<SymptomResponse> getSymptoms() {
         return data;
     }
 
+    public ArrayList<SymptomResponse> getAllSymptoms() {
+        return maindata;
+    }
 }

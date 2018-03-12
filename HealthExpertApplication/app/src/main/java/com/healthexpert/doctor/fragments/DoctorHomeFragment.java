@@ -10,11 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.healthexpert.R;
-import com.healthexpert.admin.activities.AdminDoctorDetailsActivity;
 import com.healthexpert.common.BaseFragment;
-import com.healthexpert.data.remote.models.response.Doctor;
 import com.healthexpert.doctor.adapters.DoctorHomeAdapter;
+import com.healthexpert.doctor.chat.ChatListActivity;
 import com.healthexpert.doctor.doctors.DoctorActivity;
+import com.healthexpert.doctor.mypatients.MyPatientsActivity;
+import com.healthexpert.doctor.patients.PatientActivity;
+import com.healthexpert.doctor.summary.DoctorSummaryActivity;
 
 import java.util.ArrayList;
 
@@ -60,20 +62,20 @@ public class DoctorHomeFragment extends BaseFragment implements DoctorHomeAdapte
     public void onItemCardClicked(int position) {
         switch (position) {
             case 0:
-//                Intent i = new Intent(getActivity(), Activity.class);
-//                startActivity(i);
+                Intent i = new Intent(getActivity(), PatientActivity.class);
+                startActivity(i);
                 break;
             case 1:
                 Intent i1 = new Intent(getActivity(), DoctorActivity.class);
                 startActivity(i1);
                 break;
             case 2:
-//                Intent i2 = new Intent(getActivity(), DoctorSpecialityActivity.class);
-//                startActivity(i2);
+                Intent i2 = new Intent(getActivity(), MyPatientsActivity.class);
+                startActivity(i2);
                 break;
             case 3:
-//                Intent i3 = new Intent(getActivity(), DoctorSpecialityActivity.class);
-//                startActivity(i3);
+                Intent i3 = new Intent(getActivity(), DoctorSummaryActivity.class);
+                startActivity(i3);
                 break;
             case 4:
                 Intent i4 = new Intent(getActivity(), ChatListActivity.class);

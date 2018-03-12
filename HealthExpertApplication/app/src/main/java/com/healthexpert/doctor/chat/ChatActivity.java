@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -26,14 +27,17 @@ import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 import com.healthexpert.R;
 import com.healthexpert.common.BaseActivity;
+import com.healthexpert.common.Config;
 import com.healthexpert.common.GetTimeAgo;
 import com.healthexpert.data.remote.api.DoctorRestService;
 import com.healthexpert.data.remote.models.requests.MessageRequest;
 import com.healthexpert.data.remote.models.response.Messages;
+import com.healthexpert.data.remote.models.response.UserRegisterResponse;
 import com.healthexpert.dispatcher.RetrofitObj;
 import com.healthexpert.doctor.adapters.ChatAdapter;
 import com.healthexpert.ui.widgets.BaseEditText;
 import com.healthexpert.ui.widgets.BaseTextView;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,7 +50,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * Created by Archish on 2/11/2018.
  */
 
-public class ChatActivity extends BaseActivity {
+public class ChatActivity extends BaseActivity implements ChatContracts.ChatView {
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference, rootReference;
     ImageButton ibSend;
@@ -87,7 +91,10 @@ public class ChatActivity extends BaseActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String chat_name = (String) dataSnapshot.child("name").getValue();
+                String image = (String) dataSnapshot.child("image").getValue();
                 tvTitle.setText(chat_name);
+                if(!image.equals("default"))
+                    Picasso.with(getApplicationContext()).load(Config.BASE_URL+image).fit().into(custom_bar_image);
             }
 
             @Override
@@ -180,9 +187,10 @@ public class ChatActivity extends BaseActivity {
                         Log.d("Chat Log", databaseError.getMessage());
                 }
             });
-            etMessage.setText("");
 
-            sendNotification(currentUserId, userId);
+            sendNotification(currentUserId, userId,etMessage.getText().toString());
+
+            etMessage.setText("");
         }
         srlMessages.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -320,9 +328,14 @@ public class ChatActivity extends BaseActivity {
         });
     }
 
-    private void sendNotification(String source_fuid, String destination_fuid) {
+    private void sendNotification(String source_fuid, String destination_fuid,String message) {
         DoctorRestService doctorRestService = RetrofitObj.getInstance().create(DoctorRestService.class);
-        ChatPresenter chatPresenter = new ChatPresenter(doctorRestService);
-        chatPresenter.sendNotification(new MessageRequest(source_fuid, destination_fuid));
+        ChatPresenter chatPresenter = new ChatPresenter(doctorRestService, this);
+        chatPresenter.sendNotification(new MessageRequest(source_fuid, destination_fuid,message,"com.healthexpert.doctorchat_TARGET_NOTIFICATION"));
+    }
+
+    @Override
+    public void onNotification(UserRegisterResponse userRegisterResponse) {
+        Toast.makeText(getApplicationContext(), userRegisterResponse.getMessage(),Toast.LENGTH_SHORT).show();
     }
 }

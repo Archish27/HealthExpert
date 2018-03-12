@@ -1,6 +1,7 @@
 package com.healthexpert.doctor.mypatients;
 
 import com.healthexpert.common.BaseContract;
+import com.healthexpert.data.remote.models.requests.MyRequest;
 import com.healthexpert.data.remote.models.response.DoctorResponseWrapper;
 import com.healthexpert.data.remote.models.response.PatientWrapper;
 
@@ -13,6 +14,6 @@ public interface MyPatientsContract {
         void onPatientsData(PatientWrapper patientWrapper);
     }
     interface MyPatientsPresenter{
-        void getPatients();
+        void getPatients(MyRequest myRequest);
     }
 }

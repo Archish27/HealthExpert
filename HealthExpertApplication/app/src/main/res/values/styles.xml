@@ -94,4 +94,12 @@
         <item name="android:textSize">14sp</item>
         <item name="font_name">@string/font_name_montserrat</item>
     </style>
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+    </style>
+    <style name="menu_labels_style">
+        <item name="android:background">@drawable/fab_bg</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
 </resources>

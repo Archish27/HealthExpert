@@ -22,6 +22,7 @@ import com.healthexpert.data.remote.api.PatientRestService;
 import com.healthexpert.data.remote.models.response.DoctorResponseWrapper;
 import com.healthexpert.data.remote.models.response.Speciality;
 import com.healthexpert.data.remote.models.response.SpecialityWrapper;
+import com.healthexpert.data.remote.models.response.UserRegisterResponse;
 import com.healthexpert.dispatcher.RetrofitObj;
 import com.healthexpert.patient.adapters.DoctorSpecialityAdapter;
 import com.healthexpert.ui.widgets.BaseEditText;
@@ -173,7 +174,6 @@ public class DoctorSpecialityActivity extends BaseActivity implements DoctorCont
         Intent i = new Intent(DoctorSpecialityActivity.this, DoctorActivity.class);
         i.putExtra("speciality", speciality);
         startActivity(i);
-        finish();
     }
 
     @Override
@@ -215,5 +215,25 @@ public class DoctorSpecialityActivity extends BaseActivity implements DoctorCont
         specialityAdapter = new DoctorSpecialityAdapter(specialities, this);
         rvSpeciality.setAdapter(specialityAdapter);
         pgProgress.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onCheckDoctorFeedback(UserRegisterResponse userRegisterResponse) {
+
+    }
+
+    @Override
+    public void onFeedback(UserRegisterResponse userRegisterResponse) {
+
+    }
+
+    @Override
+    public void onBookmarkDoctor(UserRegisterResponse userRegisterResponse) {
+
+    }
+
+    @Override
+    public void onCheckBookmark(UserRegisterResponse userRegisterResponse) {
+
     }
 }

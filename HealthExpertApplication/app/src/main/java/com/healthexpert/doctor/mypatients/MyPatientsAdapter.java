@@ -66,7 +66,7 @@ public class MyPatientsAdapter extends RecyclerView.Adapter<MyPatientsAdapter.Ne
         public NewsFeedViewHolder(final View itemView) {
             super(itemView);
             tvName = (BaseTextView) itemView.findViewById(R.id.tvName);
-            tvCity = (BaseTextView) itemView.findViewById(R.id.tvEmailId);
+            tvCity = (BaseTextView) itemView.findViewById(R.id.tvCity);
             tvPhoneno = (BaseTextView) itemView.findViewById(R.id.tvPhoneno);
             ivImage = (CircleImageView) itemView.findViewById(R.id.ivImage);
             llItem = (LinearLayout) itemView.findViewById(R.id.llItem);

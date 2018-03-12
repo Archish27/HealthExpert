@@ -26,7 +26,7 @@ with open("../final_dataset.csv", "r", encoding='utf-8') as csvfile:
 for bucket in buckets:
 	print bucket,"\n"
 '''
-with open("buckets.csv", "w", encoding='utf-8', newline='') as csvfile:
+with open("buckets_new.csv", "w", encoding='utf-8', newline='') as csvfile:
     writer = csv.writer(csvfile)
     for bucket in buckets:
         writer.writerow(bucket)

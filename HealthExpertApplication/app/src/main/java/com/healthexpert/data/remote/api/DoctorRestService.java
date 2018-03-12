@@ -1,17 +1,19 @@
 package com.healthexpert.data.remote.api;
 
-import com.healthexpert.data.remote.models.requests.DoctorRegisterRequest;
 import com.healthexpert.data.remote.models.requests.DoctorRequest;
 import com.healthexpert.data.remote.models.requests.MessageRequest;
+import com.healthexpert.data.remote.models.requests.MyRequest;
+import com.healthexpert.data.remote.models.requests.NotifyRequest;
+import com.healthexpert.data.remote.models.requests.PredictionRequest;
+import com.healthexpert.data.remote.models.requests.PrescriptionRequest;
 import com.healthexpert.data.remote.models.response.DoctorResponseWrapper;
-import com.healthexpert.data.remote.models.response.Patient;
 import com.healthexpert.data.remote.models.response.PatientWrapper;
+import com.healthexpert.data.remote.models.response.PredictionResponse;
+import com.healthexpert.data.remote.models.response.DoctorSummaryResponse;
 import com.healthexpert.data.remote.models.response.UserRegisterResponse;
 
-import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.http.Body;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
@@ -41,14 +43,26 @@ public interface DoctorRestService {
     @POST("/doctor/alldoctors")
     Observable<DoctorResponseWrapper> getDoctors();
 
-    @POST("/doctor/mypatients")
-    Observable<PatientWrapper> getPatients();
+    @POST("/doctor/bookmark/patients")
+    Observable<PatientWrapper> getPatients(@Body MyRequest myRequest);
 
     @POST("/doctor/patients")
     Observable<PatientWrapper> getPatientData(@Body DoctorRequest doctorRequest);
 
+    @POST("/doctor/patients/prediction")
+    Observable<PredictionResponse> predictDisease(@Body PredictionRequest predictionRequest);
+
     @POST("/messaging/notify")
-    void sendNotification(@Body MessageRequest messageRequest);
+    Observable<UserRegisterResponse> sendNotification(@Body MessageRequest messageRequest);
+
+    @POST("/notify")
+    Observable<UserRegisterResponse> sendNotify(@Body NotifyRequest notifyRequest);
+
+    @POST("/doctor/summary")
+    Observable<DoctorSummaryResponse> fetchSummary(@Body MyRequest summaryRequest);
+
+    @POST("/doctor/patient/prescription")
+    Observable<UserRegisterResponse> prescription(@Body PrescriptionRequest prescriptionRequest);
 
 
 }

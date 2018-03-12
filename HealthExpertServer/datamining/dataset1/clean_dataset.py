@@ -47,6 +47,13 @@ with open("clean_dataset.csv", "wt", encoding='utf-8', newline='') as csvfile:
         for v in values:
             writer.writerow([key, v, dict_wt[key], 1])
 
+with open("clean_test_dataset.csv", "wt", encoding='utf-8', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+
+    for key, values in dict_.items():
+        for v in values:
+            writer.writerow([key, v, dict_wt[key], 1])
+
 slist = []
 dlist = []
 with open("nodetable.csv", "wt", encoding='utf-8', newline='') as csvfile:

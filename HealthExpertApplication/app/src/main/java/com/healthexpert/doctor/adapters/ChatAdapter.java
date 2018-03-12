@@ -1,10 +1,15 @@
 package com.healthexpert.doctor.adapters;
 
+import android.annotation.TargetApi;
 import android.graphics.Color;
+import android.os.Build;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -49,7 +54,8 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MessageViewHol
 
     public class MessageViewHolder extends RecyclerView.ViewHolder {
 
-        public BaseTextView tvChat;
+        public BaseTextView tvChat, tvChatName;
+        LinearLayout chatLayout;
         public CircleImageView ivProfile;
         public BaseTextView tvName;
 
@@ -57,11 +63,14 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MessageViewHol
             super(view);
 
             tvChat = (BaseTextView) view.findViewById(R.id.tvChat);
+            tvChatName = (BaseTextView) view.findViewById(R.id.tvChatName);
             ivProfile = (CircleImageView) view.findViewById(R.id.ivProfile);
+            chatLayout = (LinearLayout) view.findViewById(R.id.chatLayout);
 
         }
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
     public void onBindViewHolder(final MessageViewHolder viewHolder, int i) {
 
@@ -69,14 +78,45 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MessageViewHol
         String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         String from_user = c.getFrom();
         if (from_user.equals(currentUserId)) {
-            viewHolder.tvChat.setBackgroundColor(Color.WHITE);
-            viewHolder.tvChat.setTextColor(Color.BLACK);
+            RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) viewHolder.ivProfile.getLayoutParams();
+            params.removeRule(RelativeLayout.ALIGN_PARENT_LEFT);
+            params.removeRule(RelativeLayout.ALIGN_PARENT_START);
 
+            params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+            params.addRule(RelativeLayout.ALIGN_PARENT_END);
+            params.addRule(RelativeLayout.CENTER_VERTICAL);
+            viewHolder.ivProfile.setLayoutParams(params);
+            RelativeLayout.LayoutParams params1 = (RelativeLayout.LayoutParams) viewHolder.chatLayout.getLayoutParams();
+            params1.removeRule(RelativeLayout.RIGHT_OF);
+            params1.removeRule(RelativeLayout.END_OF);
+
+            params1.addRule(RelativeLayout.LEFT_OF, R.id.ivProfile);
+            params1.addRule(RelativeLayout.START_OF, R.id.ivProfile);
+
+            viewHolder.chatLayout.setLayoutParams(params1);
+
+            LinearLayout.LayoutParams params2 = (LinearLayout.LayoutParams) viewHolder.tvChatName.getLayoutParams();
+            params2.gravity = Gravity.END;
+            viewHolder.tvChatName.setLayoutParams(params2);
         } else {
-            viewHolder.tvChat.setBackgroundResource(R.drawable.chat_background);
-            viewHolder.tvChat.setTextColor(Color.WHITE);
+            RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) viewHolder.ivProfile.getLayoutParams();
+            params.removeRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+            params.removeRule(RelativeLayout.ALIGN_PARENT_END);
+            params.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+            params.addRule(RelativeLayout.ALIGN_PARENT_START);
+            params.addRule(RelativeLayout.CENTER_VERTICAL);
+            viewHolder.ivProfile.setLayoutParams(params);
+            RelativeLayout.LayoutParams params1 = (RelativeLayout.LayoutParams) viewHolder.chatLayout.getLayoutParams();
+            params1.removeRule(RelativeLayout.LEFT_OF);
+            params1.removeRule(RelativeLayout.START_OF);
 
+            params1.addRule(RelativeLayout.RIGHT_OF, R.id.ivProfile);
+            params1.addRule(RelativeLayout.END_OF, R.id.ivProfile);
 
+            viewHolder.chatLayout.setLayoutParams(params1);
+            LinearLayout.LayoutParams params2 = (LinearLayout.LayoutParams) viewHolder.tvChatName.getLayoutParams();
+            params2.gravity = Gravity.START;
+            viewHolder.tvChatName.setLayoutParams(params2);
         }
 
         mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(from_user);
@@ -87,8 +127,10 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MessageViewHol
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 String image = dataSnapshot.child("image").getValue().toString();
-                Picasso.with(viewHolder.ivProfile.getContext()).load(Config.BASE_URL + image).resize(128, 128)
-                        .placeholder(R.drawable.avatar).into(viewHolder.ivProfile);
+                String name = dataSnapshot.child("name").getValue().toString();
+                viewHolder.tvChatName.setText(name);
+                if (!image.equals("default"))
+                    Picasso.with(viewHolder.ivProfile.getContext()).load(Config.BASE_URL + image).fit().into(viewHolder.ivProfile);
             }
 
             @Override
@@ -98,6 +140,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MessageViewHol
         });
 
         viewHolder.tvChat.setText(c.getMessage());
+
 
     }
 

@@ -54,9 +54,13 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.NewsFeedVi
         holder.tvSpeciality.setText(data.get(position).getSpeciality());
         holder.tvExp.setText(data.get(position).getExperience() + " years experience");
         holder.tvLikes.setText(data.get(position).getLikes() + " votes");
-        holder.tvRating.setText(data.get(position).getRatings().substring(0, 3));
+        if (!data.get(position).getRatings().equalsIgnoreCase("None"))
+            holder.tvRating.setText(data.get(position).getRatings());
+        else
+            holder.tvRating.setText("0");
         if (!data.get(position).getPhoto().isEmpty())
-            Picasso.with(holder.itemView.getContext()).load(Config.BASE_URL + data.get(position).getPhoto()).into(holder.ivImage);
+            Picasso.with(holder.itemView.getContext()).load(Config.BASE_URL + data.get(position).getPhoto()).fit().into(holder.ivImage);
+
 
     }
 

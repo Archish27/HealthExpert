@@ -25,6 +25,7 @@ import com.healthexpert.data.remote.models.response.DoctorResponse;
 import com.healthexpert.data.remote.models.response.DoctorResponseWrapper;
 import com.healthexpert.data.remote.models.response.Speciality;
 import com.healthexpert.data.remote.models.response.SpecialityWrapper;
+import com.healthexpert.data.remote.models.response.UserRegisterResponse;
 import com.healthexpert.dispatcher.RetrofitObj;
 import com.healthexpert.patient.adapters.DoctorAdapter;
 
@@ -39,7 +40,6 @@ public class DoctorActivity extends BaseActivity implements DoctorContract.Docto
 
     SwipeRefreshLayout swipeRefreshLayout;
     RecyclerView rvHome;
-    FloatingActionButton bFilter;
     ProgressBar pgProgress;
     DoctorPresenter doctorPresenter;
     DoctorAdapter doctorAdapter;
@@ -84,13 +84,6 @@ public class DoctorActivity extends BaseActivity implements DoctorContract.Docto
                 doctorPresenter.getDoctors(speciality);
             }
         });
-        bFilter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                showFilter();
-
-            }
-        });
 
 
     }
@@ -113,7 +106,7 @@ public class DoctorActivity extends BaseActivity implements DoctorContract.Docto
 
         final ArrayList<DoctorResponse> filteredModelList = new ArrayList<>();
         for (DoctorResponse model : models) {
-            final String text = model.getName().toLowerCase() + model.getSpeciality().toLowerCase() + model.getCity() + model.getExperience();
+            final String text = model.getCity();
             if (text.contains(query)) {
                 filteredModelList.add(model);
             }
@@ -180,7 +173,7 @@ public class DoctorActivity extends BaseActivity implements DoctorContract.Docto
         rvHome = (RecyclerView) findViewById(R.id.rvHome);
         pgProgress = (ProgressBar) findViewById(R.id.pgProgress);
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.srlHome);
-        bFilter = (FloatingActionButton) findViewById(R.id.fabFilter);
+
     }
 
     @Override
@@ -198,23 +191,13 @@ public class DoctorActivity extends BaseActivity implements DoctorContract.Docto
         Intent i = new Intent(DoctorActivity.this, DoctorDetailsActivity.class);
         i.putExtra("doctor", doctorResponse);
         startActivity(i);
-        finish();
     }
 
     @Override
     public void onCallClicked(DoctorResponse doctorResponse) {
-        Intent i = new Intent(Intent.ACTION_CALL, Uri.parse(doctorResponse.getPhoneno()));
-        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
+        Intent i = new Intent(Intent.ACTION_DIAL);
+        String p = "tel:" + doctorResponse.getPhoneno();
+        i.setData(Uri.parse(p));
         startActivity(i);
     }
 
@@ -248,6 +231,26 @@ public class DoctorActivity extends BaseActivity implements DoctorContract.Docto
 
     @Override
     public void onSpeciality(SpecialityWrapper specialityWrapper) {
+
+    }
+
+    @Override
+    public void onCheckDoctorFeedback(UserRegisterResponse userRegisterResponse) {
+
+    }
+
+    @Override
+    public void onFeedback(UserRegisterResponse userRegisterResponse) {
+
+    }
+
+    @Override
+    public void onBookmarkDoctor(UserRegisterResponse userRegisterResponse) {
+
+    }
+
+    @Override
+    public void onCheckBookmark(UserRegisterResponse userRegisterResponse) {
 
     }
 }

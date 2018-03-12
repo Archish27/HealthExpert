@@ -33,3 +33,12 @@ with open("clean_dataset.csv", "rt", encoding='utf-8') as infile, open("final_da
     for row in reader:
         newrow = [''.join('' if c in conversion else c for c in entry) for entry in row]
         writer.writerow(newrow)
+
+with open("clean_dataset.csv", "rt", encoding='utf-8') as infile, open("clean_test_dataset.csv", "wt", encoding='utf-8',
+                                                               newline='') as outfile:
+    reader = csv.reader(infile)
+    writer = csv.writer(outfile)
+    conversion = set('_"/.$()\'[X]')
+    for row in reader:
+        newrow = [''.join('' if c in conversion else c for c in entry) for entry in row]
+        writer.writerow(newrow)

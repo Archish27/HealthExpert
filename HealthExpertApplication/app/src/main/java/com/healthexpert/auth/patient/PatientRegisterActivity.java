@@ -30,6 +30,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.healthexpert.R;
 import com.healthexpert.common.BaseActivity;
 import com.healthexpert.common.Config;
@@ -68,7 +69,7 @@ import okhttp3.RequestBody;
  */
 
 public class PatientRegisterActivity extends BaseActivity implements PatientRegisterContracts.PatientRegisterView, SymptomPatientContracts.SymptomPatientView {
-    BaseEditText etName, etDob, etHeight, etWeight, etEmailId, etPhoneno, etPassword,etCPassword;
+    BaseEditText etName, etDob, etHeight, etWeight, etEmailId, etPhoneno, etPassword, etCPassword;
     BaseEditText etOccupation, etSymptoms, etHistory, etInvestigations;
     BaseEditText etPincode, etMotherName, etMotherSymptoms, etFatherName, etFatherSymptoms;
     String symptomsId = "";
@@ -134,7 +135,7 @@ public class PatientRegisterActivity extends BaseActivity implements PatientRegi
         etWeight = (BaseEditText) findViewById(R.id.etWeight);
         etEmailId = (BaseEditText) findViewById(R.id.etEmailId);
         etPassword = (BaseEditText) findViewById(R.id.etPassword);
-        etCPassword = (BaseEditText) findViewById(R.id.etPassword);
+        etCPassword = (BaseEditText) findViewById(R.id.etCPassword);
         etPhoneno = (BaseEditText) findViewById(R.id.etPhoneno);
         etOccupation = (BaseEditText) findViewById(R.id.etOccupation);
         etSymptoms = (BaseEditText) findViewById(R.id.etSymptom);
@@ -187,7 +188,8 @@ public class PatientRegisterActivity extends BaseActivity implements PatientRegi
                                 etFatherName.getText().toString(),
                                 etFatherSymptoms.getText().toString(),
                                 reqFile,
-                                etPassword.getText().toString()));
+                                etPassword.getText().toString(),
+                                FirebaseInstanceId.getInstance().getToken()));
                     } else {
                         patientRegisterPresenter.addPatientNoIcon(new PatientRequestNoIcon(etName.getText().toString(),
                                 etDob.getText().toString(),
@@ -206,7 +208,9 @@ public class PatientRegisterActivity extends BaseActivity implements PatientRegi
                                 etMotherSymptoms.getText().toString(),
                                 etFatherName.getText().toString(),
                                 etFatherSymptoms.getText().toString(),
-                                sBloodGroup.getSelectedItem().toString(), etPassword.getText().toString()));
+                                sBloodGroup.getSelectedItem().toString(),
+                                etPassword.getText().toString(),
+                                FirebaseInstanceId.getInstance().getToken()));
                     }
                 }
             }
@@ -250,12 +254,11 @@ public class PatientRegisterActivity extends BaseActivity implements PatientRegi
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String symptoms = "";
-                symptomResponses = patientAdapter.getSymptoms();
+                ArrayList<SymptomResponse> symptomResponses = patientAdapter.getAllSymptoms();
                 for (int i = 0; i < symptomResponses.size(); i++) {
-                    if (symptomResponses.get(i).isCheck()) {
-                        symptoms += symptomResponses.get(i).getSname() + ",";
-                        symptomsId += symptomResponses.get(i).getId() + ",";
-                    }
+                    symptoms += symptomResponses.get(i).getSname() + ",";
+                    symptomsId += symptomResponses.get(i).getId() + ",";
+
                 }
                 symptoms = symptoms.substring(0, symptoms.length() - 1);
                 symptomsId = symptomsId.substring(0, symptomsId.length() - 1);
@@ -407,7 +410,7 @@ public class PatientRegisterActivity extends BaseActivity implements PatientRegi
         } else if (symptomsId.isEmpty()) {
             Toast.makeText(PatientRegisterActivity.this, "Please select patient symptoms", Toast.LENGTH_SHORT).show();
             return false;
-        }else if (etPassword.getText().toString().isEmpty() || etPassword.getText().length() < 6) {
+        } else if (etPassword.getText().toString().isEmpty() || etPassword.getText().length() < 6) {
             etPassword.setFocusable(true);
             etPassword.setError("Password length should be more than 6 characters");
             return false;

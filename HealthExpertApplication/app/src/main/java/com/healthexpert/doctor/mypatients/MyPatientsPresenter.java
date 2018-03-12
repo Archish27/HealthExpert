@@ -1,6 +1,7 @@
 package com.healthexpert.doctor.mypatients;
 
 import com.healthexpert.data.remote.api.DoctorRestService;
+import com.healthexpert.data.remote.models.requests.MyRequest;
 import com.healthexpert.data.remote.models.response.DoctorResponseWrapper;
 import com.healthexpert.data.remote.models.response.PatientWrapper;
 import com.healthexpert.doctor.doctors.DoctorContract;
@@ -24,8 +25,8 @@ public class MyPatientsPresenter implements MyPatientsContract.MyPatientsPresent
     }
 
     @Override
-    public void getPatients() {
-        doctorRestService.getPatients()
+    public void getPatients(MyRequest myRequest) {
+        doctorRestService.getPatients(myRequest)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Observer<PatientWrapper>() {

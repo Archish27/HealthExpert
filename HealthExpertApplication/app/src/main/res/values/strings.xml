@@ -72,6 +72,19 @@
     <string name="select_symptoms">Select Symptoms</string>
     <string name="ratings">Ratings</string>
     <string name="messaging">Messaging</string>
+    <string name="include_paternal_details">Include Paternal Details</string>
+    <string name="would_you_recommend_the_doctor_to_your_family_and_friends">Would you recommend the doctor to your family and friends?</string>
+    <string name="yes">Yes</string>
+    <string name="no">NO</string>
+    <string name="rate_your_experience">Rate your experience</string>
+    <string name="overall_rating">Overall Rating</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="summary">Summary</string>
+    <string name="prescription">Prescription</string>
+    <string name="patient_summary">Patient Summary</string>
+    <string name="predict_disease">Predict Disease</string>
+    <string name="add_prescription">Add Prescription</string>
+    <string name="prescription_title">Prescription Title</string>
     <string-array name="bloodgroup">
         <item>Select Blood Group</item>
         <item>A+</item>

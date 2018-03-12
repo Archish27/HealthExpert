@@ -6,6 +6,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- This app has permission to register and receive data message. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
 
     <application
         android:name=".common.HealthExpert"
@@ -29,7 +32,32 @@
 
         </activity>
         <activity
+            android:name=".patient.doctors.DoctorFeedbackActivity"
+            android:label="Feedback"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+        <activity
             android:name=".auth.patient.PatientRegisterActivity"
+            android:label="@string/patient"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+        <activity
+            android:name=".patient.profile.PatientProfileActivity"
+            android:label="@string/patient"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+        <activity
+            android:name=".patient.profile.PatientEditProfileActivity"
+            android:label="@string/patient"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+
+        <activity
+            android:name=".patient.summary.PatientSummaryDetailsActivity"
             android:label="@string/patient"
             android:windowSoftInputMode="stateHidden">
 
@@ -41,8 +69,8 @@
 
         </activity>
         <activity
-            android:name=".doctor.activities.PatientSymptomActivity"
-            android:label="@string/app_name"
+            android:name=".doctor.patients.PatientSymptomActivity"
+            android:label="@string/patient"
             android:windowSoftInputMode="stateHidden">
 
         </activity>
@@ -53,8 +81,32 @@
 
         </activity>
         <activity
+            android:name=".patient.mydoctors.MyDoctorsActivity"
+            android:label="@string/doctors"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+        <activity
+            android:name=".doctor.mypatients.MyPatientsActivity"
+            android:label="@string/patient"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+        <activity
+            android:name=".doctor.mypatients.PatientDetailsActivity"
+            android:label="@string/patient"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+        <activity
             android:name=".patient.doctors.DoctorSpecialityActivity"
             android:label="@string/doctors"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+        <activity
+            android:name=".doctor.summary.DoctorSummaryActivity"
+            android:label="@string/summary"
             android:windowSoftInputMode="stateHidden">
 
         </activity>
@@ -71,13 +123,19 @@
 
         </activity>
         <activity
+            android:name=".doctor.patients.PatientActivity"
+            android:label="@string/patient"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+        <activity
             android:name=".doctor.doctors.DoctorDetailsActivity"
             android:label="@string/doctors"
             android:windowSoftInputMode="stateHidden">
 
         </activity>
         <activity
-            android:name=".doctor.fragments.ChatListActivity"
+            android:name=".doctor.chat.ChatListActivity"
             android:label="@string/messaging"
             android:parentActivityName=".dashboard.MainActivity"
             android:windowSoftInputMode="stateHidden">
@@ -94,6 +152,29 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".doctor.activities.PrescriptionActivity"
+            android:label="@string/prescription"
+            android:theme="@style/AppTheme">
+
+        </activity>
+        <activity
+            android:name=".doctor.activities.PredictionActivity"
+            android:label="@string/predict_disease"
+            android:theme="@style/AppTheme">
+
+        </activity>
+        <activity
+            android:name=".patient.summary.PatientSummaryActivity"
+            android:label="@string/summary"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="com.healthexpert.patientsummary_TARGET_NOTIFICATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
 
         <activity
             android:name=".auth.LoginActivity"
@@ -105,6 +186,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
 
         <service android:name=".MessengingService">
             <intent-filter>

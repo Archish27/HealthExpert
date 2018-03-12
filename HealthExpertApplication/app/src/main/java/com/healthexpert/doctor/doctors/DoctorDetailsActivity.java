@@ -11,10 +11,12 @@ import android.view.View;
 
 import com.healthexpert.R;
 import com.healthexpert.common.BaseActivity;
+import com.healthexpert.common.Config;
 import com.healthexpert.data.remote.models.response.DoctorResponse;
 import com.healthexpert.doctor.chat.ChatActivity;
 import com.healthexpert.ui.widgets.BaseButton;
 import com.healthexpert.ui.widgets.BaseTextView;
+import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -24,7 +26,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class DoctorDetailsActivity extends BaseActivity {
     CircleImageView circleImageView;
-    BaseTextView tvFullName, tvSpeciality, tvExperience, tvLikes, tvEmailId, tvAddress;
+    BaseTextView tvFullName, tvSpeciality, tvExperience, tvLikes, tvEmailId, tvAddress,tvPhoneno;
     AppCompatRatingBar rbRating;
     BaseButton bChat;
     FloatingActionButton fabBookmark;
@@ -68,7 +70,11 @@ public class DoctorDetailsActivity extends BaseActivity {
         tvSpeciality.setText(doctorResponse.getSpeciality());
         tvAddress.setText(doctorResponse.getCity() + " - " + doctorResponse.getPincode());
         tvLikes.setText(doctorResponse.getLikes() + " votes");
-//        rbRating.setRating(Float.parseFloat(doctorResponse.getRatings().substring(0,3).trim()));
+        tvPhoneno.setText(doctorResponse.getPhoneno());
+        if (!doctorResponse.getRatings().equalsIgnoreCase("None"))
+            rbRating.setRating(Float.parseFloat(doctorResponse.getRatings()));
+        if (!doctorResponse.getPhoto().isEmpty())
+            Picasso.with(getApplicationContext()).load(Config.BASE_URL + doctorResponse.getPhoto()).fit().into(circleImageView);
         bChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,6 +95,7 @@ public class DoctorDetailsActivity extends BaseActivity {
         tvLikes = (BaseTextView) findViewById(R.id.tvLikes);
         tvEmailId = (BaseTextView) findViewById(R.id.tvEmailId);
         tvAddress = (BaseTextView) findViewById(R.id.tvAddress);
+        tvPhoneno = (BaseTextView) findViewById(R.id.tvPhoneno);
         rbRating = (AppCompatRatingBar) findViewById(R.id.rbRate);
     }
 

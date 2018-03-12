@@ -10,13 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.healthexpert.R;
-import com.healthexpert.admin.activities.AdminDoctorDetailsActivity;
 import com.healthexpert.common.BaseFragment;
-import com.healthexpert.data.remote.models.response.Doctor;
-import com.healthexpert.patient.adapters.DoctorSpecialityAdapter;
+import com.healthexpert.data.local.SharedPreferenceManager;
 import com.healthexpert.patient.adapters.PatientHomeAdapter;
-import com.healthexpert.patient.doctors.DoctorActivity;
 import com.healthexpert.patient.doctors.DoctorSpecialityActivity;
+import com.healthexpert.patient.mydoctors.MyDoctorsActivity;
+import com.healthexpert.patient.profile.PatientProfileActivity;
+import com.healthexpert.patient.summary.PatientSummaryActivity;
 
 import java.util.ArrayList;
 
@@ -64,15 +64,16 @@ public class PatientHomeFragment extends BaseFragment implements PatientHomeAdap
                 startActivity(i);
                 break;
             case 1:
-                Intent i1 = new Intent(getActivity(), DoctorSpecialityActivity.class);
+                Intent i1 = new Intent(getActivity(), PatientSummaryActivity.class);
+                i1.putExtra("accesstoken", new SharedPreferenceManager(getActivity().getApplicationContext()).getAccessToken());
                 startActivity(i1);
                 break;
             case 2:
-                Intent i2 = new Intent(getActivity(), DoctorSpecialityActivity.class);
+                Intent i2 = new Intent(getActivity(), MyDoctorsActivity.class);
                 startActivity(i2);
                 break;
             case 3:
-                Intent i3 = new Intent(getActivity(), DoctorSpecialityActivity.class);
+                Intent i3 = new Intent(getActivity(), PatientProfileActivity.class);
                 startActivity(i3);
                 break;
         }

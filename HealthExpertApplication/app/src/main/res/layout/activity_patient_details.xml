@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:sothree="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/sliding_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="bottom"
-    sothree:umanoDragView="@+id/dragView"
-    sothree:umanoOverlay="true"
-    sothree:umanoPanelHeight="68dp"
-    sothree:umanoParallaxOffset="100dp"
-    sothree:umanoScrollableView="@+id/list"
-    sothree:umanoShadowHeight="4dp">
+    android:layout_height="match_parent">
 
-    <FrameLayout
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/clLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#212121"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,6 +16,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:background="#212121"
                 android:id="@+id/viewA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -36,12 +28,13 @@
                     android:layout_height="128dp"
                     android:layout_gravity="center"
                     android:padding="16dp"
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@drawable/avatar"
                     android:textColor="@color/colorPrimary"
                     tools:civ_border_color="@color/colorPrimaryDark"
                     tools:civ_border_width="2dp" />
 
             </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -61,7 +54,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Archish Thakkar"
                         android:textSize="18sp" />
                 </android.support.design.widget.TextInputLayout>
 
@@ -75,8 +67,21 @@
                         style="@style/SecondaryText"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="Mumbai - 440009" />
+                        android:gravity="center" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <com.healthexpert.ui.widgets.BaseTextView
+                        android:id="@+id/tvDob"
+                        style="@style/TertiaryText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -101,8 +106,7 @@
                             android:id="@+id/tvHeight"
                             style="@style/SecondaryText"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="5.5 inch" />
+                            android:layout_height="wrap_content" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -121,8 +125,7 @@
                             android:id="@+id/tvWeight"
                             style="@style/SecondaryText"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="55 kgs" />
+                            android:layout_height="wrap_content" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -147,8 +150,7 @@
                             android:id="@+id/tvOccupation"
                             style="@style/SecondaryText"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Student" />
+                            android:layout_height="wrap_content" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -171,17 +173,50 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <com.healthexpert.ui.widgets.BaseTextView
-                    style="@style/PrimaryText"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/history" />
+                    android:orientation="horizontal">
 
-                <com.healthexpert.ui.widgets.BaseTextView
-                    android:id="@+id/tvHistory"
-                    style="@style/SecondaryText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <com.healthexpert.ui.widgets.BaseTextView
+                            style="@style/PrimaryText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/history" />
+
+                        <com.healthexpert.ui.widgets.BaseTextView
+                            android:id="@+id/tvHistory"
+                            style="@style/SecondaryText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <com.healthexpert.ui.widgets.BaseTextView
+                            style="@style/PrimaryText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/blood_group" />
+
+                        <com.healthexpert.ui.widgets.BaseTextView
+                            android:id="@+id/tvBloodGroup"
+                            style="@style/SecondaryText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+
 
                 <com.healthexpert.ui.widgets.BaseTextView
                     style="@style/PrimaryText"
@@ -246,37 +281,18 @@
 
             </LinearLayout>
         </LinearLayout>
-    </FrameLayout>
 
-    <LinearLayout
-        android:id="@+id/dragView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-
-        <com.healthexpert.ui.widgets.BaseEditText
-            android:id="@+id/etSymptom"
-            style="@style/PrimaryText"
-            android:layout_width="match_parent"
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabBookmark"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clickable="true"
-            android:focusable="false"
-            android:hint="@string/select_symptoms" />
+            android:layout_margin="16dp"
+            android:src="@drawable/star_outline"
+            android:tag="99"
+            sothree:backgroundTint="@color/colorPrimary"
+            sothree:layout_anchor="@id/viewA"
+            sothree:layout_anchorGravity="bottom|right|end" />
 
-        <com.healthexpert.ui.widgets.BaseTextView
-            android:id="@+id/etResults"
-            style="@style/PrimaryText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+    </android.support.design.widget.CoordinatorLayout>
 
-        <com.healthexpert.ui.widgets.BaseButton
-            android:id="@+id/bSubmit"
-            style="@style/BaseButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/submit" />
-
-    </LinearLayout>
-</com.sothree.slidinguppanel.SlidingUpPanelLayout>
+</ScrollView>

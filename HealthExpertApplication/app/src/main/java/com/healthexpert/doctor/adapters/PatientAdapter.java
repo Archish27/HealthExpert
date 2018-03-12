@@ -8,10 +8,14 @@ import android.widget.LinearLayout;
 
 import com.healthexpert.R;
 
+import com.healthexpert.common.Config;
 import com.healthexpert.data.remote.models.response.Patient;
 import com.healthexpert.ui.widgets.BaseTextView;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 /**
@@ -44,8 +48,8 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.NewsFeed
         holder.tvName.setText(data.get(position).getName());
         holder.tvPhoneno.setText(data.get(position).getPhoneno());
         holder.tvCity.setText(data.get(position).getCity());
-//        if (!data.get(position).getHimage().isEmpty())
-//            Picasso.with(holder.itemView.getContext()).load(Config.BASE_URL + data.get(position).getHimage()).into(holder.ivImage);
+        if (!data.get(position).getPhoto().isEmpty())
+            Picasso.with(holder.itemView.getContext()).load(Config.BASE_URL + data.get(position).getPhoto()).into(holder.ivImage);
 //        else
 //            holder.ivImage.setVisibility(View.GONE);
 
@@ -58,7 +62,8 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.NewsFeed
 
     public class NewsFeedViewHolder extends RecyclerView.ViewHolder {
 
-        BaseTextView tvName, tvEmailId, tvPhoneno, tvCity;
+        BaseTextView tvName, tvPhoneno, tvCity;
+        CircleImageView ivImage;
         LinearLayout llItem;
 
         public NewsFeedViewHolder(final View itemView) {
@@ -66,13 +71,14 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.NewsFeed
             tvName = (BaseTextView) itemView.findViewById(R.id.tvName);
             tvPhoneno = (BaseTextView) itemView.findViewById(R.id.tvPhoneno);
             tvCity = (BaseTextView) itemView.findViewById(R.id.tvCity);
+            ivImage = (CircleImageView) itemView.findViewById(R.id.ivImage);
             llItem = (LinearLayout) itemView.findViewById(R.id.llItem);
             llItem.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (commander != null) {
+                    if (commander != null)
                         commander.onItemCardClicked(data.get(getAdapterPosition()));
-                    }
+
                 }
             });
 
