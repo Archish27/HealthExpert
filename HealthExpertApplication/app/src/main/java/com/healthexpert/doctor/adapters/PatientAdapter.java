@@ -10,6 +10,7 @@ import com.healthexpert.R;
 
 import com.healthexpert.common.Config;
 import com.healthexpert.data.remote.models.response.Patient;
+import com.healthexpert.data.remote.models.response.Patient;
 import com.healthexpert.ui.widgets.BaseTextView;
 import com.squareup.picasso.Picasso;
 
@@ -85,6 +86,58 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.NewsFeed
         }
 
     }
+
+    public void animateTo(ArrayList<Patient> models) {
+        applyAndAnimateRemovals(models);
+        applyAndAnimateAdditions(models);
+        applyAndAnimateMovedItems(models);
+    }
+
+    private void applyAndAnimateRemovals(ArrayList<Patient> newModels) {
+        for (int i = data.size() - 1; i >= 0; i--) {
+            final Patient model = data.get(i);
+            if (!newModels.contains(model)) {
+                removeItem(i);
+            }
+        }
+    }
+
+    private void applyAndAnimateAdditions(ArrayList<Patient> newModels) {
+        for (int i = 0, count = newModels.size(); i < count; i++) {
+            final Patient model = newModels.get(i);
+            if (!data.contains(model)) {
+                addItem(i, model);
+            }
+        }
+    }
+
+    private void applyAndAnimateMovedItems(ArrayList<Patient> newModels) {
+        for (int toPosition = newModels.size() - 1; toPosition >= 0; toPosition--) {
+            final Patient model = newModels.get(toPosition);
+            final int fromPosition = data.indexOf(model);
+            if (fromPosition >= 0 && fromPosition != toPosition) {
+                moveItem(fromPosition, toPosition);
+            }
+        }
+    }
+
+    public Patient removeItem(int position) {
+        final Patient model = data.remove(position);
+        notifyItemRemoved(position);
+        return model;
+    }
+
+    public void addItem(int position, Patient model) {
+        data.add(position, model);
+        notifyItemInserted(position);
+    }
+
+    public void moveItem(int fromPosition, int toPosition) {
+        final Patient model = data.remove(fromPosition);
+        data.add(toPosition, model);
+        notifyItemMoved(fromPosition, toPosition);
+    }
+
 
 
 }

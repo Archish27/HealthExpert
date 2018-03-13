@@ -40,7 +40,7 @@ import java.util.List;
  * Created by Archish on 1/28/2017.
  */
 
-public class DoctorActivity extends BaseActivity implements DoctorContract.DoctorView, DoctorAdapter.LikeItemUpdateListener, SearchView.OnQueryTextListener {
+    public class DoctorActivity extends BaseActivity implements DoctorContract.DoctorView, DoctorAdapter.LikeItemUpdateListener, SearchView.OnQueryTextListener {
 
     SwipeRefreshLayout swipeRefreshLayout;
     RecyclerView rvHome;

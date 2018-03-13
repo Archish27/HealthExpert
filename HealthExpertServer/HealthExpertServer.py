@@ -376,6 +376,7 @@ def patient_prediction():
 
         # Prediction of disease based on symptoms
         res = predict()
+        #Cleaning -> Association (Apriori) -> Classification(MultinominalNB)->RES
         return jsonify(result=res)
 
 
@@ -884,4 +885,4 @@ def allowed_file(filename):
 
 
 if __name__ == '__main__':
-    app.run(host='192.168.0.103', port=5000)
+    app.run(host='192.168.2.103', port=5000)

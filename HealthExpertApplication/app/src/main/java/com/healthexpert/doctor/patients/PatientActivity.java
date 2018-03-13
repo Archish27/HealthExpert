@@ -4,9 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -16,23 +20,27 @@ import com.healthexpert.data.local.SharedPreferenceManager;
 import com.healthexpert.data.remote.api.DoctorRestService;
 import com.healthexpert.data.remote.models.requests.DoctorRequest;
 import com.healthexpert.data.remote.models.response.Patient;
+import com.healthexpert.data.remote.models.response.Patient;
 import com.healthexpert.data.remote.models.response.PatientWrapper;
 import com.healthexpert.data.remote.models.response.PredictionResponse;
 import com.healthexpert.dispatcher.RetrofitObj;
 import com.healthexpert.doctor.adapters.PatientAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Archish on 1/28/2017.
  */
 
-public class PatientActivity extends BaseActivity implements PatientContract.PatientView, PatientAdapter.LikeItemUpdateListener {
+public class PatientActivity extends BaseActivity implements PatientContract.PatientView, PatientAdapter.LikeItemUpdateListener, SearchView.OnQueryTextListener {
 
     SwipeRefreshLayout swipeRefreshLayout;
     RecyclerView rvHome;
     PatientPresenter patientPresenter;
     ProgressBar pgProgress;
+    ArrayList<Patient> patients;
+    PatientAdapter patientAdapter;
 
     @Override
     public void onNetworkException(Throwable e) {
@@ -40,8 +48,26 @@ public class PatientActivity extends BaseActivity implements PatientContract.Pat
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // handle arrow click here
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        }
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+
+    @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         setContentView(R.layout.fragment_patient);
         rvHome = (RecyclerView) findViewById(R.id.rvHome);
         pgProgress = (ProgressBar) findViewById(R.id.pgProgress);
@@ -59,11 +85,46 @@ public class PatientActivity extends BaseActivity implements PatientContract.Pat
         });
     }
 
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        final ArrayList<Patient> filteredModelList = filter(patients, newText);
+        patientAdapter.animateTo(filteredModelList);
+        rvHome.scrollToPosition(0);
+        return false;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_search, menu);
+        final MenuItem item = menu.findItem(R.id.action_search);//Menu Resource, Menu
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(item);
+        searchView.setOnQueryTextListener(this);
+        return true;
+    }
+
+    private ArrayList<Patient> filter(List<Patient> models, String query) {
+        query = query.toLowerCase();
+
+        final ArrayList<Patient> filteredModelList = new ArrayList<>();
+        for (Patient model : models) {
+            final String text = model.getName();
+            if (text.contains(query)) {
+                filteredModelList.add(model);
+            }
+        }
+        return filteredModelList;
+    }
 
 
     @Override
     public void onPatientData(PatientWrapper patientWrapper) {
-        ArrayList<Patient> patients = new ArrayList<>();
+        patients = new ArrayList<>();
         for (int i = 0; i < patientWrapper.data.size(); i++) {
             Patient patient = new Patient(patientWrapper.data.get(i).getPid(),
                     patientWrapper.data.get(i).getName(),
@@ -88,7 +149,7 @@ public class PatientActivity extends BaseActivity implements PatientContract.Pat
                     patientWrapper.data.get(i).getDevicetoken());
             patients.add(patient);
         }
-        PatientAdapter patientAdapter = new PatientAdapter(patients, PatientActivity.this);
+        patientAdapter = new PatientAdapter(patients, PatientActivity.this);
         rvHome.setAdapter(patientAdapter);
         if (swipeRefreshLayout.isRefreshing())
             swipeRefreshLayout.setRefreshing(false);

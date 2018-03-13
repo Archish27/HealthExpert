@@ -31,11 +31,11 @@ def classification():
     testy = test_data['disease']
     predict = mnb.predict(testx)
     print(predict[0])
-    score = 0
+    score = 0.0
     while score == 0.0:
         score = mnb.score(testx, testy)
     print(score)
-    score = round(score * 100, 1)
+    score = round(score * 100, 1) #0.2112121212 -> 2.1
     res = "Disease" + " - "+"Probability of having disease\n\n"
     res += str(predict[0] + " - " +str(score)+"%")
     return res

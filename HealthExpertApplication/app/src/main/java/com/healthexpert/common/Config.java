@@ -1,7 +1,7 @@
 package com.healthexpert.common;
 
 /**
- * Created by Archish on 12/20/2016.
+ * Created by shivani on 12/20/2016.
  */
 
 
@@ -17,7 +17,7 @@ import android.widget.TextView;
  */
 public class Config {
     public static final String IMAGE_DIRECTORY_NAME = "HealthExpert";
-    public static final String BASE_URL = "http://192.168.0.103:5000/";
+    public static final String BASE_URL = "http://192.168.2.103:5000/";
 
 
     public static void changeFontInViewGroup(ViewGroup viewGroup, int fontType) {

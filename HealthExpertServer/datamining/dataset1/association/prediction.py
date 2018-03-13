@@ -15,8 +15,8 @@ def get_disease_new(symptoms):
         with open(os.path.join(__file__, "../", "rollup_dataset.csv"), "rt", encoding='utf-8') as csvfile:
             reader = csv.reader(csvfile)
             for row in reader:
-                row_clean = [i for i in row if i]
-                for sym in symptoms:
+                row_clean = [i for i in row if i] #Eliminates white spaces
+                for sym in symptoms: #[['cough','vomit']['vomit','headache']]
                     disease = []
                     if sym in row_clean:
                         disease.append(row_clean[0])
@@ -79,7 +79,7 @@ def get_disease_new(symptoms):
 
 
 
-
+#Association Rule
 def Apriori_gen(Itemset, lenght):
     canditate = []
     for i in range(0, lenght):
@@ -93,7 +93,7 @@ def Apriori_gen(Itemset, lenght):
                 canditate.append(unionset)
     return canditate
 
-
+#Frequent Item sets
 def Apriori_prune(Ck, minsupport):
     L = []
     for i in Ck:

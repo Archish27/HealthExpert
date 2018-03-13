@@ -106,7 +106,7 @@ public class MyPatientsActivity extends BaseActivity implements MyPatientsContra
 
         final ArrayList<Patient> filteredModelList = new ArrayList<>();
         for (Patient model : models) {
-            final String text = model.getName().toLowerCase() + model.getCity();
+            final String text = model.getName().toLowerCase();
             if (text.contains(query)) {
                 filteredModelList.add(model);
             }

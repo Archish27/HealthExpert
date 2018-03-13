@@ -94,7 +94,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), DoctorRegisterActivity.class);
                 startActivity(i);
-                finish();
+
             }
         });
         bRegisterPatient.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +102,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), PatientRegisterActivity.class);
                 startActivity(i);
-                finish();
+
             }
         });
     }
