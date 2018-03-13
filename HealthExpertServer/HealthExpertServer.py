@@ -6,7 +6,7 @@ from pyfcm import FCMNotification
 import hashlib
 from firebase import firebase
 from os.path import join, dirname, realpath
-from datamining.dataset3.association.prediction import predict
+from datamining.dataset1.association.prediction import predict
 
 push_service = FCMNotification(api_key='AIzaSyAJAUIw8JlY64FYmft7MfZyyZqlqd18NII')
 
@@ -255,6 +255,7 @@ def get_mypatients():
 
         return jsonify(data=list_data)
 
+
 @app.route('/patient/profile', methods=['GET', 'POST'])
 def patient_profile():
     if request.method == 'POST':
@@ -264,7 +265,8 @@ def patient_profile():
 
         cur = mysql.connection.cursor()
         cur.execute(
-            '''SELECT p_id,p_name,p_dob,p_gender,p_height,p_weight,p_phoneno,p_occupation,p_symptoms,p_bloodgroup,p_history,p_investigations,p_city,p_pincode,p_mothername,p_mothersymptoms,p_fathername,p_fathersymptoms,p_photo,p_accesstoken,p_devicetoken FROM patient INNER JOIN users WHERE p_accesstoken=%s ORDER BY p_name ''',(accesstoken,))
+            '''SELECT p_id,p_name,p_dob,p_gender,p_height,p_weight,p_phoneno,p_occupation,p_symptoms,p_bloodgroup,p_history,p_investigations,p_city,p_pincode,p_mothername,p_mothersymptoms,p_fathername,p_fathersymptoms,p_photo,p_accesstoken,p_devicetoken FROM patient INNER JOIN users WHERE p_accesstoken=%s ORDER BY p_name ''',
+            (accesstoken,))
         list_data = []
         for row in cur:
             psymptoms = row[8]
@@ -365,13 +367,14 @@ def patient_prediction():
             buckets.append(mother_symptoms)
             buckets.append(father_symptoms)
 
-        with open(os.path.join(__file__, "../datamining/dataset3/association/", "buckets_new.csv"), 'w',
+        with open(os.path.join(__file__, "../datamining/dataset1/association/", "buckets_new.csv"), 'w',
                   encoding='utf-8', newline='') as csvfile:
             writer = csv.writer(csvfile)
             for bucket in buckets:
                 writer.writerow(bucket)
         csvfile.close()
 
+        # Prediction of disease based on symptoms
         res = predict()
         return jsonify(result=res)
 
@@ -491,7 +494,7 @@ def status_doctor():
             registration_id = result.get("device_token")
             name = result.get("name")
             push_service.notify_single_device(registration_id=registration_id, message_title="Health Expert"
-                                              , message_body=name + " your registration is verified",sound="default")
+                                              , message_body=name + " your registration is verified", sound="default")
             return jsonify(status=True,
                            message="Doctor Verified")
         else:
@@ -730,7 +733,6 @@ def messaging_notify():
                                                         message_body=message_body, click_action=action,
                                                         data_message=data_message)
         return jsonify(status=True, message="Success")
-
 
 
 @app.route('/notify', methods=['GET', 'POST'])

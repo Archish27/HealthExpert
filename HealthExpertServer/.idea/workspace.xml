@@ -2,178 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82a48e96-b7da-4f74-9b2e-5d29e9a8d6aa" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/BookmarkRequest.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/DoctorCheckFeedback.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/DoctorFeedback.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/MyRequest.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/NotifyRequest.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/PatientUpdateRequestNoIcon.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/PredictionRequest.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/PrescriptionRequest.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/response/DoctorSummaryResponse.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/response/PatientSummaryResponse.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/response/PatientSummaryResponseWrapper.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/response/PredictionResponse.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/activities/PredictionActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/activities/PrescriptionActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/mypatients/PatientDetailsActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/profile/DoctorProfileActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/summary/DoctorSummaryActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/summary/DoctorSummaryContract.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/summary/DoctorSummaryPresenter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/doctors/DoctorFeedbackActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/mydoctors/MyDoctorsActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/mydoctors/MyDoctorsAdapter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/mydoctors/MyDoctorsContract.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/mydoctors/MyDoctorsPresenter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/profile/PatientEditProfileActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/profile/PatientProfileActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/profile/PatientProfileContract.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/profile/PatientProfilePresenter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/summary/PatientSummaryActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/summary/PatientSummaryAdapter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/summary/PatientSummaryContract.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/summary/PatientSummaryDetailsActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/summary/PatientSummaryPresenter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/ui/widgets/BaseMaterialEditText.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/bookmark_fill.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/bookmark_outline.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/down_grey.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/edit.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/fab_bg.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/gender.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/online.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/predict_small.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/prescription_small.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/rectangle.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/rounded.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/rounded_color.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/send.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/star_fill.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/star_outline.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/summary_small.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/telephone.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/toggle_off.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/toggle_on.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/toggle_selector.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/drawable/up_grey.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_doctor_feedback.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_patient_profile_edit.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_patient_summary.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_patient_symptoms.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_prediction.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_prescription.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/adapter_summary.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/menu/menu_patient_symptom.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/association/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/association/apriori.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/association/apriori_new.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/association/apriori_new_1.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/association/buckets.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/association/buckets_new.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/association/disease_probabilityscores_from_symptomlist.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/association/freq-itemsets/edge.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/association/freq-itemsets/node.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/association/freq-itemsets/pass_5.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/association/make_buckets.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/association/prediction.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/association/rollup_dataset.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/association/rollup_datasets.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/association/testing.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/module-association/apriori_new.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/module-association/apriori_new_1.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/module-association/buckets_new.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/module-classification/pivoted_data_new.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/module-classification/testing.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/sample/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset3/association/apriori.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset3/association/buckets.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset3/association/decisiontree.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset3/association/disease_probabilityscores_from_symptomlist.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset3/association/freq-itemsets/edge.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset3/association/freq-itemsets/node.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset3/association/freq-itemsets/pass_5.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset3/association/make_buckets.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset3/association/prediction.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset3/association/rollup_dataset.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset3/association/rollup_datasets.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset3/module-association/apriori_new.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset3/module-classification/testing.csv" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/build.gradle" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/LoginActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/LoginActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/patient/PatientRegisterActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/auth/patient/PatientRegisterActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/common/BaseActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/common/BaseActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/common/Config.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/common/Config.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/common/HealthExpert.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/common/HealthExpert.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/dashboard/MainActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/dashboard/MainActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/local/SharedPreferenceManager.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/local/SharedPreferenceManager.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/api/DoctorRestService.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/api/DoctorRestService.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/api/PatientRestService.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/api/PatientRestService.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/Conv.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/Conv.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/MessageRequest.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/MessageRequest.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/PatientRegisterRequest.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/PatientRegisterRequest.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/PatientRequestNoIcon.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/requests/PatientRequestNoIcon.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/response/Patient.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/data/remote/models/response/Patient.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/activities/PatientSymptomActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/patients/PatientSymptomActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/adapters/ChatAdapter.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/adapters/ChatAdapter.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/adapters/DoctorAdapter.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/adapters/DoctorAdapter.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/adapters/PatientAdapter.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/adapters/PatientAdapter.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/chat/ChatActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/chat/ChatActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/chat/ChatContracts.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/chat/ChatContracts.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/chat/ChatPresenter.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/chat/ChatPresenter.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/doctors/DoctorActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/doctors/DoctorActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/doctors/DoctorContract.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/doctors/DoctorContract.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/doctors/DoctorDetailsActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/doctors/DoctorDetailsActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/doctors/DoctorPresenter.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/doctors/DoctorPresenter.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/fragments/ChatListActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/chat/ChatListActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/fragments/DoctorHomeFragment.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/fragments/DoctorHomeFragment.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/fragments/PatientActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/patients/PatientActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/fragments/PatientContract.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/patients/PatientContract.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/fragments/PatientPresenter.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/patients/PatientPresenter.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/mypatients/MyPatientsActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/mypatients/MyPatientsActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/mypatients/MyPatientsAdapter.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/mypatients/MyPatientsAdapter.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/mypatients/MyPatientsContract.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/mypatients/MyPatientsContract.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/mypatients/MyPatientsPresenter.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/doctor/mypatients/MyPatientsPresenter.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/adapters/DoctorAdapter.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/adapters/DoctorAdapter.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/doctors/DoctorActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/doctors/DoctorActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/doctors/DoctorContract.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/doctors/DoctorContract.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/doctors/DoctorDetailsActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/doctors/DoctorDetailsActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/doctors/DoctorPresenter.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/doctors/DoctorPresenter.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/doctors/DoctorSpecialityActivity.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/doctors/DoctorSpecialityActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/fragments/PatientHomeFragment.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/fragments/PatientHomeFragment.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/symptom/adapters/SymptomAdapter.java" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/java/com/healthexpert/patient/symptom/adapters/SymptomAdapter.java" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_chat.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_chat.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_doctor_profile.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_doctor_profile.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_doctor_summary.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_doctor_summary.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_patient_details.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_patient_details.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_patient_profile.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/activity_patient_profile.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/adapter_chat.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/adapter_chat.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/adapter_doctors.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/adapter_doctors.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/adapter_patient.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/adapter_patient.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/fragment_doctor.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/fragment_doctor.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/layout_doctor_details.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/layout_doctor_details.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/layout_doctors_details.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/layout_doctors_details.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/nav_header_main.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/nav_header_main.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/users_single_layout.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/layout/users_single_layout.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/menu/activity_main_drawer.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/menu/activity_main_drawer.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/values/colors.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/values/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/../HealthExpertApplication/app/src/main/res/values/styles.xml" />
-      <change beforePath="$PROJECT_DIR$/../HealthExpertApplication/build.gradle" afterPath="$PROJECT_DIR$/../HealthExpertApplication/build.gradle" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/classification/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/classification/decisiontree.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/classification/nb_classifier.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/classification/randomforestclassifier.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/cleaning/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/cleaning/clean_dataset.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/datamining/dataset1/cleaning/collecting_dataset.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/HealthEnvironment/pip-selfcheck.json" afterPath="$PROJECT_DIR$/HealthEnvironment/pip-selfcheck.json" />
       <change beforePath="$PROJECT_DIR$/HealthExpertServer.py" afterPath="$PROJECT_DIR$/HealthExpertServer.py" />
-      <change beforePath="$PROJECT_DIR$/datamining/dataset1/clean_dataset.csv" afterPath="$PROJECT_DIR$/datamining/dataset1/clean_dataset.csv" />
+      <change beforePath="$PROJECT_DIR$/datamining/dataset1/association/buckets_new.csv" afterPath="$PROJECT_DIR$/datamining/dataset1/association/buckets_new.csv" />
+      <change beforePath="$PROJECT_DIR$/datamining/dataset1/association/prediction.py" afterPath="$PROJECT_DIR$/datamining/dataset1/association/prediction.py" />
       <change beforePath="$PROJECT_DIR$/datamining/dataset1/clean_dataset.py" afterPath="$PROJECT_DIR$/datamining/dataset1/clean_dataset.py" />
-      <change beforePath="$PROJECT_DIR$/datamining/dataset1/module-association/apriori.py" afterPath="$PROJECT_DIR$/datamining/dataset1/module-association/apriori.py" />
-      <change beforePath="$PROJECT_DIR$/datamining/dataset1/module-association/buckets.csv" afterPath="$PROJECT_DIR$/datamining/dataset1/module-association/buckets.csv" />
-      <change beforePath="$PROJECT_DIR$/datamining/dataset1/module-association/disease_probabilityscores_from_symptomlist.csv" afterPath="$PROJECT_DIR$/datamining/dataset1/module-association/disease_probabilityscores_from_symptomlist.csv" />
       <change beforePath="$PROJECT_DIR$/datamining/dataset1/module-classification/decisiontree.py" afterPath="$PROJECT_DIR$/datamining/dataset1/module-classification/decisiontree.py" />
       <change beforePath="$PROJECT_DIR$/datamining/dataset1/module-classification/nb_classifier.py" afterPath="$PROJECT_DIR$/datamining/dataset1/module-classification/nb_classifier.py" />
-      <change beforePath="$PROJECT_DIR$/datamining/dataset3/clean_dataset.py" afterPath="$PROJECT_DIR$/datamining/dataset3/clean_dataset.py" />
-      <change beforePath="$PROJECT_DIR$/datamining/dataset3/module-association/make_buckets.py" afterPath="$PROJECT_DIR$/datamining/dataset3/module-association/make_buckets.py" />
-      <change beforePath="$PROJECT_DIR$/datamining/dataset3/module-classification/decisiontree.py" afterPath="$PROJECT_DIR$/datamining/dataset3/module-classification/decisiontree.py" />
+      <change beforePath="$PROJECT_DIR$/datamining/dataset1/module-classification/randomforestclassifier.py" afterPath="$PROJECT_DIR$/datamining/dataset1/module-classification/randomforestclassifier.py" />
+      <change beforePath="$PROJECT_DIR$/datamining/dataset1/module-classification/testing.csv" afterPath="$PROJECT_DIR$/datamining/dataset1/module-classification/testing.csv" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -184,7 +28,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/HealthExpertServer$apriori_new_1.coverage" NAME="apriori_new_1 Coverage Results" MODIFIED="1520846950353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/datamining/dataset1/module-association" />
-    <SUITE FILE_PATH="coverage/HealthExpertServer$HealthExpertServer.coverage" NAME="HealthExpertServer Coverage Results" MODIFIED="1520889329246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/HealthExpertServer$HealthExpertServer.coverage" NAME="HealthExpertServer Coverage Results" MODIFIED="1520931249742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/HealthExpertServer$apriori__2_.coverage" NAME="apriori (2) Coverage Results" MODIFIED="1518449303470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Symptom-X--master/a-priori" />
     <SUITE FILE_PATH="coverage/HealthExpertServer$apriori.coverage" NAME="apriori Coverage Results" MODIFIED="1518993372315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/datamining/dataset3/module-association" />
     <SUITE FILE_PATH="coverage/HealthExpertServer$nb_classifier.coverage" NAME="nb_classifier Coverage Results" MODIFIED="1520688708446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/datamining/dataset1/module-classification" />
@@ -210,23 +54,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="apriori_new_1.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datamining/dataset1/module-association/apriori_new_1.py">
+      <file leaf-file-name="clean_dataset.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datamining/dataset1/clean_dataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nb_classifier.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datamining/dataset1/module-classification/nb_classifier.py">
+      <file leaf-file-name="clean_dataset.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datamining/dataset1/cleaning/clean_dataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="17">
+              <caret line="49" column="41" lean-forward="true" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="collecting_dataset.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datamining/dataset1/cleaning/collecting_dataset.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -234,134 +86,125 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="decisiontree.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datamining/dataset1/module-classification/decisiontree.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="apriori.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../Symptom-X--master/a-priori/apriori.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="131" column="16" lean-forward="false" selection-start-line="131" selection-start-column="16" selection-end-line="131" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HealthExpertServer.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HealthExpertServer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HealthExpertServer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="493" column="115" lean-forward="false" selection-start-line="493" selection-start-column="115" selection-end-line="493" selection-end-column="115" />
+            <state relative-caret-position="125">
+              <caret line="377" column="0" lean-forward="false" selection-start-line="377" selection-start-column="0" selection-end-line="377" selection-end-column="0" />
               <folding>
-                <marker date="1520892646611" expanded="true" signature="2192:2358" ph="INSERT INTO doctor... " />
-                <marker date="1520892646611" expanded="true" signature="2508:2598" ph="INSERT into users... " />
-                <marker date="1520892646611" expanded="true" signature="4258:4588" ph="INSERT INTO patient... " />
-                <marker date="1520892646611" expanded="true" signature="4849:4939" ph="INSERT into users... " />
-                <marker date="1520892646611" expanded="true" signature="6605:6924" ph="INSERT INTO patient... " />
-                <marker date="1520892646611" expanded="true" signature="7178:7268" ph="INSERT into users... " />
-                <marker date="1520892646611" expanded="true" signature="7842:7945" ph="SELECT u_sta... users" />
-                <marker date="1520892646611" expanded="true" signature="8897:8947" ph="UPDATE doctor... " />
-                <marker date="1520892646611" expanded="true" signature="9271:9322" ph="SELECT s_id,... symptom" />
-                <marker date="1520892646611" expanded="true" signature="9683:9721" ph="SELECT * FRO... speciality" />
-                <marker date="1520892646611" expanded="true" signature="10232:10276" ph="SELECT * FRO... patient" />
-                <marker date="1520892646611" expanded="true" signature="11644:11951" ph="SELECT p_id,... patient" />
-                <marker date="1520892646611" expanded="true" signature="12372:12419" ph="SELECT s_id,... symptom" />
-                <marker date="1520892646611" expanded="true" signature="12717:12764" ph="SELECT s_id,... symptom" />
-                <marker date="1520892646611" expanded="true" signature="13031:13078" ph="SELECT s_id,... symptom" />
-                <marker date="1520892646611" expanded="true" signature="15106:15196" ph="SELECT p_id,... patient" />
-                <marker date="1520892646611" expanded="true" signature="15583:15630" ph="SELECT s_id,... symptom" />
-                <marker date="1520892646611" expanded="true" signature="15921:15968" ph="SELECT s_id,... symptom" />
-                <marker date="1520892646611" expanded="true" signature="16844:17168" ph="SELECT * FRO... patient" />
-                <marker date="1520892646611" expanded="true" signature="17574:17621" ph="SELECT s_id,... symptom" />
-                <marker date="1520892646611" expanded="true" signature="17919:17966" ph="SELECT s_id,... symptom" />
-                <marker date="1520892646611" expanded="true" signature="18233:18280" ph="SELECT s_id,... symptom" />
-                <marker date="1520892646611" expanded="true" signature="19850:20132" ph="SELECT DISTI... doctor" />
-                <marker date="1520892646611" expanded="true" signature="21175:21230" ph="UPDATE users... " />
-                <marker date="1520892646611" expanded="true" signature="22236:22579" ph="SELECT d_nam... doctor" />
-                <marker date="1520892646611" expanded="true" signature="22751:22849" ph="SELECT COUNT... rating" />
-                <marker date="1520892646611" expanded="true" signature="23869:24187" ph="SELECT DISTI... doctor" />
-                <marker date="1520892646611" expanded="true" signature="24337:24424" ph="SELECT COUNT... rating" />
-                <marker date="1520892646611" expanded="true" signature="25711:25771" ph="INSERT into bookmarks... " />
-                <marker date="1520892646611" expanded="true" signature="26110:26137" ph="DELETE FROM bookmarks... " />
-                <marker date="1520892646611" expanded="true" signature="26110:26147" ph="DELETE FROM bookmarks... " />
-                <marker date="1520892646611" expanded="true" signature="26110:26167" ph="DELETE FROM bookmarks... " />
-                <marker date="1520892646611" expanded="true" signature="26110:26170" ph="DELETE FROM bookmarks... " />
-                <marker date="1520892646611" expanded="true" signature="26834:27189" ph="SELECT d_nam... doctor" />
-                <marker date="1520892646611" expanded="true" signature="27369:27467" ph="SELECT COUNT... rating" />
-                <marker date="1520892646611" expanded="true" signature="28651:28981" ph="SELECT * FRO... patient" />
-                <marker date="1520892646611" expanded="true" signature="28927:28980" ph="SELECT b_des... bookmarks" />
-                <marker date="1520892646611" expanded="true" signature="29414:29461" ph="SELECT s_id,... symptom" />
-                <marker date="1520892646611" expanded="true" signature="29759:29806" ph="SELECT s_id,... symptom" />
-                <marker date="1520892646611" expanded="true" signature="30073:30120" ph="SELECT s_id,... symptom" />
-                <marker date="1520892646611" expanded="true" signature="34286:34357" ph="INSERT INTO rating... " />
-                <marker date="1520892646611" expanded="true" signature="34286:34371" ph="INSERT INTO rating... " />
-                <marker date="1520892646611" expanded="true" signature="34981:35047" ph="SELECT * FRO... rating" />
-                <marker date="1520892646611" expanded="true" signature="35665:35722" ph="SELECT AVG(r... rating" />
-                <marker date="1520892646611" expanded="true" signature="35665:35742" ph="SELECT AVG(r... rating" />
-                <marker date="1520892646611" expanded="true" signature="35880:35952" ph="SELECT COUNT... rating" />
-                <marker date="1520892646611" expanded="true" signature="35880:35961" ph="SELECT COUNT... rating" />
-                <marker date="1520892646611" expanded="true" signature="35880:35963" ph="SELECT COUNT... rating" />
-                <marker date="1520892646611" expanded="true" signature="36123:36194" ph="SELECT (r_li... rating" />
-                <marker date="1520892646611" expanded="true" signature="36668:36863" ph="SELECT ROUND... rating" />
-                <marker date="1520892646611" expanded="true" signature="36668:37008" ph="SELECT p_id,... doctor" />
-                <marker date="1520892646611" expanded="true" signature="36942:37007" ph="SELECT p_dac... prescrition" />
-                <marker date="1520892646611" expanded="true" signature="37963:38025" ph="SELECT * FRO... bookmarks" />
-                <marker date="1520892646611" expanded="true" signature="37963:38033" ph="SELECT * FRO... bookmarks" />
-                <marker date="1520892646611" expanded="true" signature="38775:38787" ph="INSERT INTO summary... " />
-                <marker date="1520892646611" expanded="true" signature="38775:38853" ph="INSERT INTO prescription... " />
-                <marker date="1520892646611" expanded="true" signature="38775:38873" ph="INSERT INTO prescription... " />
+                <element signature="e#0#41#0" expanded="true" />
+                <marker date="1520924922712" expanded="true" signature="2192:2358" ph="INSERT INTO doctor... " />
+                <marker date="1520924922712" expanded="true" signature="2508:2598" ph="INSERT into users... " />
+                <marker date="1520924922712" expanded="true" signature="4258:4588" ph="INSERT INTO patient... " />
+                <marker date="1520924922712" expanded="true" signature="4849:4939" ph="INSERT into users... " />
+                <marker date="1520924922712" expanded="true" signature="6605:6924" ph="INSERT INTO patient... " />
+                <marker date="1520924922712" expanded="true" signature="7178:7268" ph="INSERT into users... " />
+                <marker date="1520924922712" expanded="true" signature="7842:7945" ph="SELECT u_sta... users" />
+                <marker date="1520924922712" expanded="true" signature="8897:8947" ph="UPDATE doctor... " />
+                <marker date="1520924922712" expanded="true" signature="9271:9322" ph="SELECT s_id,... symptom" />
+                <marker date="1520924922712" expanded="true" signature="9683:9721" ph="SELECT * FRO... speciality" />
+                <marker date="1520924922712" expanded="true" signature="10232:10276" ph="SELECT * FRO... patient" />
+                <marker date="1520924922712" expanded="true" signature="11645:11952" ph="SELECT p_id,... patient" />
+                <marker date="1520924922712" expanded="true" signature="12386:12433" ph="SELECT s_id,... symptom" />
+                <marker date="1520924922712" expanded="true" signature="12731:12778" ph="SELECT s_id,... symptom" />
+                <marker date="1520924922712" expanded="true" signature="13045:13092" ph="SELECT s_id,... symptom" />
+                <marker date="1520924922712" expanded="true" signature="15120:15210" ph="SELECT p_id,... patient" />
+                <marker date="1520924922712" expanded="true" signature="15597:15644" ph="SELECT s_id,... symptom" />
+                <marker date="1520924922712" expanded="true" signature="15935:15982" ph="SELECT s_id,... symptom" />
+                <marker date="1520924922712" expanded="true" signature="16908:17232" ph="SELECT * FRO... patient" />
+                <marker date="1520924922712" expanded="true" signature="17638:17685" ph="SELECT s_id,... symptom" />
+                <marker date="1520924922712" expanded="true" signature="17983:18030" ph="SELECT s_id,... symptom" />
+                <marker date="1520924922712" expanded="true" signature="18297:18344" ph="SELECT s_id,... symptom" />
+                <marker date="1520924922712" expanded="true" signature="19914:20196" ph="SELECT DISTI... doctor" />
+                <marker date="1520924922712" expanded="true" signature="21239:21294" ph="UPDATE users... " />
+                <marker date="1520924922712" expanded="true" signature="22301:22644" ph="SELECT d_nam... doctor" />
+                <marker date="1520924922712" expanded="true" signature="22816:22914" ph="SELECT COUNT... rating" />
+                <marker date="1520924922712" expanded="true" signature="23934:24252" ph="SELECT DISTI... doctor" />
+                <marker date="1520924922712" expanded="true" signature="24402:24489" ph="SELECT COUNT... rating" />
+                <marker date="1520924922712" expanded="true" signature="25776:25836" ph="INSERT into bookmarks... " />
+                <marker date="1520924922712" expanded="true" signature="26175:26202" ph="DELETE FROM bookmarks... " />
+                <marker date="1520924922712" expanded="true" signature="26175:26212" ph="DELETE FROM bookmarks... " />
+                <marker date="1520924922712" expanded="true" signature="26175:26232" ph="DELETE FROM bookmarks... " />
+                <marker date="1520924922712" expanded="true" signature="26175:26235" ph="DELETE FROM bookmarks... " />
+                <marker date="1520924922712" expanded="true" signature="26899:27254" ph="SELECT d_nam... doctor" />
+                <marker date="1520924922712" expanded="true" signature="27434:27532" ph="SELECT COUNT... rating" />
+                <marker date="1520924922712" expanded="true" signature="28716:29046" ph="SELECT * FRO... patient" />
+                <marker date="1520924922712" expanded="true" signature="28992:29045" ph="SELECT b_des... bookmarks" />
+                <marker date="1520924922712" expanded="true" signature="29479:29526" ph="SELECT s_id,... symptom" />
+                <marker date="1520924922712" expanded="true" signature="29824:29871" ph="SELECT s_id,... symptom" />
+                <marker date="1520924922712" expanded="true" signature="30138:30185" ph="SELECT s_id,... symptom" />
+                <marker date="1520924922712" expanded="true" signature="34350:34421" ph="INSERT INTO rating... " />
+                <marker date="1520924922712" expanded="true" signature="34350:34435" ph="INSERT INTO rating... " />
+                <marker date="1520924922712" expanded="true" signature="35045:35111" ph="SELECT * FRO... rating" />
+                <marker date="1520924922712" expanded="true" signature="35729:35786" ph="SELECT AVG(r... rating" />
+                <marker date="1520924922712" expanded="true" signature="35729:35806" ph="SELECT AVG(r... rating" />
+                <marker date="1520924922712" expanded="true" signature="35944:36016" ph="SELECT COUNT... rating" />
+                <marker date="1520924922712" expanded="true" signature="35944:36025" ph="SELECT COUNT... rating" />
+                <marker date="1520924922712" expanded="true" signature="35944:36027" ph="SELECT COUNT... rating" />
+                <marker date="1520924922712" expanded="true" signature="36187:36258" ph="SELECT (r_li... rating" />
+                <marker date="1520924922712" expanded="true" signature="36732:36927" ph="SELECT ROUND... rating" />
+                <marker date="1520924922712" expanded="true" signature="36732:37072" ph="SELECT p_id,... doctor" />
+                <marker date="1520924922712" expanded="true" signature="37006:37071" ph="SELECT p_dac... prescrition" />
+                <marker date="1520924922712" expanded="true" signature="38027:38089" ph="SELECT * FRO... bookmarks" />
+                <marker date="1520924922712" expanded="true" signature="38027:38097" ph="SELECT * FRO... bookmarks" />
+                <marker date="1520924922712" expanded="true" signature="38839:38851" ph="INSERT INTO summary... " />
+                <marker date="1520924922712" expanded="true" signature="38839:38917" ph="INSERT INTO prescription... " />
+                <marker date="1520924922712" expanded="true" signature="38839:38937" ph="INSERT INTO prescription... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="prediction.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datamining/dataset1/association/prediction.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="326">
+              <caret line="182" column="70" lean-forward="false" selection-start-line="182" selection-start-column="70" selection-end-line="182" selection-end-column="70" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testing_new.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datamining/dataset1/classification/testing_new.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nb_classifier.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/datamining/dataset1/classification/nb_classifier.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="139">
+              <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="testing.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datamining/dataset1/module-classification/testing.csv">
+        <entry file="file://$PROJECT_DIR$/datamining/dataset1/classification/testing.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1955">
-              <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+            <state relative-caret-position="34">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="apriori_new.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datamining/dataset3/module-association/apriori_new.py">
+      <file leaf-file-name="training.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datamining/dataset1/classification/training.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3009">
-              <caret line="179" column="31" lean-forward="false" selection-start-line="179" selection-start-column="31" selection-end-line="179" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="make_buckets.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datamining/dataset3/module-association/make_buckets.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="3" lean-forward="false" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="decisiontree.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datamining/dataset3/association/decisiontree.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="13" column="14" lean-forward="false" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -378,8 +221,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>disease_p</find>
-      <find>get_dise</find>
       <find>get_diseas</find>
       <find>get_disease_new</find>
       <find>_new</find>
@@ -389,7 +230,6 @@
       <find>clean_data</find>
       <find>1</find>
       <find>hyper</find>
-      <find>1.0</find>
       <find>pain che</find>
       <find>auth/</find>
       <find>dataD</find>
@@ -408,6 +248,9 @@
       <find>patient</find>
       <find>role</find>
       <find>single</find>
+      <find>predic</find>
+      <find>predict</find>
+      <find>1.0</find>
     </findStrings>
     <replaceStrings>
       <replace>request.args.get(</replace>
@@ -448,10 +291,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../../Symptom-X--master/prediction/NB Classifier.ipynb" />
-        <option value="$PROJECT_DIR$/Module-Frequent/apyori_example" />
-        <option value="$PROJECT_DIR$/Module-Frequent/fpgrowth.py" />
-        <option value="$PROJECT_DIR$/../../APriori-master/src/apriori.py" />
         <option value="$PROJECT_DIR$/../../Symptom-X--master/a-priori/apriori.py" />
         <option value="$PROJECT_DIR$/../../Symptom-X--master/a-priori/make_buckets.py" />
         <option value="$PROJECT_DIR$/Module-Frequent/make_buckets.py" />
@@ -467,7 +306,6 @@
         <option value="$PROJECT_DIR$/datamining/dataset1/module-classification/prediction/pivoting.py" />
         <option value="$PROJECT_DIR$/Module-Frequent/prediction/nb_classifier.py" />
         <option value="$PROJECT_DIR$/Module-Frequent/prediction/pivoting.py" />
-        <option value="$PROJECT_DIR$/datamining/dataset1/module-classification/randomforestclassifier.py" />
         <option value="$PROJECT_DIR$/datamining/dataset1/module-classification/pivoting.py" />
         <option value="$PROJECT_DIR$/datamining/dataset1/module-association/rollup_datasets.py" />
         <option value="$PROJECT_DIR$/datamining/dataset3/module-association/rollup_datasets.py" />
@@ -482,23 +320,28 @@
         <option value="$PROJECT_DIR$/datamining/dataset1/association/buckets_new.csv" />
         <option value="$PROJECT_DIR$/datamining/dataset1/association/apriori_new_1.py" />
         <option value="$PROJECT_DIR$/datamining/dataset1/association/rollup_dataset.csv" />
-        <option value="$PROJECT_DIR$/datamining/dataset1/association/prediction.py" />
         <option value="$PROJECT_DIR$/datamining/dataset3/association/prediction.py" />
         <option value="$PROJECT_DIR$/datamining/dataset1/module-association/buckets_new.csv" />
         <option value="$PROJECT_DIR$/datamining/dataset1/module-classification/pivoted_data_new.csv" />
         <option value="$PROJECT_DIR$/datamining/dataset1/association/testing.py" />
         <option value="$PROJECT_DIR$/datamining/dataset1/clean_dataset.csv" />
         <option value="$PROJECT_DIR$/datamining/dataset1/module-association/testing_dataset.csv" />
-        <option value="$PROJECT_DIR$/datamining/dataset1/clean_dataset.py" />
         <option value="$PROJECT_DIR$/datamining/dataset1/module-association/apriori_new_1.py" />
         <option value="$PROJECT_DIR$/datamining/dataset3/clean_dataset.py" />
         <option value="$PROJECT_DIR$/datamining/dataset3/association/decisiontree.py" />
         <option value="$PROJECT_DIR$/datamining/dataset3/module-classification/decisiontree.py" />
         <option value="$PROJECT_DIR$/datamining/dataset3/module-association/apriori_new.py" />
         <option value="$PROJECT_DIR$/datamining/dataset3/module-association/make_buckets.py" />
+        <option value="$PROJECT_DIR$/datamining/dataset1/module-classification/testing.csv" />
+        <option value="$PROJECT_DIR$/datamining/dataset1/module-classification/randomforestclassifier.py" />
         <option value="$PROJECT_DIR$/datamining/dataset1/module-classification/nb_classifier.py" />
         <option value="$PROJECT_DIR$/datamining/dataset1/module-classification/decisiontree.py" />
         <option value="$PROJECT_DIR$/HealthExpertServer.py" />
+        <option value="$PROJECT_DIR$/datamining/dataset1/clean_dataset.py" />
+        <option value="$PROJECT_DIR$/datamining/dataset1/cleaning/clean_dataset.py" />
+        <option value="$PROJECT_DIR$/datamining/dataset1/classification/testing.csv" />
+        <option value="$PROJECT_DIR$/datamining/dataset1/association/prediction.py" />
+        <option value="$PROJECT_DIR$/datamining/dataset1/classification/nb_classifier.py" />
       </list>
     </option>
   </component>
@@ -531,8 +374,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -556,45 +397,51 @@
               <item name="HealthExpertServer" type="462c0819:PsiDirectoryNode" />
               <item name="datamining" type="462c0819:PsiDirectoryNode" />
               <item name="dataset1" type="462c0819:PsiDirectoryNode" />
-              <item name="module-association" type="462c0819:PsiDirectoryNode" />
+              <item name="association" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HealthExpertServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="HealthExpertServer" type="462c0819:PsiDirectoryNode" />
               <item name="datamining" type="462c0819:PsiDirectoryNode" />
               <item name="dataset1" type="462c0819:PsiDirectoryNode" />
-              <item name="module-classification" type="462c0819:PsiDirectoryNode" />
+              <item name="classification" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HealthExpertServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="HealthExpertServer" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="datamining" type="462c0819:PsiDirectoryNode" />
+              <item name="dataset1" type="462c0819:PsiDirectoryNode" />
+              <item name="cleaning" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HealthExpertServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="HealthExpertServer" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="uploads" type="462c0819:PsiDirectoryNode" />
+              <item name="datamining" type="462c0819:PsiDirectoryNode" />
+              <item name="dataset1" type="462c0819:PsiDirectoryNode" />
+              <item name="cleaning" type="462c0819:PsiDirectoryNode" />
+              <item name="raw" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="clea&#9;null&#9;null&#10;Heal&#9;FILE&#9;file://F:/GitHub Projects/HealthExpert/HealthExpertServer/HealthExpertServer.py&#10;roll&#9;FILE&#9;file://F:/GitHub Projects/HealthExpert/HealthExpertServer/datamining/dataset1/association/rollup_datasets.py&#10;make&#9;FILE&#9;file://F:/GitHub Projects/HealthExpert/HealthExpertServer/datamining/dataset1/association/make_buckets.py&#10;make_buckets&#9;FILE&#9;file://F:/GitHub Projects/HealthExpert/HealthExpertServer/datamining/dataset1/module-association/make_buckets.py&#10;Hea&#9;FILE&#9;file://F:/GitHub Projects/HealthExpert/HealthExpertServer/HealthExpertServer.py&#10;doctor&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="Hea&#9;FILE&#9;file://F:/GitHub Projects/HealthExpert/HealthExpertServer/HealthExpertServer.py&#10;He&#9;FILE&#9;file://F:/GitHub Projects/HealthExpert/HealthExpertServer/HealthExpertServer.py&#10;decis&#9;FILE&#9;file://F:/GitHub Projects/HealthExpert/HealthExpertServer/datamining/dataset1/module-classification/decisiontree.py&#10;nb&#9;FILE&#9;file://F:/GitHub Projects/HealthExpert/HealthExpertServer/datamining/dataset1/module-classification/nb_classifier.py&#10;clea&#9;null&#9;null&#10;Heal&#9;FILE&#9;file://F:/GitHub Projects/HealthExpert/HealthExpertServer/HealthExpertServer.py&#10;roll&#9;FILE&#9;file://F:/GitHub Projects/HealthExpert/HealthExpertServer/datamining/dataset1/association/rollup_datasets.py&#10;make&#9;FILE&#9;file://F:/GitHub Projects/HealthExpert/HealthExpertServer/datamining/dataset1/association/make_buckets.py&#10;make_buckets&#9;FILE&#9;file://F:/GitHub Projects/HealthExpert/HealthExpertServer/datamining/dataset1/module-association/make_buckets.py&#10;doctor&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\GitHub Projects\HealthExpert\HealthExpertServer\datamining\dataset1\cleaning" />
+      <recent name="F:\GitHub Projects\HealthExpert\HealthExpertServer\datamining\dataset1\classification" />
       <recent name="F:\GitHub Projects\HealthExpert\HealthExpertServer\datamining\dataset3\module-classification" />
       <recent name="F:\GitHub Projects\HealthExpert\HealthExpertServer\datamining\dataset1\module-classification" />
       <recent name="F:\GitHub Projects\HealthExpert\HealthExpertServer\datamining\dataset3\association" />
-      <recent name="F:\GitHub Projects\HealthExpert\HealthExpertServer\datamining\dataset3" />
-      <recent name="F:\GitHub Projects\HealthExpert\HealthExpertServer\datamining\dataset1\association" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -648,39 +495,39 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="apriori_new" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="clean_dataset" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/datamining/dataset3/module-association" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/datamining/dataset1/cleaning" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="HealthExpertServer" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datamining/dataset3/module-association/apriori_new.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datamining/dataset1/cleaning/clean_dataset.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="decisiontree (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="collecting_dataset" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/datamining/dataset3/module-classification" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/datamining/dataset1/cleaning" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="HealthExpertServer" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datamining/dataset3/module-classification/decisiontree.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datamining/dataset1/cleaning/collecting_dataset.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -705,25 +552,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="make_buckets" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/datamining/dataset3/module-association" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="HealthExpertServer" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datamining/dataset3/module-association/make_buckets.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <configuration name="nb_classifier" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -743,21 +571,40 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="prediction" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/datamining/dataset1/association" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="HealthExpertServer" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datamining/dataset1/association/prediction.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.HealthExpertServer" />
-      <item index="1" class="java.lang.String" itemvalue="Python.apriori_new" />
-      <item index="2" class="java.lang.String" itemvalue="Python.make_buckets" />
-      <item index="3" class="java.lang.String" itemvalue="Python.decisiontree (1)" />
-      <item index="4" class="java.lang.String" itemvalue="Python.nb_classifier" />
-      <item index="5" class="java.lang.String" itemvalue="Python.decisiontree" />
+      <item index="1" class="java.lang.String" itemvalue="Python.nb_classifier" />
+      <item index="2" class="java.lang.String" itemvalue="Python.decisiontree" />
+      <item index="3" class="java.lang.String" itemvalue="Python.collecting_dataset" />
+      <item index="4" class="java.lang.String" itemvalue="Python.clean_dataset" />
+      <item index="5" class="java.lang.String" itemvalue="Python.prediction" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.decisiontree" />
-        <item index="1" class="java.lang.String" itemvalue="Python.nb_classifier" />
-        <item index="2" class="java.lang.String" itemvalue="Python.decisiontree (1)" />
-        <item index="3" class="java.lang.String" itemvalue="Python.apriori_new" />
-        <item index="4" class="java.lang.String" itemvalue="Python.make_buckets" />
+        <item index="0" class="java.lang.String" itemvalue="Python.prediction" />
+        <item index="1" class="java.lang.String" itemvalue="Python.clean_dataset" />
+        <item index="2" class="java.lang.String" itemvalue="Python.collecting_dataset" />
+        <item index="3" class="java.lang.String" itemvalue="Python.decisiontree" />
+        <item index="4" class="java.lang.String" itemvalue="Python.nb_classifier" />
       </list>
     </recent_temporary>
   </component>
@@ -795,7 +642,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30098686" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24130106" sideWeight="0.49342105" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24508321" sideWeight="0.49342105" order="0" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -854,111 +701,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/datamining/dataset1/module-association/apriori_new.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="50" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datamining/dataset1/association/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="23" column="90" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datamining/dataset1/module-association/make_buckets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datamining/dataset1/module-association/disease_probabilityscores_from_symptomlist.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datamining/dataset1/association/buckets_new.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datamining/dataset1/association/make_buckets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="24" lean-forward="false" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datamining/dataset1/association/rollup_datasets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datamining/dataset1/association/rollup_dataset.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datamining/dataset1/association/prediction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1751">
-          <caret line="103" column="29" lean-forward="false" selection-start-line="103" selection-start-column="29" selection-end-line="103" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HealthEnvironment/Lib/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="1050" column="0" lean-forward="false" selection-start-line="1050" selection-start-column="0" selection-end-line="1050" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datamining/dataset3/association/prediction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="102" column="20" lean-forward="false" selection-start-line="102" selection-start-column="20" selection-end-line="102" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datamining/dataset3/association/apriori.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datamining/dataset1/association/disease_probabilityscores_from_symptomlist.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datamining/dataset3/association/buckets_new.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datamining/dataset1/module-association/buckets.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="88" lean-forward="false" selection-start-line="3" selection-start-column="88" selection-end-line="3" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../Predicting-Diseases-From-Symptoms-master/Data-Analysis.ipynb" />
     <entry file="file://$PROJECT_DIR$/datamining/dataset1/module-association/buckets_new.csv">
       <provider selected="true" editor-type-id="text-editor">
@@ -986,13 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datamining/dataset1/association/apriori_new_1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="107" column="48" lean-forward="false" selection-start-line="107" selection-start-column="48" selection-end-line="107" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -1052,18 +787,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datamining/dataset1/clean_dataset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/datamining/dataset3/clean_dataset.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="36" column="22" lean-forward="false" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1078,9 +805,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="28" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#19#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1139,7 +863,7 @@
         <state relative-caret-position="3009">
           <caret line="179" column="31" lean-forward="false" selection-start-line="179" selection-start-column="31" selection-end-line="179" selection-end-column="31" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1149,44 +873,8 @@
         <state relative-caret-position="119">
           <caret line="13" column="14" lean-forward="false" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datamining/dataset1/module-association/apriori_new_1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datamining/dataset1/module-classification/nb_classifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datamining/dataset1/module-classification/testing.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1955">
-          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datamining/dataset1/module-classification/decisiontree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1202,74 +890,255 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../Symptom-X--master/a-priori/apriori.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="2210">
           <caret line="131" column="16" lean-forward="false" selection-start-line="131" selection-start-column="16" selection-end-line="131" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/datamining/dataset1/module-classification/testing.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datamining/dataset1/module-classification/test.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datamining/dataset1/module-classification/randomforestclassifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#19#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datamining/dataset1/module-classification/nb_classifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#19#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datamining/dataset1/module-classification/decisiontree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datamining/dataset1/classification/decisiontree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datamining/dataset1/association/apriori_new_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="121" column="18" lean-forward="false" selection-start-line="121" selection-start-column="18" selection-end-line="121" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datamining/dataset1/association/buckets_new.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datamining/dataset3/association/prediction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="94" column="4" lean-forward="false" selection-start-line="94" selection-start-column="4" selection-end-line="94" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datamining/dataset1/module-association/apriori_new_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datamining/dataset1/clean_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datamining/dataset1/cleaning/collecting_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HealthExpertServer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="493" column="115" lean-forward="false" selection-start-line="493" selection-start-column="115" selection-end-line="493" selection-end-column="115" />
+        <state relative-caret-position="125">
+          <caret line="377" column="0" lean-forward="false" selection-start-line="377" selection-start-column="0" selection-end-line="377" selection-end-column="0" />
           <folding>
-            <marker date="1520892646611" expanded="true" signature="2192:2358" ph="INSERT INTO doctor... " />
-            <marker date="1520892646611" expanded="true" signature="2508:2598" ph="INSERT into users... " />
-            <marker date="1520892646611" expanded="true" signature="4258:4588" ph="INSERT INTO patient... " />
-            <marker date="1520892646611" expanded="true" signature="4849:4939" ph="INSERT into users... " />
-            <marker date="1520892646611" expanded="true" signature="6605:6924" ph="INSERT INTO patient... " />
-            <marker date="1520892646611" expanded="true" signature="7178:7268" ph="INSERT into users... " />
-            <marker date="1520892646611" expanded="true" signature="7842:7945" ph="SELECT u_sta... users" />
-            <marker date="1520892646611" expanded="true" signature="8897:8947" ph="UPDATE doctor... " />
-            <marker date="1520892646611" expanded="true" signature="9271:9322" ph="SELECT s_id,... symptom" />
-            <marker date="1520892646611" expanded="true" signature="9683:9721" ph="SELECT * FRO... speciality" />
-            <marker date="1520892646611" expanded="true" signature="10232:10276" ph="SELECT * FRO... patient" />
-            <marker date="1520892646611" expanded="true" signature="11644:11951" ph="SELECT p_id,... patient" />
-            <marker date="1520892646611" expanded="true" signature="12372:12419" ph="SELECT s_id,... symptom" />
-            <marker date="1520892646611" expanded="true" signature="12717:12764" ph="SELECT s_id,... symptom" />
-            <marker date="1520892646611" expanded="true" signature="13031:13078" ph="SELECT s_id,... symptom" />
-            <marker date="1520892646611" expanded="true" signature="15106:15196" ph="SELECT p_id,... patient" />
-            <marker date="1520892646611" expanded="true" signature="15583:15630" ph="SELECT s_id,... symptom" />
-            <marker date="1520892646611" expanded="true" signature="15921:15968" ph="SELECT s_id,... symptom" />
-            <marker date="1520892646611" expanded="true" signature="16844:17168" ph="SELECT * FRO... patient" />
-            <marker date="1520892646611" expanded="true" signature="17574:17621" ph="SELECT s_id,... symptom" />
-            <marker date="1520892646611" expanded="true" signature="17919:17966" ph="SELECT s_id,... symptom" />
-            <marker date="1520892646611" expanded="true" signature="18233:18280" ph="SELECT s_id,... symptom" />
-            <marker date="1520892646611" expanded="true" signature="19850:20132" ph="SELECT DISTI... doctor" />
-            <marker date="1520892646611" expanded="true" signature="21175:21230" ph="UPDATE users... " />
-            <marker date="1520892646611" expanded="true" signature="22236:22579" ph="SELECT d_nam... doctor" />
-            <marker date="1520892646611" expanded="true" signature="22751:22849" ph="SELECT COUNT... rating" />
-            <marker date="1520892646611" expanded="true" signature="23869:24187" ph="SELECT DISTI... doctor" />
-            <marker date="1520892646611" expanded="true" signature="24337:24424" ph="SELECT COUNT... rating" />
-            <marker date="1520892646611" expanded="true" signature="25711:25771" ph="INSERT into bookmarks... " />
-            <marker date="1520892646611" expanded="true" signature="26110:26137" ph="DELETE FROM bookmarks... " />
-            <marker date="1520892646611" expanded="true" signature="26110:26147" ph="DELETE FROM bookmarks... " />
-            <marker date="1520892646611" expanded="true" signature="26110:26167" ph="DELETE FROM bookmarks... " />
-            <marker date="1520892646611" expanded="true" signature="26110:26170" ph="DELETE FROM bookmarks... " />
-            <marker date="1520892646611" expanded="true" signature="26834:27189" ph="SELECT d_nam... doctor" />
-            <marker date="1520892646611" expanded="true" signature="27369:27467" ph="SELECT COUNT... rating" />
-            <marker date="1520892646611" expanded="true" signature="28651:28981" ph="SELECT * FRO... patient" />
-            <marker date="1520892646611" expanded="true" signature="28927:28980" ph="SELECT b_des... bookmarks" />
-            <marker date="1520892646611" expanded="true" signature="29414:29461" ph="SELECT s_id,... symptom" />
-            <marker date="1520892646611" expanded="true" signature="29759:29806" ph="SELECT s_id,... symptom" />
-            <marker date="1520892646611" expanded="true" signature="30073:30120" ph="SELECT s_id,... symptom" />
-            <marker date="1520892646611" expanded="true" signature="34286:34357" ph="INSERT INTO rating... " />
-            <marker date="1520892646611" expanded="true" signature="34286:34371" ph="INSERT INTO rating... " />
-            <marker date="1520892646611" expanded="true" signature="34981:35047" ph="SELECT * FRO... rating" />
-            <marker date="1520892646611" expanded="true" signature="35665:35722" ph="SELECT AVG(r... rating" />
-            <marker date="1520892646611" expanded="true" signature="35665:35742" ph="SELECT AVG(r... rating" />
-            <marker date="1520892646611" expanded="true" signature="35880:35952" ph="SELECT COUNT... rating" />
-            <marker date="1520892646611" expanded="true" signature="35880:35961" ph="SELECT COUNT... rating" />
-            <marker date="1520892646611" expanded="true" signature="35880:35963" ph="SELECT COUNT... rating" />
-            <marker date="1520892646611" expanded="true" signature="36123:36194" ph="SELECT (r_li... rating" />
-            <marker date="1520892646611" expanded="true" signature="36668:36863" ph="SELECT ROUND... rating" />
-            <marker date="1520892646611" expanded="true" signature="36668:37008" ph="SELECT p_id,... doctor" />
-            <marker date="1520892646611" expanded="true" signature="36942:37007" ph="SELECT p_dac... prescrition" />
-            <marker date="1520892646611" expanded="true" signature="37963:38025" ph="SELECT * FRO... bookmarks" />
-            <marker date="1520892646611" expanded="true" signature="37963:38033" ph="SELECT * FRO... bookmarks" />
-            <marker date="1520892646611" expanded="true" signature="38775:38787" ph="INSERT INTO summary... " />
-            <marker date="1520892646611" expanded="true" signature="38775:38853" ph="INSERT INTO prescription... " />
-            <marker date="1520892646611" expanded="true" signature="38775:38873" ph="INSERT INTO prescription... " />
+            <element signature="e#0#41#0" expanded="true" />
+            <marker date="1520924922712" expanded="true" signature="2192:2358" ph="INSERT INTO doctor... " />
+            <marker date="1520924922712" expanded="true" signature="2508:2598" ph="INSERT into users... " />
+            <marker date="1520924922712" expanded="true" signature="4258:4588" ph="INSERT INTO patient... " />
+            <marker date="1520924922712" expanded="true" signature="4849:4939" ph="INSERT into users... " />
+            <marker date="1520924922712" expanded="true" signature="6605:6924" ph="INSERT INTO patient... " />
+            <marker date="1520924922712" expanded="true" signature="7178:7268" ph="INSERT into users... " />
+            <marker date="1520924922712" expanded="true" signature="7842:7945" ph="SELECT u_sta... users" />
+            <marker date="1520924922712" expanded="true" signature="8897:8947" ph="UPDATE doctor... " />
+            <marker date="1520924922712" expanded="true" signature="9271:9322" ph="SELECT s_id,... symptom" />
+            <marker date="1520924922712" expanded="true" signature="9683:9721" ph="SELECT * FRO... speciality" />
+            <marker date="1520924922712" expanded="true" signature="10232:10276" ph="SELECT * FRO... patient" />
+            <marker date="1520924922712" expanded="true" signature="11645:11952" ph="SELECT p_id,... patient" />
+            <marker date="1520924922712" expanded="true" signature="12386:12433" ph="SELECT s_id,... symptom" />
+            <marker date="1520924922712" expanded="true" signature="12731:12778" ph="SELECT s_id,... symptom" />
+            <marker date="1520924922712" expanded="true" signature="13045:13092" ph="SELECT s_id,... symptom" />
+            <marker date="1520924922712" expanded="true" signature="15120:15210" ph="SELECT p_id,... patient" />
+            <marker date="1520924922712" expanded="true" signature="15597:15644" ph="SELECT s_id,... symptom" />
+            <marker date="1520924922712" expanded="true" signature="15935:15982" ph="SELECT s_id,... symptom" />
+            <marker date="1520924922712" expanded="true" signature="16908:17232" ph="SELECT * FRO... patient" />
+            <marker date="1520924922712" expanded="true" signature="17638:17685" ph="SELECT s_id,... symptom" />
+            <marker date="1520924922712" expanded="true" signature="17983:18030" ph="SELECT s_id,... symptom" />
+            <marker date="1520924922712" expanded="true" signature="18297:18344" ph="SELECT s_id,... symptom" />
+            <marker date="1520924922712" expanded="true" signature="19914:20196" ph="SELECT DISTI... doctor" />
+            <marker date="1520924922712" expanded="true" signature="21239:21294" ph="UPDATE users... " />
+            <marker date="1520924922712" expanded="true" signature="22301:22644" ph="SELECT d_nam... doctor" />
+            <marker date="1520924922712" expanded="true" signature="22816:22914" ph="SELECT COUNT... rating" />
+            <marker date="1520924922712" expanded="true" signature="23934:24252" ph="SELECT DISTI... doctor" />
+            <marker date="1520924922712" expanded="true" signature="24402:24489" ph="SELECT COUNT... rating" />
+            <marker date="1520924922712" expanded="true" signature="25776:25836" ph="INSERT into bookmarks... " />
+            <marker date="1520924922712" expanded="true" signature="26175:26202" ph="DELETE FROM bookmarks... " />
+            <marker date="1520924922712" expanded="true" signature="26175:26212" ph="DELETE FROM bookmarks... " />
+            <marker date="1520924922712" expanded="true" signature="26175:26232" ph="DELETE FROM bookmarks... " />
+            <marker date="1520924922712" expanded="true" signature="26175:26235" ph="DELETE FROM bookmarks... " />
+            <marker date="1520924922712" expanded="true" signature="26899:27254" ph="SELECT d_nam... doctor" />
+            <marker date="1520924922712" expanded="true" signature="27434:27532" ph="SELECT COUNT... rating" />
+            <marker date="1520924922712" expanded="true" signature="28716:29046" ph="SELECT * FRO... patient" />
+            <marker date="1520924922712" expanded="true" signature="28992:29045" ph="SELECT b_des... bookmarks" />
+            <marker date="1520924922712" expanded="true" signature="29479:29526" ph="SELECT s_id,... symptom" />
+            <marker date="1520924922712" expanded="true" signature="29824:29871" ph="SELECT s_id,... symptom" />
+            <marker date="1520924922712" expanded="true" signature="30138:30185" ph="SELECT s_id,... symptom" />
+            <marker date="1520924922712" expanded="true" signature="34350:34421" ph="INSERT INTO rating... " />
+            <marker date="1520924922712" expanded="true" signature="34350:34435" ph="INSERT INTO rating... " />
+            <marker date="1520924922712" expanded="true" signature="35045:35111" ph="SELECT * FRO... rating" />
+            <marker date="1520924922712" expanded="true" signature="35729:35786" ph="SELECT AVG(r... rating" />
+            <marker date="1520924922712" expanded="true" signature="35729:35806" ph="SELECT AVG(r... rating" />
+            <marker date="1520924922712" expanded="true" signature="35944:36016" ph="SELECT COUNT... rating" />
+            <marker date="1520924922712" expanded="true" signature="35944:36025" ph="SELECT COUNT... rating" />
+            <marker date="1520924922712" expanded="true" signature="35944:36027" ph="SELECT COUNT... rating" />
+            <marker date="1520924922712" expanded="true" signature="36187:36258" ph="SELECT (r_li... rating" />
+            <marker date="1520924922712" expanded="true" signature="36732:36927" ph="SELECT ROUND... rating" />
+            <marker date="1520924922712" expanded="true" signature="36732:37072" ph="SELECT p_id,... doctor" />
+            <marker date="1520924922712" expanded="true" signature="37006:37071" ph="SELECT p_dac... prescrition" />
+            <marker date="1520924922712" expanded="true" signature="38027:38089" ph="SELECT * FRO... bookmarks" />
+            <marker date="1520924922712" expanded="true" signature="38027:38097" ph="SELECT * FRO... bookmarks" />
+            <marker date="1520924922712" expanded="true" signature="38839:38851" ph="INSERT INTO summary... " />
+            <marker date="1520924922712" expanded="true" signature="38839:38917" ph="INSERT INTO prescription... " />
+            <marker date="1520924922712" expanded="true" signature="38839:38937" ph="INSERT INTO prescription... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datamining/dataset1/classification/training_dataset.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datamining/dataset1/cleaning/clean_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="49" column="41" lean-forward="true" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datamining/dataset1/association/rollup_dataset.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datamining/dataset1/classification/testing_dataset.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datamining/dataset1/classification/training.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datamining/dataset1/classification/testing.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datamining/dataset1/classification/testing_new.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datamining/dataset1/association/prediction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="182" column="70" lean-forward="false" selection-start-line="182" selection-start-column="70" selection-end-line="182" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datamining/dataset1/classification/nb_classifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>

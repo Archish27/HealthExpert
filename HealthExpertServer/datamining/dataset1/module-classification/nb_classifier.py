@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 
 import graphviz
 
-data = pd.read_csv('pivoted_data.csv')
+data = pd.read_csv('test.csv')
 
 print(data.shape)
 cols = data.columns.tolist()
@@ -32,4 +32,7 @@ testx = test_data[cols]
 testy = test_data['disease']
 predict = mnb.predict(testx)
 print(predict[0])
-print(mnb.score(testx, testy))
+score = 0
+while score == 0.0:
+    score = mnb.score(testx, testy)
+print(score)
